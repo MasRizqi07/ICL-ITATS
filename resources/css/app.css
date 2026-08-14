@@ -1,9 +1,116 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@layer base {
+  :root {
+    --color-primary: #2563eb;
+    --color-primary-dark: #004ac6;
+    --color-secondary: #0f766e;
+    --color-tertiary: #b45309;
+    --color-ai-accent: #6d28d9;
+    --color-canvas: #f8fafc;
+    --color-surface: #ffffff;
+    --color-line: #d9e0e8;
+  }
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* Glassmorphism Cards & Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 224, 232, 0.7);
+}
+
+.dark .glass-panel {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+}
+
+/* Background Dots Pattern */
+.bg-dots-pattern {
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-dots-pattern {
+  background-image: radial-gradient(#334155 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Micro-Animations & Smooth Hover Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 12px 4px rgba(37, 99, 235, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.12);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Borders for AI Panels */
+.ai-gradient-border {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
+  border: 1px solid rgba(109, 40, 217, 0.3);
+}
+
+.dark .ai-gradient-border {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.3) 0%, rgba(37, 99, 235, 0.2) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.4);
 }

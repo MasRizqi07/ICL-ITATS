@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full bg-slate-50">
+<html lang="id" class="h-full bg-slate-50 scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@yield('title', 'ICL ITATS Career Intelligence')</title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -39,19 +43,19 @@
     </style>
     @stack('styles')
 </head>
-<body class="h-full flex flex-col bg-[#F8FAFC] dark:bg-slate-900 text-[#17202A] dark:text-slate-100 transition-colors duration-200">
+<body class="h-full flex flex-col bg-[#F8FAFC] dark:bg-slate-950 text-[#17202A] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Top Navigation Bar -->
-    <header class="bg-white dark:bg-slate-800 border-b border-[#D9E0E8] dark:border-slate-700 sticky top-0 z-30">
+    <!-- Top Navigation Bar with Glassmorphism -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 transition-all">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2">
-                    <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform duration-200">
                         ICL
                     </div>
                     <div class="leading-tight">
-                        <span class="font-bold text-slate-900 dark:text-white text-base tracking-tight block">ICL ITATS</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400 block font-normal">Career Intelligence Platform</span>
+                        <span class="font-extrabold text-slate-900 dark:text-white text-base tracking-tight block">ICL ITATS</span>
+                        <span class="text-[11px] text-slate-500 dark:text-slate-400 block font-medium">Career Intelligence Platform</span>
                     </div>
                 </a>
             </div>
@@ -59,38 +63,38 @@
             <!-- Header Quick Role Switcher & User Profile -->
             <div class="flex items-center space-x-4">
                 <!-- Role Switcher Pill for Demo -->
-                <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-700 p-1 rounded-lg text-xs font-medium">
-                    <span class="px-2 text-slate-500 dark:text-slate-400">Demo Role:</span>
-                    <a href="{{ route('login.quick', 'student') }}" class="px-2 py-1 rounded {{ auth()->user()->isStudent() ? 'bg-white dark:bg-slate-600 text-blue-600 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Mahasiswa</a>
-                    <a href="{{ route('login.quick', 'reviewer') }}" class="px-2 py-1 rounded {{ auth()->user()->isReviewer() ? 'bg-white dark:bg-slate-600 text-teal-600 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Reviewer</a>
-                    <a href="{{ route('login.quick', 'admin') }}" class="px-2 py-1 rounded {{ auth()->user()->isAdmin() ? 'bg-white dark:bg-slate-600 text-purple-600 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Admin</a>
+                <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-700">
+                    <span class="px-2.5 text-slate-400 dark:text-slate-500">Role Demo:</span>
+                    <a href="{{ route('login.quick', 'student') }}" class="px-3 py-1.5 rounded-lg transition {{ auth()->user()->isStudent() ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Mahasiswa</a>
+                    <a href="{{ route('login.quick', 'reviewer') }}" class="px-3 py-1.5 rounded-lg transition {{ auth()->user()->isReviewer() ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Reviewer</a>
+                    <a href="{{ route('login.quick', 'admin') }}" class="px-3 py-1.5 rounded-lg transition {{ auth()->user()->isAdmin() ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Admin</a>
                 </div>
 
                 <!-- Dark Mode Toggle -->
-                <button id="theme-toggle" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                <button id="theme-toggle" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition active:scale-95">
                     <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+                    <span class="material-symbols-outlined text-xl hidden dark:block text-amber-400">light_mode</span>
                 </button>
 
                 <!-- Notifications -->
-                <a href="{{ route('notifications.index') }}" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition relative">
+                <a href="{{ route('notifications.index') }}" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition relative active:scale-95">
                     <span class="material-symbols-outlined text-xl">notifications</span>
-                    <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-blue-600 rounded-full border-2 border-white dark:border-slate-900 animate-pulse"></span>
                 </a>
 
                 <!-- User Dropdown & Logout -->
-                <div class="flex items-center space-x-3 pl-3 border-l border-slate-200 dark:border-slate-700">
-                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-sm border border-blue-200">
+                <div class="flex items-center space-x-3 pl-3 border-l border-slate-200 dark:border-slate-800">
+                    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold flex items-center justify-center text-sm shadow-xs">
                         {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                     </div>
                     <div class="hidden md:block leading-tight text-xs">
-                        <div class="font-semibold text-slate-800 dark:text-slate-100">{{ auth()->user()->name }}</div>
-                        <div class="text-slate-500 dark:text-slate-400 capitalize">{{ auth()->user()->role }}</div>
+                        <div class="font-bold text-slate-900 dark:text-slate-100">{{ auth()->user()->name }}</div>
+                        <div class="text-slate-500 dark:text-slate-400 capitalize font-medium">{{ auth()->user()->role }}</div>
                     </div>
                     <form action="{{ route('logout') }}" method="POST" class="inline">
                         @csrf
-                        <button type="submit" title="Keluar" class="p-1.5 text-slate-400 hover:text-red-600 transition">
-                            <span class="material-symbols-outlined text-lg">logout</span>
+                        <button type="submit" title="Keluar" class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition">
+                            <span class="material-symbols-outlined text-xl">logout</span>
                         </button>
                     </form>
                 </div>
@@ -103,106 +107,106 @@
         
         <!-- Sidebar Navigation -->
         <aside class="w-full md:w-64 shrink-0">
-            <nav class="bg-white dark:bg-slate-800 rounded-xl border border-[#D9E0E8] dark:border-slate-700 p-3 space-y-1 shadow-2xs sticky top-22">
+            <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl border border-[#D9E0E8] dark:border-slate-800 p-3.5 space-y-1 shadow-sm sticky top-22">
                 
-                <div class="px-3 py-2 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <div class="px-3 py-2 text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
                     Menu Utama
                 </div>
 
-                <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('dashboard') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">dashboard</span>
+                <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('dashboard') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">dashboard</span>
                     <span>Dashboard</span>
                 </a>
 
-                <a href="{{ route('careers.show', 'fullstack-web-developer') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('careers.*') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">work</span>
+                <a href="{{ route('careers.show', 'fullstack-web-developer') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('careers.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">work</span>
                     <span>Target Karier</span>
                 </a>
 
-                <a href="{{ route('competency.map') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('competency.map') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">map</span>
+                <a href="{{ route('competency.map') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('competency.map') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">map</span>
                     <span>Peta Kompetensi</span>
                 </a>
 
-                <a href="{{ route('assessment.show') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('assessment.*') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">quiz</span>
+                <a href="{{ route('assessment.show') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('assessment.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">quiz</span>
                     <span>Asesmen Mandiri</span>
                 </a>
 
-                <a href="{{ route('evidence.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('evidence.*') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">folder_special</span>
+                <a href="{{ route('evidence.index') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('evidence.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">folder_special</span>
                     <span>Bukti Kemampuan</span>
                 </a>
 
-                <a href="{{ route('skill-gaps') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('skill-gaps') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">insights</span>
+                <a href="{{ route('skill-gaps') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('skill-gaps') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">insights</span>
                     <span>Analisis Skill Gap</span>
                 </a>
 
-                <a href="{{ route('development-plans.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('development-plans.*') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">checklist_rtl</span>
+                <a href="{{ route('development-plans.index') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('development-plans.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">checklist_rtl</span>
                     <span>Rencana Pengembangan</span>
                 </a>
 
-                <a href="{{ route('reassessments.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition {{ request()->routeIs('reassessments.*') ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50' }}">
-                    <span class="material-symbols-outlined text-xl">history</span>
+                <a href="{{ route('reassessments.index') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('reassessments.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                    <span class="material-symbols-outlined text-lg">history</span>
                     <span>Penilaian Ulang</span>
                 </a>
 
                 <!-- Special Role Section -->
                 @if(auth()->user()->isReviewer())
-                    <div class="pt-3 pb-1 px-3 text-xs font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                    <div class="pt-3 pb-1 px-3 text-[11px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest">
                         Portal Reviewer
                     </div>
-                    <a href="{{ route('reviewer.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-teal-700 bg-teal-50 dark:bg-teal-900/30 dark:text-teal-300">
-                        <span class="material-symbols-outlined text-xl">fact_check</span>
+                    <a href="{{ route('reviewer.index') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-teal-700 bg-teal-50 dark:bg-teal-900/40 dark:text-teal-300 border border-teal-200 dark:border-teal-800 hover-lift">
+                        <span class="material-symbols-outlined text-lg">fact_check</span>
                         <span>Verifikasi Bukti</span>
                     </a>
                 @endif
 
                 @if(auth()->user()->isAdmin())
-                    <div class="pt-3 pb-1 px-3 text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+                    <div class="pt-3 pb-1 px-3 text-[11px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-widest">
                         Manajemen Admin
                     </div>
-                    <a href="{{ route('admin.careers') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50">
-                        <span class="material-symbols-outlined text-xl">work_history</span>
+                    <a href="{{ route('admin.careers') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover-lift">
+                        <span class="material-symbols-outlined text-lg">work_history</span>
                         <span>Data Karier</span>
                     </a>
-                    <a href="{{ route('admin.competencies') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50">
-                        <span class="material-symbols-outlined text-xl">menu_book</span>
+                    <a href="{{ route('admin.competencies') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover-lift">
+                        <span class="material-symbols-outlined text-lg">menu_book</span>
                         <span>Kurikulum Kompetensi</span>
                     </a>
                 @endif
 
-                <div class="pt-3 pb-1 px-3 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <div class="pt-3 pb-1 px-3 text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
                     Informasi & Akun
                 </div>
 
-                <a href="{{ route('profile.show') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50">
-                    <span class="material-symbols-outlined text-xl">person</span>
+                <a href="{{ route('profile.show') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover-lift">
+                    <span class="material-symbols-outlined text-lg">person</span>
                     <span>Profil Saya</span>
                 </a>
 
-                <a href="{{ route('flow') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50">
-                    <span class="material-symbols-outlined text-xl">schema</span>
+                <a href="{{ route('flow') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover-lift">
+                    <span class="material-symbols-outlined text-lg">schema</span>
                     <span>Alur Platform</span>
                 </a>
 
-                <a href="{{ route('about') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50">
-                    <span class="material-symbols-outlined text-xl">info</span>
+                <a href="{{ route('about') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover-lift">
+                    <span class="material-symbols-outlined text-lg">info</span>
                     <span>Tentang ICL ITATS</span>
                 </a>
             </nav>
         </aside>
 
         <!-- Main Workspace Area -->
-        <main class="flex-1 min-w-0">
+        <main class="flex-1 min-w-0 animate-fade-in-up">
             <!-- Flash Message Alerts -->
             @if(session('success'))
-                <div class="mb-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 dark:bg-emerald-900/30 dark:border-emerald-800 dark:text-emerald-200 flex items-center justify-between">
+                <div class="mb-5 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 flex items-center justify-between backdrop-blur-md animate-fade-in-up">
                     <div class="flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-emerald-600">check_circle</span>
-                        <span class="text-sm font-medium">{{ session('success') }}</span>
+                        <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400">check_circle</span>
+                        <span class="text-xs font-semibold">{{ session('success') }}</span>
                     </div>
                     <button onclick="this.parentElement.remove()" class="text-emerald-500 hover:text-emerald-700">
                         <span class="material-symbols-outlined text-lg">close</span>
