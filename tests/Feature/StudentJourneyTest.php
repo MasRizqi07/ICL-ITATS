@@ -31,6 +31,17 @@ class StudentJourneyTest extends TestCase
         $dashboardResponse->assertSee('Budi Santoso');
     }
 
+    public function test_admin_can_access_admin_dashboard(): void
+    {
+        $admin = User::where('email', 'admin@itats.ac.id')->firstOrFail();
+        $this->actingAs($admin);
+
+        $response = $this->get('/dashboard');
+        $response->assertStatus(200);
+        $response->assertSee('Dashboard Administrator');
+        $response->assertSee('Total Profil Karier');
+    }
+
     public function test_student_can_view_competency_map_and_skill_gaps(): void
     {
         $user = User::where('email', 'student@itats.ac.id')->firstOrFail();

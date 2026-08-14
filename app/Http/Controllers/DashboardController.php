@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Career;
+use App\Models\Competency;
 use App\Models\Evidence;
 use App\Models\Reassessment;
+use App\Models\User;
 use App\Services\ScoringService;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,10 +27,20 @@ class DashboardController extends Controller
         }
 
         if ($user->isAdmin()) {
-            $careersCount = Career::count();
-            $studentsCount = \App\Models\User::where('role', 'student')->count();
+            $careers = Career::withCount('competencies')->latest()->get();
+            $careersCount = $careers->count();
+            $studentsCount = User::where('role', 'student')->count();
             $evidenceCount = Evidence::count();
-            return view('pages.admin.dashboard', compact('user', 'careersCount', 'studentsCount', 'evidenceCount'));
+            $competenciesCount = Competency::count();
+
+            return view('pages.admin.dashboard', compact(
+                'user',
+                'careers',
+                'careersCount',
+                'studentsCount',
+                'evidenceCount',
+                'competenciesCount'
+            ));
         }
 
         // Student Dashboard
