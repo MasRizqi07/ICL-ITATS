@@ -65,7 +65,10 @@ class DevelopmentPlanController extends Controller
 
     public function updateActivityStatus(Request $request, string $id)
     {
-        $activity = DevelopmentActivity::findOrFail($id);
+        $user = Auth::user();
+        $activity = DevelopmentActivity::whereHas('plan', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->findOrFail($id);
         $status = $request->input('status');
 
         $activity->update([

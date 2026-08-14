@@ -92,4 +92,22 @@ class AuthorizationTest extends TestCase
         $response = $this->get('/login/quick/admin');
         $response->assertStatus(403);
     }
+
+    public function test_reviewer_cannot_access_student_assessment(): void
+    {
+        $reviewer = User::where('email', 'reviewer@itats.ac.id')->firstOrFail();
+        $this->actingAs($reviewer);
+
+        $response = $this->get('/assessment');
+        $response->assertStatus(403);
+    }
+
+    public function test_admin_cannot_access_student_evidence_create(): void
+    {
+        $admin = User::where('email', 'admin@itats.ac.id')->firstOrFail();
+        $this->actingAs($admin);
+
+        $response = $this->get('/evidence/create');
+        $response->assertStatus(403);
+    }
 }

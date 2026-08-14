@@ -172,7 +172,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignUuid('career_id')->constrained('careers')->onDelete('cascade');
-            $table->uuid('previous_id')->nullable();
+            $table->foreignUuid('previous_id')->nullable()->constrained('reassessments')->nullOnDelete();
             $table->string('rule_version')->default('v1.0');
             $table->string('status')->default('completed');
             $table->timestamp('completed_at')->nullable();

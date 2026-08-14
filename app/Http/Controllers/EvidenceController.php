@@ -11,6 +11,8 @@ use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Storage;
+
 class EvidenceController extends Controller
 {
     use ResolvesCareer;
@@ -37,12 +39,18 @@ class EvidenceController extends Controller
         $user = Auth::user();
         $validated = $request->validated();
 
+        $storageKey = null;
+        if ($request->hasFile('evidence_file')) {
+            $storageKey = $request->file('evidence_file')->store('evidence', 'local');
+        }
+
         $ev = Evidence::create([
             'user_id' => $user->id,
             'title' => $validated['title'],
             'type' => $validated['type'],
             'description' => $validated['description'],
             'source_url' => $validated['source_url'] ?? null,
+            'storage_key' => $storageKey,
             'obtained_at' => $validated['obtained_at'] ?? now(),
             'validation_status' => 'pending',
         ]);
@@ -58,5 +66,24 @@ class EvidenceController extends Controller
         }
 
         return redirect()->route('evidence.index')->with('success', 'Bukti kemampuan berhasil diunggah dan menunggu peninjauan reviewer.');
+    }
+
+    public function download(string $id)
+    {
+        $user = Auth::user();
+        $evidence = Evidence::findOrFail($id);
+
+        if (! $user->isAdmin() && ! $user->isReviewer() && $evidence->user_id !== $user->id) {
+            abort(403, 'Anda tidak memiliki akses untuk mengunduh berkas ini.');
+        }
+
+        if (! $evidence->storage_key || ! Storage::disk('local')->exists($evidence->storage_key)) {
+            abort(404, 'Berkas bukti tidak ditemukan di penyimpanan.');
+        }
+
+        $extension = pathinfo($evidence->storage_key, PATHINFO_EXTENSION);
+        $filename = \Illuminate\Support\Str::slug($evidence->title) . ($extension ? '.' . $extension : '');
+
+        return Storage::disk('local')->download($evidence->storage_key, $filename);
     }
 }

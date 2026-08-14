@@ -12,7 +12,7 @@
         </p>
     </div>
 
-    <form action="{{ route('evidence.store') }}" method="POST" class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 space-y-4">
+    <form action="{{ route('evidence.store') }}" method="POST" enctype="multipart/form-data" class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 space-y-4">
         @csrf
 
         <div>
@@ -38,9 +38,16 @@
             </div>
         </div>
 
-        <div>
-            <label for="source_url" class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1">Tautan Bukti (URL Github/Drive/Sertifikat) *</label>
-            <input type="url" id="source_url" name="source_url" required class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg text-xs" placeholder="https://github.com/username/project-repo">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+                <label for="source_url" class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1">Tautan Bukti (URL Github/Drive)</label>
+                <input type="url" id="source_url" name="source_url" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg text-xs" placeholder="https://github.com/username/project-repo">
+            </div>
+
+            <div>
+                <label for="evidence_file" class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1">Unggah Berkas Privat (PDF/JPG/PNG/ZIP, Max 10MB)</label>
+                <input type="file" id="evidence_file" name="evidence_file" accept=".pdf,.jpg,.jpeg,.png,.zip" class="w-full px-3 py-1.5 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg text-xs file:mr-3 file:py-1 file:px-2.5 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 dark:file:bg-slate-600 dark:file:text-slate-200">
+            </div>
         </div>
 
         <div>

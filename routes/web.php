@@ -48,22 +48,26 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/peta-kompetensi', [CareerController::class, 'map'])->name('competency.map');
     Route::get('/kompetensi/{slug}', [CareerController::class, 'competencyDetail'])->name('competency.detail');
 
-    Route::get('/assessment', [AssessmentController::class, 'show'])->name('assessment.show');
-    Route::post('/assessment', [AssessmentController::class, 'store'])->name('assessment.store');
+    Route::get('/evidence/{id}/download', [EvidenceController::class, 'download'])->name('evidence.download');
 
-    Route::get('/evidence', [EvidenceController::class, 'index'])->name('evidence.index');
-    Route::get('/evidence/create', [EvidenceController::class, 'create'])->name('evidence.create');
-    Route::post('/evidence', [EvidenceController::class, 'store'])->name('evidence.store');
+    Route::middleware(['role:student'])->group(function () {
+        Route::get('/assessment', [AssessmentController::class, 'show'])->name('assessment.show');
+        Route::post('/assessment', [AssessmentController::class, 'store'])->name('assessment.store');
 
-    Route::get('/skill-gaps', [GapAnalysisController::class, 'index'])->name('skill-gaps');
+        Route::get('/evidence', [EvidenceController::class, 'index'])->name('evidence.index');
+        Route::get('/evidence/create', [EvidenceController::class, 'create'])->name('evidence.create');
+        Route::post('/evidence', [EvidenceController::class, 'store'])->name('evidence.store');
 
-    Route::get('/development-plans', [DevelopmentPlanController::class, 'index'])->name('development-plans.index');
-    Route::post('/development-plans/activities', [DevelopmentPlanController::class, 'storeActivity'])->name('development-plans.activities.store');
-    Route::put('/development-plans/activities/{id}', [DevelopmentPlanController::class, 'updateActivityStatus'])->name('development-plans.activities.update');
-    Route::post('/development-plans/ai-suggest', [DevelopmentPlanController::class, 'aiSuggest'])->name('development-plans.ai-suggest');
+        Route::get('/skill-gaps', [GapAnalysisController::class, 'index'])->name('skill-gaps');
 
-    Route::get('/reassessments', [ReassessmentController::class, 'index'])->name('reassessments.index');
-    Route::post('/reassessments/trigger', [ReassessmentController::class, 'trigger'])->name('reassessments.trigger');
+        Route::get('/development-plans', [DevelopmentPlanController::class, 'index'])->name('development-plans.index');
+        Route::post('/development-plans/activities', [DevelopmentPlanController::class, 'storeActivity'])->name('development-plans.activities.store');
+        Route::put('/development-plans/activities/{id}', [DevelopmentPlanController::class, 'updateActivityStatus'])->name('development-plans.activities.update');
+        Route::post('/development-plans/ai-suggest', [DevelopmentPlanController::class, 'aiSuggest'])->name('development-plans.ai-suggest');
+
+        Route::get('/reassessments', [ReassessmentController::class, 'index'])->name('reassessments.index');
+        Route::post('/reassessments/trigger', [ReassessmentController::class, 'trigger'])->name('reassessments.trigger');
+    });
 
     Route::middleware(['role:reviewer'])->group(function () {
         Route::get('/reviewer', [ReviewerController::class, 'index'])->name('reviewer.index');

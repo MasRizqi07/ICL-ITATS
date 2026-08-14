@@ -95,7 +95,7 @@
                         <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
                             <span class="material-symbols-outlined text-xl">lock</span>
                         </div>
-                        <input id="password" name="password" type="password" required value="password"
+                        <input id="password" name="password" type="password" required
                             class="w-full pl-11 pr-11 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition"
                             placeholder="••••••••">
                     </div>

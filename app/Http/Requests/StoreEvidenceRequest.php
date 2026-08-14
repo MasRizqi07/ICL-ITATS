@@ -18,6 +18,7 @@ class StoreEvidenceRequest extends FormRequest
             'type' => ['required', 'string'],
             'description' => ['required', 'string'],
             'source_url' => ['nullable', 'url'],
+            'evidence_file' => ['nullable', 'file', 'mimes:pdf,jpg,jpeg,png,zip', 'max:10240'],
             'obtained_at' => ['nullable', 'date'],
             'competency_ids' => ['required', 'array'],
             'competency_ids.*' => ['exists:competencies,id'],

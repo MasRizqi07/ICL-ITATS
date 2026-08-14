@@ -31,6 +31,15 @@
             </div>
         @endif
 
+        @if($evidence->storage_key)
+            <div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg">
+                <a href="{{ route('evidence.download', $evidence->id) }}" class="text-xs text-emerald-700 dark:text-emerald-300 font-semibold hover:underline flex items-center space-x-1">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    <span>Unduh Berkas Privat Bukti Kemampuan (PDF/JPG/PNG/ZIP)</span>
+                </a>
+            </div>
+        @endif
+
         <div class="text-xs text-slate-500 pt-2 border-t border-slate-100 dark:border-slate-700">
             Kompetensi Terkait: <strong>{{ $evidence->competencies->pluck('name')->implode(', ') }}</strong>
         </div>

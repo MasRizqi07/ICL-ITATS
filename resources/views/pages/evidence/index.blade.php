@@ -58,9 +58,16 @@
                     </p>
 
                     @if($item->source_url)
-                        <a href="{{ $item->source_url }}" target="_blank" class="inline-flex items-center space-x-1 text-xs text-blue-600 dark:text-blue-400 font-medium mt-2 hover:underline">
+                        <a href="{{ $item->source_url }}" target="_blank" class="inline-flex items-center space-x-1 text-xs text-blue-600 dark:text-blue-400 font-medium mt-2 hover:underline mr-3">
                             <span class="material-symbols-outlined text-sm">link</span>
-                            <span>Buka Tautan Bukti (External URL)</span>
+                            <span>Buka Tautan (External URL)</span>
+                        </a>
+                    @endif
+
+                    @if($item->storage_key)
+                        <a href="{{ route('evidence.download', $item->id) }}" class="inline-flex items-center space-x-1 text-xs text-emerald-600 dark:text-emerald-400 font-medium mt-2 hover:underline">
+                            <span class="material-symbols-outlined text-sm">download</span>
+                            <span>Unduh Berkas Privat</span>
                         </a>
                     @endif
 
