@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rencana Pengembangan - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "line": "#D9E0E8",
+                      "on-surface": "#0b1c30",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary-container": "#99efe5",
+                      "tertiary-fixed": "#ffdbca",
+                      "inverse-surface": "#213145",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#004ac6",
+                      "secondary-fixed": "#9cf2e8",
+                      "on-secondary-container": "#006f67",
+                      "surface-container": "#e5eeff",
+                      "tertiary": "#8c3d00",
+                      "on-tertiary-fixed": "#331200",
+                      "surface": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-surface-variant": "#434655",
+                      "on-primary-container": "#eeefff",
+                      "ink": "#17202A",
+                      "on-secondary-fixed": "#00201d",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#80d5cb",
+                      "tertiary-fixed-dim": "#ffb68e",
+                      "on-primary-fixed": "#00174b",
+                      "on-secondary-fixed-variant": "#00504a",
+                      "surface-container-high": "#dce9ff",
+                      "on-error": "#ffffff",
+                      "error": "#B42318",
+                      "surface-container-low": "#eff4ff",
+                      "on-tertiary-container": "#ffece4",
+                      "ai-accent": "#6D28D9",
+                      "on-background": "#0b1c30",
+                      "outline": "#737686",
+                      "primary-container": "#2563eb",
+                      "tertiary-container": "#b15106",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#763300",
+                      "secondary": "#006a63",
+                      "background": "#f8f9ff",
+                      "canvas": "#F8FAFC",
+                      "outline-variant": "#c3c6d7",
+                      "primary-fixed": "#dbe1ff",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#d3e4fe",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "xxl": "48px",
+                      "lg": "24px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "body": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Inter"
+                      ],
+                      "h1-mobile": [
+                              "Inter"
+                      ],
+                      "small": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "26px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h3": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "small": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-canvas text-on-surface flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav aria-label="Sidebar Navigation" class="hidden md:flex flex-col fixed left-0 top-0 h-full w-64 p-md border-r border-line dark:border-outline-variant bg-surface-container-low dark:bg-inverse-surface z-40">
+<div class="mb-lg px-md">
+<h2 class="text-h3 font-h3 text-on-surface dark:text-inverse-on-surface">ICL ITATS</h2>
+<p class="text-small font-small text-on-surface-variant mt-xs">Career Intelligence</p>
+</div>
+<div class="flex-1 space-y-base mt-md">
+<a aria-label="Dashboard" class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3">dashboard</span>
+                Dashboard
+            </a>
+<a aria-label="Competencies" class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3">military_tech</span>
+                Competencies
+            </a>
+<a aria-label="Evidence" class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3">description</span>
+                Evidence
+            </a>
+<a aria-current="page" aria-label="Activities" class="flex items-center gap-sm px-md py-sm rounded-lg bg-primary-container text-on-primary-container dark:bg-primary dark:text-on-primary font-bold transition-all scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3" style="font-variation-settings: 'FILL' 1;">list_alt</span>
+                Activities
+            </a>
+<a aria-label="Settings" class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto pt-md border-t border-line">
+<button class="w-full mb-md py-sm px-md bg-primary text-on-primary rounded-lg text-label font-label font-bold hover:opacity-90 transition-opacity">
+                Add Evidence
+            </button>
+<a aria-label="Logout" class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all scale-95 active:scale-90 text-label font-label w-full" href="#">
+<span class="material-symbols-outlined text-h3">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 relative w-full h-full">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex sticky top-0 z-50 items-center justify-between px-gutter w-full h-16 bg-surface dark:bg-surface-dim border-b border-line dark:border-outline-variant shadow-sm w-full">
+<div class="flex items-center gap-md">
+<!-- Search placeholder if needed, though search_bar is 'on_left' in JSON, we'll just put a simple icon for aesthetics if we don't build full search -->
+<button class="text-on-surface-variant p-sm hover:bg-surface-container rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="notifications" class="text-on-surface-variant p-sm hover:bg-surface-container rounded-full transition-colors cursor-pointer active:opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button aria-label="help" class="text-on-surface-variant p-sm hover:bg-surface-container rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="flex items-center gap-sm pl-sm border-l border-line cursor-pointer active:opacity-80 hover:bg-surface-container p-xs rounded transition-colors">
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover border border-line" data-alt="A small, professional portrait photo of a user for a digital profile avatar. The image features a brightly lit, modern corporate headshot against a neutral, clean white background, reflecting a trustworthy and polished career intelligence aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXW5AKuXLIxSCNDObSty0bSgv1gWKUo3WggAXU-rweervyzPzCYG-cXDKwWXDCTm4qMUEdWuHpXt7HQE_6RA9tUDRguKAt-ictXTQ5Pfyj2wGzcj8b2F-pIyEvWdwt8TbjykBDX1cyweJoTtqdloGUgrKiRZGccIOr5MBzAowmVS_wPq9jt6iXdD1nfvIhPAmWlDHFcrLs9QGRgd2rlR23gi6UKpPonhndZ3e3iFDnWvXQHszwCKbwkg"/>
+<span class="text-body font-body font-semibold text-primary">Ahmad Fauzi</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-md md:p-lg lg:p-xl w-full max-w-container-max mx-auto space-y-xl">
+<!-- Page Header -->
+<div>
+<h1 class="text-h1-mobile md:text-h1 font-h1-mobile md:font-h1 text-on-surface">Rencana Pengembangan</h1>
+<p class="text-body font-body text-on-surface-variant mt-xs max-w-2xl">Lacak dan kelola aktivitas pembelajaran Anda untuk menutup kesenjangan kompetensi dan mencapai target karir.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column (Activities List) - Takes 2 cols on lg -->
+<div class="lg:col-span-2 space-y-md">
+<h2 class="text-h2 font-h2 text-on-surface border-b border-line pb-xs">Aktivitas Prioritas</h2>
+<!-- Activity Card 1 -->
+<div class="bg-surface rounded-xl p-md border border-line shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-md">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded bg-amber-100 text-amber-800 text-label font-label">
+<span class="material-symbols-outlined text-[14px]">sync</span> Berjalan
+                                     </span>
+<span class="text-small font-small text-on-surface-variant">Tenggat: 15 Okt 2023</span>
+</div>
+<h3 class="text-h3 font-h3 text-on-surface">Pelatihan Analisis Data Lanjutan (Python)</h3>
+<p class="text-body font-body text-on-surface-variant mt-xs line-clamp-2">Menyelesaikan modul pembelajaran mesin dasar dan proyek akhir menggunakan Pandas dan Scikit-learn untuk menutupi gap pada kompetensi Data Science.</p>
+</div>
+<div class="sm:text-right flex flex-col items-start sm:items-end gap-sm">
+<div class="bg-surface-container rounded px-3 py-2 text-center w-full sm:w-auto">
+<span class="block text-h2 font-h2 text-primary">65%</span>
+<span class="block text-label font-label text-on-surface-variant">Selesai</span>
+</div>
+<button class="text-primary hover:text-surface-tint text-label font-label font-bold flex items-center gap-xs transition-colors">
+                                    Perbarui Progres <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container h-2 rounded-full mt-md overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Activity Card 2 -->
+<div class="bg-surface rounded-xl p-md border border-line shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-teal-500"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-md">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded bg-teal-100 text-teal-800 text-label font-label">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Selesai
+                                    </span>
+<span class="text-small font-small text-on-surface-variant">Diselesaikan: 10 Sep 2023</span>
+</div>
+<h3 class="text-h3 font-h3 text-on-surface">Sertifikasi Manajemen Proyek Agile (Scrum)</h3>
+<p class="text-body font-body text-on-surface-variant mt-xs line-clamp-2">Mendapatkan sertifikasi PSM I untuk memperkuat kompetensi kepemimpinan tim dan pengelolaan sprint secara efektif.</p>
+</div>
+<div class="sm:text-right flex flex-col items-start sm:items-end gap-sm">
+<button class="bg-surface border border-line hover:bg-surface-container-low px-4 py-2 rounded text-primary text-label font-label font-bold transition-colors">
+                                   Lihat Sertifikat
+                               </button>
+</div>
+</div>
+</div>
+<!-- Activity Card 3 -->
+<div class="bg-surface rounded-xl p-md border border-line shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-md">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded bg-surface-container-high text-on-surface-variant text-label font-label">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Belum dimulai
+                                    </span>
+<span class="text-small font-small text-on-surface-variant">Target: Q4 2023</span>
+</div>
+<h3 class="text-h3 font-h3 text-on-surface">Workshop Komunikasi Publik Eksekutif</h3>
+<p class="text-body font-body text-on-surface-variant mt-xs line-clamp-2">Sesi intensif selama 2 hari untuk meningkatkan kemampuan presentasi di depan manajemen tingkat atas dan pemangku kepentingan eksternal.</p>
+</div>
+<div class="sm:text-right flex flex-col items-start sm:items-end gap-sm">
+<button class="bg-primary text-on-primary hover:bg-surface-tint px-4 py-2 rounded text-label font-label font-bold transition-colors">
+                                   Mulai Aktivitas
+                               </button>
+</div>
+</div>
+</div>
+<div class="text-center pt-sm">
+<button class="text-primary hover:text-surface-tint text-body font-body font-semibold inline-flex items-center gap-xs">
+                           Muat lebih banyak <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Right Column (AI Assistant & Summaries) -->
+<div class="space-y-lg">
+<!-- AI Assistance Panel -->
+<div class="bg-[#f5f3ff] rounded-xl border border-[#ddd6fe] p-md shadow-sm relative overflow-hidden">
+<!-- Subtle decorative background for AI -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-[#c4b5fd] rounded-full mix-blend-multiply filter blur-2xl opacity-40"></div>
+<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-[#8b5cf6] rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-md">
+<h3 class="text-h3 font-h3 text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#6D28D9]">smart_toy</span>
+                                    Rekomendasi AI
+                                </h3>
+<span class="bg-[#e9d5ff] text-[#6D28D9] text-xs font-bold px-2 py-1 rounded uppercase tracking-wide font-label">Dibantu AI</span>
+</div>
+<p class="text-body font-body text-on-surface-variant mb-md">
+                                Berdasarkan analisis kesenjangan kompetensi Anda pada <strong class="text-on-surface">Cloud Architecture</strong>, AI menyarankan aktivitas pembelajaran berikut untuk mencapai target level 4.
+                            </p>
+<div class="bg-surface rounded border border-[#e5e7eb] p-sm mb-md shadow-sm">
+<div class="flex items-start gap-sm">
+<div class="bg-[#ede9fe] p-xs rounded text-[#6D28D9] mt-1">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div>
+<h4 class="text-body font-body font-bold text-on-surface">Sertifikasi AWS Solutions Architect</h4>
+<p class="text-small font-small text-on-surface-variant mt-xs">Estimasi waktu: 4 Minggu. Potensi dampak tinggi pada profil Anda.</p>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 bg-[#6D28D9] hover:bg-[#5b21b6] text-white py-2 rounded text-label font-label font-bold transition-colors">
+                                    Tambahkan ke Rencana
+                                </button>
+<button aria-label="Tolak rekomendasi" class="px-3 border border-[#c4b5fd] text-[#6D28D9] hover:bg-[#ede9fe] rounded transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Progress Summary Minimal Card -->
+<div class="bg-surface rounded-xl border border-line p-md shadow-sm">
+<h3 class="text-h3 font-h3 text-on-surface mb-md">Ringkasan Q3 2023</h3>
+<div class="space-y-md">
+<div>
+<div class="flex justify-between text-body font-body text-on-surface mb-xs">
+<span>Penyelesaian Target</span>
+<span class="font-bold">4/6</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-teal-600 h-full rounded-full" style="width: 66%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body font-body text-on-surface mb-xs">
+<span>Jam Pembelajaran</span>
+<span class="font-bold">42h / 50h</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

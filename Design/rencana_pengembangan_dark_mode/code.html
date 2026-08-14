@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Intelligence - Rencana Pengembangan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#44e2cd",
+                        "primary": "#a4c9ff",
+                        "secondary-container": "#03c6b2",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-primary-fixed": "#001c39",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "tertiary-fixed": "#ffdf9f",
+                        "on-secondary": "#003731",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "tertiary": "#f9bd22",
+                        "outline": "#8b919d",
+                        "primary-fixed": "#d4e3ff",
+                        "on-primary": "#00315d",
+                        "outline-variant": "#414751",
+                        "secondary-fixed": "#62fae3",
+                        "surface-tint": "#a4c9ff",
+                        "on-secondary-container": "#004d44",
+                        "on-background": "#dae2fd",
+                        "background": "#0b1326",
+                        "surface-variant": "#2d3449",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "ai-accent": "#A78BFA",
+                        "inverse-on-surface": "#283044",
+                        "on-error": "#690005",
+                        "error": "#F87171",
+                        "on-tertiary": "#402d00",
+                        "on-surface": "#dae2fd",
+                        "surface": "#0F172A",
+                        "surface-container-lowest": "#060e20",
+                        "primary-container": "#60a5fa",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "text-secondary": "#94A3B8",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ce9a00",
+                        "border-subtle": "rgba(255, 255, 255, 0.08)",
+                        "surface-container-high": "#334155",
+                        "on-secondary-fixed-variant": "#005047",
+                        "inverse-primary": "#0060ac",
+                        "text-primary": "#F8FAFC",
+                        "on-secondary-fixed": "#00201c",
+                        "inverse-surface": "#dae2fd",
+                        "on-surface-variant": "#c1c7d3",
+                        "on-primary-fixed-variant": "#004883",
+                        "on-tertiary-container": "#4a3500",
+                        "on-primary-container": "#003a6b",
+                        "surface-dim": "#0b1326"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xs: "4px",
+                        xl: "32px",
+                        base: "4px",
+                        sm: "8px",
+                        lg: "24px",
+                        gutter: "24px",
+                        "container-max": "1200px",
+                        md: "16px"
+                    },
+                    fontFamily: {
+                        h2: ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        body: ["Inter"],
+                        small: ["Inter"],
+                        label: ["Inter"],
+                        display: ["Inter"],
+                        h3: ["Inter"],
+                        h1: ["Inter"]
+                    },
+                    fontSize: {
+                        h2: ["20px", { lineHeight: "1.4", fontWeight: "700" }],
+                        "h1-mobile": ["22px", { lineHeight: "1.3", fontWeight: "700" }],
+                        body: ["14px", { lineHeight: "1.6", fontWeight: "400" }],
+                        small: ["12px", { lineHeight: "1.5", fontWeight: "400" }],
+                        label: ["12px", { lineHeight: "1", letterSpacing: "0.01em", fontWeight: "600" }],
+                        display: ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        h3: ["16px", { lineHeight: "1.5", fontWeight: "600" }],
+                        h1: ["26px", { lineHeight: "1.3", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col py-lg z-40 bg-surface-container border-r border-border-subtle docked left-0 h-screen w-64 fixed">
+<div class="px-lg mb-lg">
+<h1 class="font-h3 text-h3 text-text-primary">ICL ITATS</h1>
+<p class="font-small text-small text-text-secondary">Command Center</p>
+</div>
+<div class="flex-1 px-sm space-y-xs">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary hover:bg-surface-container-highest transition-all px-md py-sm rounded-lg group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary hover:bg-surface-container-highest transition-all px-md py-sm rounded-lg group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary hover:bg-surface-container-highest transition-all px-md py-sm rounded-lg group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">folder_shared</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg px-md py-sm group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary hover:bg-surface-container-highest transition-all px-md py-sm rounded-lg group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</div>
+<div class="px-lg mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label text-label py-sm rounded-lg hover:opacity-90 transition-opacity">New Assessment</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 relative min-h-screen pb-20 md:pb-0">
+<!-- TopNavBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-lg h-16 sticky top-0 z-50 bg-surface border-b border-border-subtle">
+<h1 class="font-h2 text-h2 text-primary tracking-tight">Career Intelligence</h1>
+<div class="flex items-center gap-md text-primary">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high transition-colors p-sm rounded-full active:scale-95 transition-transform" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high transition-colors p-sm rounded-full active:scale-95 transition-transform" style="font-variation-settings: 'FILL' 0;">apps</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-border-subtle object-cover" data-alt="A detailed 50-100 word prompt..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4i4l8t-Zpz79uYns1V--tBAI0wpu9lLBR6t8Ep1lw0qnT3dq4zu_V6RwyK-BruWqAnncu9I5GkCjLR-qdrryb0IpHr_1eZ79ksrejsgpCO9Lihqbnd-NFDihtiA46yUk5FcXXGosMNx-1E2V0czjv8NMv_huBnSpiKNSY1UWuByQMMC0geSeXJRFENFLZVUnh_6y1brSJTI-pFjc0HkJzhAKYBLKo93E80xrtVBbCr1ENJ-rIKBl4fw"/>
+</div>
+</header>
+<!-- Top Header for Desktop (Optional extension, keeping it clean based on JSON) -->
+<header class="hidden md:flex justify-between items-center w-full px-xl h-20 border-b border-border-subtle">
+<div>
+<h2 class="font-h1 text-h1 text-text-primary">Rencana Pengembangan</h2>
+<p class="font-body text-body text-text-secondary mt-xs">Rekomendasi AI dan prioritas aktivitas untuk mencapai target karir Anda.</p>
+</div>
+<div class="flex items-center gap-md">
+<button class="bg-surface-container hover:bg-surface-container-high text-text-primary px-md py-sm rounded-lg border border-border-subtle font-label text-label transition-colors">Unduh Laporan</button>
+</div>
+</header>
+<div class="p-lg md:p-xl flex-1 max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column: AI Recommendations & Focus Area -->
+<div class="lg:col-span-2 space-y-lg">
+<!-- AI Panel -->
+<section class="relative bg-surface-container border border-ai-accent/30 rounded-xl p-lg overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-ai-accent/5 pointer-events-none"></div>
+<div class="relative z-10 flex items-start gap-md mb-md">
+<div class="p-sm bg-ai-accent/20 rounded-lg text-ai-accent flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-text-primary flex items-center gap-sm">
+                                Rekomendasi Fokus AI
+                                <span class="font-small text-[10px] bg-ai-accent/10 text-ai-accent px-2 py-0.5 rounded-full border border-ai-accent/20">Generated by AI</span>
+</h3>
+<p class="font-body text-body text-text-secondary mt-xs">Berdasarkan asesmen terakhir, algoritma kami menyarankan Anda fokus pada kompetensi manajerial menengah.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md relative z-10">
+<div class="bg-surface p-md rounded-lg border border-border-subtle">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-label text-label text-text-primary">Manajemen Proyek Agile</h4>
+<span class="bg-[#93000a] text-[#ffdad6] font-label text-[10px] px-2 py-0.5 rounded-full">Prioritas Tinggi</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mt-2">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[40%]"></div>
+</div>
+<p class="font-small text-small text-text-secondary mt-sm">Gap: 60% menuju tingkat mahir.</p>
+</div>
+<div class="bg-surface p-md rounded-lg border border-border-subtle">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-label text-label text-text-primary">Analisis Data Bisnis</h4>
+<span class="bg-[#4a3500] text-[#f9bd22] font-label text-[10px] px-2 py-0.5 rounded-full">Prioritas Menengah</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mt-2">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[75%] relative">
+<div class="absolute right-0 top-0 bottom-0 w-[2px] bg-secondary"></div>
+</div>
+</div>
+<p class="font-small text-small text-text-secondary mt-sm">Mendekati target. Perlu sedikit peningkatan.</p>
+</div>
+</div>
+</section>
+<!-- Activity List -->
+<section>
+<h3 class="font-h3 text-h3 text-text-primary mb-md">Aktivitas Terjadwal</h3>
+<div class="space-y-sm">
+<!-- Activity Item -->
+<div class="bg-surface-container p-md rounded-lg border border-border-subtle flex items-center gap-md hover:border-outline-variant transition-colors group">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label text-label text-text-primary truncate">Pelatihan Sertifikasi Scrum Master</h4>
+<p class="font-small text-small text-text-secondary truncate mt-1">Modul 3: Manajemen Sprint</p>
+</div>
+<div class="flex-shrink-0 flex items-center gap-sm">
+<span class="bg-[#005047] text-[#62fae3] font-label text-[10px] px-2 py-1 rounded-full">In-Progress</span>
+<button class="p-sm text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="bg-surface-container p-md rounded-lg border border-border-subtle flex items-center gap-md hover:border-outline-variant transition-colors group">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">ondemand_video</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label text-label text-text-primary truncate">Webinar: Future of Tech</h4>
+<p class="font-small text-small text-text-secondary truncate mt-1">Oleh Industri Ahli</p>
+</div>
+<div class="flex-shrink-0 flex items-center gap-sm">
+<span class="bg-surface-container-highest text-on-surface font-label text-[10px] px-2 py-1 rounded-full">Belum Mulai</span>
+<button class="p-sm text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Status & Milestones -->
+<div class="space-y-lg">
+<!-- Overall Progress -->
+<section class="bg-surface-container rounded-xl p-lg border border-border-subtle">
+<h3 class="font-h3 text-h3 text-text-primary mb-md">Status Karir</h3>
+<div class="flex items-end gap-sm mb-md">
+<span class="font-display text-display text-primary">68%</span>
+<span class="font-body text-body text-text-secondary pb-1">menuju Senior Level</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden mb-sm">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[68%]"></div>
+</div>
+<p class="font-small text-small text-text-secondary">Penyelesaian 2 aktivitas wajib akan meningkatkan skor Anda sebesar 5%.</p>
+</section>
+<!-- Milestones -->
+<section class="bg-surface-container rounded-xl p-lg border border-border-subtle">
+<h3 class="font-h3 text-h3 text-text-primary mb-md">Milestones</h3>
+<div class="relative pl-6 border-l-2 border-surface-container-highest space-y-md">
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-secondary border-4 border-surface-container"></div>
+<h4 class="font-label text-label text-text-primary">Level Junior Selesai</h4>
+<p class="font-small text-small text-text-secondary mt-1">Okt 2023</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-surface-container"></div>
+<h4 class="font-label text-label text-text-primary">Sertifikasi Intermediate</h4>
+<p class="font-small text-small text-text-secondary mt-1">Dalam proses (Est. Jan 2024)</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-container-highest border-4 border-surface-container"></div>
+<h4 class="font-label text-label text-text-secondary">Level Senior Tercapai</h4>
+<p class="font-small text-small text-text-secondary mt-1">Target: Des 2024</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface border-t border-border-subtle flex justify-around items-center h-16 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant p-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-small text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant p-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="font-small text-[10px]">Competencies</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary font-bold border-t-2 border-primary pt-1 pb-1 -mt-px" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<span class="font-small text-[10px]">Activities</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant p-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-small text-[10px]">Settings</span>
+</a>
+</nav>
+</body></html>

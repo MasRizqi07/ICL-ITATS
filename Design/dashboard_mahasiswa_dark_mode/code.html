@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Intelligence - Student Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#44e2cd",
+                        "primary": "#a4c9ff",
+                        "secondary-container": "#03c6b2",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-primary-fixed": "#001c39",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "tertiary-fixed": "#ffdf9f",
+                        "on-secondary": "#003731",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "tertiary": "#f9bd22",
+                        "outline": "#8b919d",
+                        "primary-fixed": "#d4e3ff",
+                        "on-primary": "#00315d",
+                        "outline-variant": "#414751",
+                        "secondary-fixed": "#62fae3",
+                        "surface-tint": "#a4c9ff",
+                        "on-secondary-container": "#004d44",
+                        "on-background": "#dae2fd",
+                        "background": "#0b1326",
+                        "surface-variant": "#2d3449",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "ai-accent": "#A78BFA",
+                        "inverse-on-surface": "#283044",
+                        "on-error": "#690005",
+                        "error": "#F87171",
+                        "on-tertiary": "#402d00",
+                        "on-surface": "#dae2fd",
+                        "surface": "#0F172A",
+                        "surface-container-lowest": "#060e20",
+                        "primary-container": "#60a5fa",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "text-secondary": "#94A3B8",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ce9a00",
+                        "border-subtle": "rgba(255, 255, 255, 0.08)",
+                        "surface-container-high": "#334155",
+                        "on-secondary-fixed-variant": "#005047",
+                        "inverse-primary": "#0060ac",
+                        "text-primary": "#F8FAFC",
+                        "on-secondary-fixed": "#00201c",
+                        "inverse-surface": "#dae2fd",
+                        "on-surface-variant": "#c1c7d3",
+                        "on-primary-fixed-variant": "#004883",
+                        "on-tertiary-container": "#4a3500",
+                        "on-primary-container": "#003a6b",
+                        "surface-dim": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "body": ["Inter"],
+                        "small": ["Inter"],
+                        "label": ["Inter"],
+                        "display": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle glow for AI sections */
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.15);
+        }
+        
+        /* Progress bar animation */
+        @keyframes fillProgress {
+            from { width: 0; }
+            to { width: 68%; }
+        }
+        .progress-animate {
+            animation: fillProgress 1.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex antialiased">
+<!-- SideNavBar (Web Only) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-surface-container border-r border-border-subtle fixed left-0 top-0 h-full flex-col py-lg z-40 w-64">
+<div class="px-lg mb-xl">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-border-subtle">
+<img alt="University Logo" class="w-full h-full object-cover" data-alt="A stylized, modern geometric logo representing a university command center, utilizing deep navy blue and cool grey tones. The design should convey a high-tech, academic intelligence hub aesthetic suitable for a sophisticated dashboard. Clean lines and professional composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSqpGcTmAJo5T1rY83JsR49rxQp0UI3eha9Urnz7OGzNx9DJAw2NDjJyT6yeFleR5Vh7YLgpLa3iLwXys19dRecvzj-7lfCfhhmxVdNSuwBL1EjkKE0vKK-2GhGqlO92hpaAv8fsQJVrVyqp0bLAlIhY5MOCAYsHzcKiaGwQdi-It3MbIcxyavWXmb827GivajAjU43x7u7vGVnNgXxPsVKA25HOP7uCFmQFuzTo47XFEnz5ezLwyGJQ"/>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-text-primary">ICL ITATS</h2>
+<p class="font-small text-small text-text-secondary">Command Center</p>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs px-sm">
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg px-md py-sm group cursor-pointer active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary px-md py-sm hover:bg-surface-container-highest transition-all rounded-lg group cursor-pointer active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary px-md py-sm hover:bg-surface-container-highest transition-all rounded-lg group cursor-pointer active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary px-md py-sm hover:bg-surface-container-highest transition-all rounded-lg group cursor-pointer active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-text-primary px-md py-sm hover:bg-surface-container-highest transition-all rounded-lg group cursor-pointer active:translate-x-1 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</div>
+<div class="px-md mt-sm">
+<button class="w-full py-sm px-md bg-primary text-surface font-label text-label rounded-lg hover:opacity-90 transition-opacity">
+                New Assessment
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full relative">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-border-subtle flex justify-between items-center w-full px-lg h-16 sticky top-0 z-50">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant p-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Brand Logo / Search (Web) -->
+<div class="flex-1 flex items-center gap-lg">
+<h1 class="font-h2 text-h2 text-primary dark:text-primary tracking-tight hidden md:block">Career Intelligence</h1>
+<!-- Search Bar -->
+<div class="hidden md:flex relative max-w-md w-full">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full bg-surface-container-high border-border-subtle rounded-full py-2 pl-xl pr-sm text-on-surface font-body text-body focus:ring-1 focus:ring-primary focus:border-primary transition-all shadow-none" placeholder="Search skills, evidence, courses..." type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-border-subtle cursor-pointer ml-sm">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A highly professional portrait photo of a university student looking confident and forward-thinking. Dark, sophisticated lighting with a subtle cool-toned rim light highlighting the subject's face against a deep navy background. Cinematic corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNucYR1G8PjcPriXv7rSlu_gQjZ-xyAlOui2rKYeE_Q5526M8locCXLOOeSrdfe_E5533PQ6hvpgFlJymCeL5MIU7POhUyqkwYME-gcFpEzDensFVHQfE5m97-DbI2Fm67MAMY4DhkkcUMRNAAWuYCtoKndPUuZKA_X-NN6x3b5tT67-JVRdg-ODYViZNwB_NeeL1JYb-xqRtIvnN2zL30vZA5NaP5JWN40Tdl15_LA-3ggg7cfwhHRg"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-md md:p-lg overflow-y-auto w-full max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="mb-lg">
+<h1 class="font-display text-display text-text-primary mb-xs">Welcome back, Alex.</h1>
+<p class="font-body text-body text-text-secondary">Here's your current career readiness overview.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Main Progress Card (Spans 8 columns) -->
+<div class="md:col-span-8 bg-surface-container rounded-xl border border-border-subtle p-lg relative overflow-hidden flex flex-col justify-between">
+<!-- Subtle background decoration -->
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-start mb-xl gap-md">
+<div>
+<div class="inline-flex items-center gap-sm px-3 py-1 rounded-full bg-surface-container-high border border-border-subtle mb-sm">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label text-label text-secondary">Target Role</span>
+</div>
+<h2 class="font-h1 text-h1 text-text-primary">Software Engineer</h2>
+<p class="font-body text-body text-text-secondary mt-xs">Level: Entry / Junior</p>
+</div>
+<div class="text-right">
+<div class="font-display text-display text-primary">68%</div>
+<p class="font-small text-small text-text-secondary">Overall Readiness</p>
+</div>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex justify-between font-small text-small text-text-secondary mb-xs">
+<span>Current Progress</span>
+<span>Target</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden border border-border-subtle shadow-inner">
+<div class="h-full bg-gradient-to-r from-primary-container to-primary rounded-full progress-animate w-0 relative">
+<div class="absolute right-0 top-0 bottom-0 w-4 bg-white/20"></div>
+</div>
+</div>
+<p class="font-small text-small text-text-secondary mt-sm">You are 12% closer to your goal than last month.</p>
+</div>
+</div>
+<!-- AI Recommendation Panel (Spans 4 columns) -->
+<div class="md:col-span-4 bg-surface-container rounded-xl border border-[#A78BFA]/30 p-lg ai-glow relative flex flex-col bg-opacity-90">
+<div class="absolute inset-0 bg-[#A78BFA]/5 rounded-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-md relative z-10">
+<div class="flex items-center gap-sm text-ai-accent">
+<span class="material-symbols-outlined" data-weight="fill">auto_awesome</span>
+<span class="font-h3 text-h3">AI Insight</span>
+</div>
+<span class="font-label text-label text-text-secondary opacity-70">Generated</span>
+</div>
+<p class="font-body text-body text-text-primary mb-md relative z-10 flex-1">
+                        Based on recent evidence uploads, your <strong>System Architecture</strong> competency has improved. To reach 75% readiness for Software Engineering, focus on completing the <em>Advanced React Patterns</em> certification.
+                    </p>
+<button class="w-full py-2 bg-[#A78BFA]/10 border border-[#A78BFA]/40 text-ai-accent font-label text-label rounded-lg hover:bg-[#A78BFA]/20 transition-colors relative z-10 flex justify-center items-center gap-sm">
+<span>View Action Plan</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Competencies Section (Spans 12 columns) -->
+<div class="md:col-span-12">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-h3 text-h3 text-text-primary">Core Competencies</h3>
+<a class="font-small text-small text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Competency Card 1 -->
+<div class="bg-surface-container-low rounded-lg p-md border border-border-subtle hover:border-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-2 bg-surface-container-high rounded-lg text-primary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary border border-secondary/20 font-label text-[10px]">Verified</span>
+</div>
+<h4 class="font-body text-body font-semibold text-text-primary mb-xs">Frontend Development</h4>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mt-md">
+<div class="h-full bg-secondary w-[85%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="font-small text-[10px] text-text-secondary">Level 4/5</span>
+<span class="font-small text-[10px] text-text-secondary">85%</span>
+</div>
+</div>
+<!-- Competency Card 2 -->
+<div class="bg-surface-container-low rounded-lg p-md border border-border-subtle hover:border-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-2 bg-surface-container-high rounded-lg text-primary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/20 text-tertiary border border-tertiary/20 font-label text-[10px]">In-Progress</span>
+</div>
+<h4 class="font-body text-body font-semibold text-text-primary mb-xs">Backend Architecture</h4>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mt-md">
+<div class="h-full bg-tertiary w-[45%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="font-small text-[10px] text-text-secondary">Level 2/5</span>
+<span class="font-small text-[10px] text-text-secondary">45%</span>
+</div>
+</div>
+<!-- Competency Card 3 -->
+<div class="bg-surface-container-low rounded-lg p-md border border-border-subtle hover:border-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-2 bg-surface-container-high rounded-lg text-primary">
+<span class="material-symbols-outlined">group_work</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-text-primary border border-border-subtle font-label text-[10px]">Neutral</span>
+</div>
+<h4 class="font-body text-body font-semibold text-text-primary mb-xs">Agile Methodology</h4>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mt-md relative">
+<!-- Target line -->
+<div class="absolute left-[80%] top-0 bottom-0 w-[1px] bg-secondary z-10"></div>
+<div class="h-full bg-primary-container w-[60%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="font-small text-[10px] text-text-secondary">Gap Detected</span>
+<span class="font-small text-[10px] text-text-secondary">Target: 80%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

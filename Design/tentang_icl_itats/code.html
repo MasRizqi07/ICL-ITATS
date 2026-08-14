@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tentang ICL ITATS - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#B42318",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "secondary-container": "#99efe5",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-container": "#ffece4",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline": "#737686",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "line": "#D9E0E8",
+                        "on-tertiary-fixed": "#331200",
+                        "secondary": "#006a63",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#006f67",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "canvas": "#F8FAFC",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "ai-accent": "#6D28D9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#ffdbca",
+                        "tertiary": "#8c3d00",
+                        "ink": "#17202A",
+                        "on-error": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#b15106",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#eeefff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "display": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    fontSize: {
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(248, 249, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(217, 224, 232, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-canvas text-on-surface font-body min-h-screen antialiased">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface shadow-sm border-b border-line">
+<div class="flex items-center gap-md">
+<span class="text-h2 font-h2 text-primary">Career Intelligence</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant font-body text-body hover:bg-surface-container transition-colors py-xs px-sm rounded" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary py-xs px-sm cursor-pointer" href="#">Tentang</a>
+<a class="text-on-surface-variant font-body text-body hover:bg-surface-container transition-colors py-xs px-sm rounded" href="#">Program</a>
+<a class="text-on-surface-variant font-body text-body hover:bg-surface-container transition-colors py-xs px-sm rounded" href="#">Kontak</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center justify-center p-sm rounded-full text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="login">login</span>
+<span class="font-label text-label ml-xs">Masuk</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1200px] mx-auto w-full px-md md:px-gutter py-xl md:py-xxl flex flex-col gap-xxl">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center gap-xl md:gap-xxl">
+<div class="flex-1 flex flex-col gap-md md:gap-lg">
+<div class="inline-flex items-center gap-sm bg-surface-container-high text-primary px-sm py-xs rounded-full self-start">
+<span class="material-symbols-outlined text-[16px]" data-icon="lightbulb">lightbulb</span>
+<span class="font-label text-label">Visi &amp; Misi</span>
+</div>
+<h1 class="font-display text-display text-on-surface">Menjembatani Kampus dan Industri Global</h1>
+<p class="font-body text-body text-on-surface-variant max-w-2xl">
+                    Platform Career Intelligence ICL ITATS dirancang untuk memberdayakan mahasiswa dengan pemetaan kompetensi berbasis data, memastikan kesiapan lulusan untuk bersaing secara tangguh di pasar kerja internasional.
+                </p>
+<div class="flex gap-md pt-sm">
+<button class="bg-primary text-on-primary font-label text-label px-lg py-sm rounded-lg hover:opacity-90 transition-opacity">Bergabung Sekarang</button>
+</div>
+</div>
+<div class="flex-1 w-full aspect-video rounded-xl overflow-hidden shadow-sm relative group">
+<img alt="Kolaborasi Universitas dan Industri" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern university campus setting with students and professionals collaborating in a bright, tech-forward learning space. The lighting is bright and natural, reflecting a clean, corporate light-mode aesthetic with soft blues and crisp whites. The mood is optimistic and forward-looking, emphasizing technological advancement in education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-thHgBdw-RdVv1TJKBR3JYI9kGsLmYMNMjBgh0n2iOWXNsfLLC8lPy0sAXMoBEQy1o3nWsnyWoW4ZdY3_IXc8LgrfVCG9O6bC7gLdkI1bEKGUfUqf_gHfHP_Q4vgP0XNSF1ro-0zZURVLipMNWXCNdBdF-2lHvTB_nvp9mMLkHLLK2DieaOb9VL9Mk6kGptYNchoUL6OKBvV0tFUUybUZlh3zHs-xyKzBfLK-1a_vDgeYN_S75B_uw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 to-transparent"></div>
+</div>
+</section>
+<!-- Mengapa Career Intelligence? (Bento Grid) -->
+<section class="flex flex-col gap-xl">
+<div class="text-center max-w-3xl mx-auto flex flex-col gap-sm">
+<h2 class="font-h1 text-h1 text-on-surface">Mengapa Career Intelligence?</h2>
+<p class="font-body text-body text-on-surface-variant">Pendekatan modern dalam pengembangan karir yang didukung oleh analisis cerdas dan validasi industri.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl p-lg border border-line shadow-sm flex flex-col gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="analytics">analytics</span>
+</div>
+<h3 class="font-h2 text-h2 text-on-surface">Pemetaan Berbasis Data</h3>
+<p class="font-body text-body text-on-surface-variant">
+                        Menganalisis profil kompetensi mahasiswa secara real-time untuk mengidentifikasi celah keterampilan (skill gap) dan memberikan rekomendasi pembelajaran yang presisi.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl p-lg border border-line shadow-sm flex flex-col gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-h2 text-h2 text-on-surface">Standar Industri</h3>
+<p class="font-body text-body text-on-surface-variant">
+                        Indikator penilaian diselaraskan langsung dengan kebutuhan terkini dari perusahaan teknologi dan manufaktur global.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl p-lg border border-ai-accent/30 shadow-sm flex flex-col gap-md hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-ai-accent/10 rounded-full blur-2xl"></div>
+<div class="w-12 h-12 rounded-lg bg-ai-accent/10 flex items-center justify-center text-ai-accent">
+<span class="material-symbols-outlined text-[24px]" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex items-center justify-between">
+<h3 class="font-h2 text-h2 text-on-surface">Dibantu AI</h3>
+<span class="bg-ai-accent text-white font-small text-[10px] px-2 py-1 rounded-full">Beta</span>
+</div>
+<p class="font-body text-body text-on-surface-variant">
+                        Asisten cerdas yang membantu meninjau bukti portofolio (evidence) secara otomatis, memberikan umpan balik awal sebelum validasi akhir oleh dosen pembimbing.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Metodologi Penilaian -->
+<section class="glass-panel rounded-xl p-lg md:p-xl flex flex-col md:flex-row gap-xl items-center">
+<div class="flex-1 order-2 md:order-1 flex flex-col gap-md">
+<h2 class="font-h1 text-h1 text-on-surface">Metodologi Penilaian Transparan</h2>
+<p class="font-body text-body text-on-surface-variant">
+                    Sistem evaluasi kami memadukan penilaian mandiri (self-assessment), unggah bukti konkret, dan validasi otoritas akademik. Hal ini menjamin bahwa setiap level kompetensi yang dicapai oleh mahasiswa dapat dipertanggungjawabkan di dunia profesional.
+                </p>
+<ul class="flex flex-col gap-sm mt-sm">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body text-body text-on-surface">Penetapan Target Kompetensi</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body text-body text-on-surface">Pengumpulan Evidence Berkualitas</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body text-body text-on-surface">Validasi Berlapis (AI &amp; Human)</span>
+</li>
+</ul>
+</div>
+<div class="flex-1 order-1 md:order-2 w-full flex justify-center">
+<div class="relative w-full max-w-sm aspect-square bg-surface rounded-full shadow-sm border border-line flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/5 rounded-full animate-pulse"></div>
+<div class="w-3/4 h-3/4 bg-surface-container rounded-full flex flex-col items-center justify-center gap-sm z-10 border border-primary/20 text-center p-md">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="hub">hub</span>
+<h4 class="font-h3 text-h3 text-on-surface">Validasi Berpusat</h4>
+</div>
+<!-- Satellites -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-surface p-sm rounded-full shadow-sm border border-line">
+<span class="material-symbols-outlined text-secondary" data-icon="school">school</span>
+</div>
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-surface p-sm rounded-full shadow-sm border border-line">
+<span class="material-symbols-outlined text-tertiary" data-icon="factory">factory</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tim di Balik Layar -->
+<section class="flex flex-col gap-xl pb-xl">
+<div class="text-center max-w-3xl mx-auto flex flex-col gap-sm">
+<h2 class="font-h1 text-h1 text-on-surface">Tim Pengembang</h2>
+<p class="font-body text-body text-on-surface-variant">Sinergi antara akademisi, insinyur perangkat lunak, dan praktisi industri untuk mewujudkan platform edukasi masa depan.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-md md:gap-lg">
+<!-- Team Member 1 -->
+<div class="bg-surface rounded-xl overflow-hidden border border-line flex flex-col shadow-sm group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img alt="Foto Anggota Tim" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A professional headshot of a software engineer in a modern office environment. The person is smiling warmly. The lighting is clean, bright, and utilizes a light-mode color palette with subtle blue accents. The mood is approachable and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFTEE58uCQHRM-iB7VRDmEiNCqBgEJZLJ4F6Kt_g9kq73k-2960HOauW0BEgO-pxFT2wVM3APb2uczwzIveM8SZL9W5ckdj1xzTbHKwaVLHeYcBTmTkfqm9x74gdH59uZsN0hqA5I5i4yP9GEv6_9UruwtOAbVM6s6anBuXerjp-RCE1_p1OUKoMvZw6EEg0uqlRPDXWsgK8atYosAbbTguWUbjNi5K8AX2gYOH64FKBbXRI8_B7a5bw"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h4 class="font-h3 text-h3 text-on-surface">Ahmad Fauzi</h4>
+<p class="font-small text-small text-on-surface-variant">Lead Engineer</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="bg-surface rounded-xl overflow-hidden border border-line flex flex-col shadow-sm group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img alt="Foto Anggota Tim" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A professional headshot of an academic advisor in a bright university setting. The person looks intelligent and welcoming. The lighting is crisp, emphasizing a corporate light-mode aesthetic with neutral tones. The mood is academic yet modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBXzqMys5RH3vUsMofGplVCtC_UlKIIBHIQ9QvgfpD0LbL52gBATTatvOCl_reH1y3jOdNITclgTm87oGbRTbc-jNSCmNzc0DaBmTvWsaLeKD4_XseZyx2KK6_jLikFxBgd3iZMcKsLBRCExPHgYwDbdCnBrwhtM3_MUIlu2ZT5UyBoHTlDEI0FiBw9DXTZkQxkhCYOclpwJzX9XW4a1J8aKPmlFTs8PdE3u5k6OaBTKo7yIrTIsFo2g"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h4 class="font-h3 text-h3 text-on-surface">Dr. Siti Aminah</h4>
+<p class="font-small text-small text-on-surface-variant">Academic Advisor</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="bg-surface rounded-xl overflow-hidden border border-line flex flex-col shadow-sm group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img alt="Foto Anggota Tim" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A professional headshot of a UX designer in a creative workspace. The person exudes a modern, innovative vibe. The lighting is soft and bright, fitting a tech-focused light-mode design system. The mood is creative and focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnvgbMOVEgKeg6XR-H50geSijMss5uV8Ey5AXT-BR280wHlWs0Wa1BAqjoUXBU0ThQLiQe1lvo9Tlm2Zkc5lxHVZbOB9W_6kbVXzzvsqsEuJar5tr05C_DjXdM2Sx_rbtq5DiheWNCsds03k-yas_fFBhCd6YRsw1XMTrdfl3GcKIjce5JJSFu8UYn8XSrWckodfoUnMMGYdd2lryk1N_4xBqmN0UufuqXozdhgt6F1CVtH5_UrKWZEg"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h4 class="font-h3 text-h3 text-on-surface">Budi Santoso</h4>
+<p class="font-small text-small text-on-surface-variant">UI/UX Designer</p>
+</div>
+</div>
+<!-- Team Member 4 -->
+<div class="bg-surface rounded-xl overflow-hidden border border-line flex flex-col shadow-sm group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img alt="Foto Anggota Tim" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A professional headshot of a data scientist in a contemporary office setting with subtle charts in the blurred background. The person looks confident and analytical. The aesthetic is clean, corporate light-mode with cool blue tones. The mood is intellectual and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjd_3iXrDGZtJvS6utI_kAEPpE8Mg53eBUHIHgRvXhMkHS7gELq7vTu1a3dsA3e3e6tDjcAZttxCHikdpb6lM8Es3JLKoj61Zu0t3LQm7WDwXXJQ1Ui_QXKAmxZkFzl0Yzx3rtQTKn167J0TTEjoNx77iS_hX7XFu44svqeRRXDPqtTfERi3rmQeAFV8VReYjIhe0VtR95Shw4R8Nj5d5gj9lo83XfYf8p1m98hkYLlMatw_eK9we9Jg"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h4 class="font-h3 text-h3 text-on-surface">Rina Melati</h4>
+<p class="font-small text-small text-on-surface-variant">Data Scientist</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

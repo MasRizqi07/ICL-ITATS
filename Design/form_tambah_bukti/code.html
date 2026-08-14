@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Form Tambah Bukti - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737686",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "tertiary": "#8c3d00",
+                        "on-secondary-container": "#006f67",
+                        "secondary-container": "#99efe5",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "canvas": "#F8FAFC",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#331200",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#213145",
+                        "ink": "#17202A",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-container": "#b15106",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "primary": "#004ac6",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "line": "#D9E0E8",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "error": "#B42318",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "secondary": "#006a63",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-container": "#ffece4",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "ai-accent": "#6D28D9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle ambient shadow for high-end look */
+        .ambient-shadow {
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Mobile Nav Header (Visible only on mobile) -->
+<header class="md:hidden bg-surface-container-lowest dark:bg-inverse-surface border-b border-line dark:border-outline-variant shadow-sm flex justify-between items-center px-lg h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="font-display text-h1-mobile font-bold text-primary dark:text-primary-fixed-dim">ICL ITATS</span>
+</div>
+<div class="flex items-center gap-md text-primary dark:text-primary-fixed-dim">
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Visible on md and up) -->
+<aside class="hidden md:flex flex-col p-md gap-sm fixed left-0 top-0 h-full w-64 bg-surface-container dark:bg-surface-container-high border-r border-line z-40 transition-all duration-200 ease-in-out">
+<div class="mb-xl px-md pt-lg">
+<h1 class="font-display text-h1 font-bold text-primary">ICL ITATS</h1>
+<p class="font-small text-small text-on-surface-variant mt-xs">Career Intelligence</p>
+</div>
+<nav class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-md py-sm transition-colors duration-200" href="#">
+<span class="material-symbols-outlined fill-icon" data-icon="folder_open">folder_open</span>
+<span class="font-label text-label font-bold">Evidence</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-colors duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</nav>
+<!-- User Profile Area Bottom -->
+<div class="mt-auto border-t border-line pt-md flex items-center gap-md px-md pb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A small circular avatar image showing a professional headshot of a young, modern university student against a clean, light blue studio background. The lighting is soft and flattering, aligning with a corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASCHpewUN15GxJl-6c18bEdG66rzMh7rxhK-y0CKP79aujuUqX9Py95vtqpnwoe_RzvlDkd4X4m8-6tMpt79-tzck1JKpSDWp-MzC-qWmJWseSZRLqprzdCRKRGWyyMD0h87Zwf2SQguc3zG1muKTIS5TN71X5PMWf7g8U5XNI97toyCB1dlRNCD_1j_jDKHEtjUunmr7TTZ1q-UUGwufAEmXdtIrDCwT2UQn5VzBiU6zxfNbbZghXzg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label text-on-background">Budi Santoso</span>
+<span class="font-small text-small text-on-surface-variant">Teknik Informatika</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 min-h-screen bg-canvas">
+<!-- TopAppBar for Desktop (Optional contextual header) -->
+<div class="hidden md:flex justify-between items-center px-xl h-20 w-full bg-canvas/80 backdrop-blur-sm sticky top-0 z-30">
+<div>
+<h2 class="font-display text-h2 font-bold text-on-background">Tambah Bukti</h2>
+<p class="font-body text-body text-on-surface-variant">Unggah dokumen atau tautan untuk validasi kompetensi Anda.</p>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-container-low transition-colors p-sm rounded-full active:scale-95 duration-150 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+<div class="p-md md:p-xl max-w-container-max mx-auto w-full">
+<!-- Mobile Header Text -->
+<div class="md:hidden mb-lg">
+<h2 class="font-display text-h1-mobile font-bold text-on-background">Tambah Bukti</h2>
+<p class="font-body text-body text-on-surface-variant mt-xs">Unggah dokumen atau tautan untuk validasi kompetensi Anda.</p>
+</div>
+<!-- Form Container -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow border border-line overflow-hidden">
+<form class="divide-y divide-line">
+<!-- Section 1: Basic Info -->
+<div class="p-lg md:p-xl grid grid-cols-1 md:grid-cols-12 gap-xl">
+<div class="md:col-span-4">
+<h3 class="font-h3 text-h3 text-on-background">Informasi Dasar</h3>
+<p class="font-small text-small text-on-surface-variant mt-sm">Detail utama mengenai bukti yang Anda ajukan.</p>
+</div>
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Input: Judul Bukti -->
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-background" for="title">Judul Bukti <span class="text-error">*</span></label>
+<input class="bg-surface border border-outline-variant rounded text-body font-body text-on-background px-md py-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-on-surface-variant/50" id="title" name="title" placeholder="Misal: Sertifikat AWS Cloud Practitioner" type="text"/>
+</div>
+<!-- Input: Kategori -->
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-background" for="category">Kategori <span class="text-error">*</span></label>
+<div class="relative">
+<select class="appearance-none w-full bg-surface border border-outline-variant rounded text-body font-body text-on-background px-md py-sm pr-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="category" name="category">
+<option disabled="" selected="" value="">Pilih Kategori...</option>
+<option value="certification">Sertifikasi Profesional</option>
+<option value="project">Proyek Praktikum / Mandiri</option>
+<option value="competition">Kompetisi / Penghargaan</option>
+<option value="course">Kursus / Pelatihan</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Input: Kompetensi Terkait (Multi-select visual simulation) -->
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-background">Kompetensi Terkait <span class="text-error">*</span></label>
+<div class="bg-surface border border-outline-variant rounded p-sm flex flex-wrap gap-sm items-center min-h-[48px] focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all cursor-text">
+<!-- Selected Chips -->
+<div class="inline-flex items-center gap-xs bg-surface-container-high text-on-background px-sm py-xs rounded font-small text-small">
+                                        Cloud Computing
+                                        <button class="text-on-surface-variant hover:text-error transition-colors rounded-full p-[2px]" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-xs bg-surface-container-high text-on-background px-sm py-xs rounded font-small text-small">
+                                        System Architecture
+                                        <button class="text-on-surface-variant hover:text-error transition-colors rounded-full p-[2px]" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<!-- Input for searching -->
+<input class="flex-1 min-w-[150px] bg-transparent border-none focus:ring-0 text-body font-body text-on-background p-0 placeholder:text-on-surface-variant/50" placeholder="Cari kompetensi..." type="text"/>
+</div>
+<p class="font-small text-small text-on-surface-variant mt-xs">Anda dapat memilih lebih dari satu kompetensi.</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Upload Zone -->
+<div class="p-lg md:p-xl grid grid-cols-1 md:grid-cols-12 gap-xl bg-canvas/30">
+<div class="md:col-span-4">
+<h3 class="font-h3 text-h3 text-on-background">Dokumen Bukti</h3>
+<p class="font-small text-small text-on-surface-variant mt-sm">Unggah berkas atau masukkan tautan yang memvalidasi bukti Anda.</p>
+</div>
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- URL Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-background" for="url">Tautan Bukti (Opsional)</label>
+<div class="flex items-center bg-surface border border-outline-variant rounded focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all overflow-hidden">
+<div class="px-md py-sm bg-surface-container-low border-r border-line text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</div>
+<input class="flex-1 bg-transparent border-none text-body font-body text-on-background px-md py-sm focus:ring-0 placeholder:text-on-surface-variant/50" id="url" name="url" placeholder="https://..." type="url"/>
+</div>
+</div>
+<div class="relative flex py-sm items-center">
+<div class="flex-grow border-t border-line"></div>
+<span class="flex-shrink-0 mx-md text-on-surface-variant font-small text-small uppercase tracking-wider">Atau</span>
+<div class="flex-grow border-t border-line"></div>
+</div>
+<!-- File Upload Drag & Drop Zone -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-lowest p-xl flex flex-col items-center justify-center text-center hover:border-primary hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low group-hover:bg-primary-container flex items-center justify-center mb-md transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:text-on-primary transition-colors">cloud_upload</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-background mb-xs">Klik untuk mengunggah atau seret berkas ke sini</h4>
+<p class="font-small text-small text-on-surface-variant mb-md">Mendukung PDF, JPG, PNG, atau ZIP (Maks. 10MB)</p>
+<button class="bg-surface border border-line text-on-background font-label text-label px-md py-sm rounded hover:bg-surface-container-low transition-colors" type="button">Pilih Berkas</button>
+<input class="hidden" id="file-upload" type="file"/>
+</div>
+</div>
+</div>
+<!-- Section 3: Reflection / AI Assisted -->
+<div class="p-lg md:p-xl grid grid-cols-1 md:grid-cols-12 gap-xl relative overflow-hidden">
+<!-- AI Decorative Background Element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-ai-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="md:col-span-4 relative z-10">
+<div class="flex items-center gap-xs mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">Refleksi &amp; Deskripsi</h3>
+</div>
+<p class="font-small text-small text-on-surface-variant">Jelaskan secara singkat apa yang Anda pelajari dan bagaimana bukti ini menunjukkan kompetensi Anda.</p>
+<!-- AI Assist Badge -->
+<div class="inline-flex items-center gap-xs mt-md bg-ai-accent/10 border border-ai-accent/20 rounded-full px-sm py-xs text-ai-accent">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span class="font-small text-small font-semibold">AI Assistant Tersedia</span>
+</div>
+</div>
+<div class="md:col-span-8 flex flex-col gap-md relative z-10">
+<!-- Textarea -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-end">
+<label class="font-label text-label text-on-background" for="reflection">Deskripsi <span class="text-error">*</span></label>
+<button class="text-ai-accent hover:text-ai-accent/80 font-small text-small flex items-center gap-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+                                        Bantu saya menulis
+                                    </button>
+</div>
+<textarea class="bg-surface border border-outline-variant rounded text-body font-body text-on-background p-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-on-surface-variant/50 resize-y" id="reflection" name="reflection" placeholder="Ceritakan pengalaman Anda, tantangan yang dihadapi, dan hasil akhir yang dicapai..." rows="5"></textarea>
+<div class="flex justify-end mt-xs">
+<span class="font-small text-small text-on-surface-variant">0 / 500 karakter</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-lg md:p-xl bg-surface-container-lowest flex flex-col-reverse sm:flex-row items-center justify-end gap-md">
+<button class="w-full sm:w-auto px-lg py-sm font-label text-label text-on-surface-variant hover:bg-surface-container-low border border-transparent rounded transition-colors duration-200" type="button">
+                            Batal
+                        </button>
+<button class="w-full sm:w-auto px-lg py-sm font-label text-label text-primary hover:bg-primary-container hover:text-on-primary-container border border-primary rounded transition-colors duration-200" type="button">
+                            Simpan Draft
+                        </button>
+<button class="w-full sm:w-auto px-xl py-sm font-label text-label text-on-primary bg-primary hover:bg-primary-fixed-variant border border-transparent rounded shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-xs" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+                            Ajukan Bukti
+                        </button>
+</div>
+</form>
+</div>
+<div class="h-xxl"></div> <!-- Bottom padding -->
+</div>
+</main>
+</body></html>

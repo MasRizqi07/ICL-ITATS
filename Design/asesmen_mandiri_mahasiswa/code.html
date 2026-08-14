@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Self-Assessment - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737686",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "tertiary": "#8c3d00",
+                        "on-secondary-container": "#006f67",
+                        "secondary-container": "#99efe5",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "canvas": "#F8FAFC",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#331200",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#213145",
+                        "ink": "#17202A",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-container": "#b15106",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "primary": "#004ac6",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "line": "#D9E0E8",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "error": "#B42318",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "secondary": "#006a63",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-container": "#ffece4",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "ai-accent": "#6D28D9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom radio button styling */
+        .rating-radio:checked + label {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            border-color: theme('colors.primary');
+        }
+        
+        .rating-radio:focus-visible + label {
+            outline: 2px solid theme('colors.primary');
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col md:flex-row">
+<!-- Desktop Sidebar -->
+<nav class="hidden md:flex flex-col bg-surface-container h-screen w-64 fixed left-0 top-0 p-md gap-sm shadow-sm z-40 border-r border-line">
+<div class="mb-xl px-sm">
+<h1 class="font-display text-h1 font-bold text-primary">ICL ITATS</h1>
+<p class="font-small text-small text-on-surface-variant">Career Intelligence</p>
+</div>
+<div class="flex flex-col gap-sm flex-grow">
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-xl px-md py-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined filled" data-icon="star" data-weight="fill">star</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-line px-sm flex items-center gap-md">
+<img alt="User Profile" class="w-8 h-8 rounded-full bg-surface-variant object-cover" data-alt="A small circular avatar placeholder image showing a generic profile silhouette in a light modern setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxsx6j_O5AuaPUNZJufC7BLI2H7JkgeOC20FtZPwuJ_aIu1w504arRlwUth43My663h1nIb55Aa2S8T9Kqhv8gpx8xKekox1Q4Mv-iGjH1VPZYK83YB-HjWk6n_d0c7PX2H67Uv5kOzWm53CupngieSlV39TVyoJJNkPBuWixaj-iOK2pGyGOO9hktyLAe6leeoDGiZCDrLEZMznJ_drWhzS8L93c7iLwxfPW0ulVn8LkBsgyIKxgRrw"/>
+<div class="flex flex-col">
+<span class="font-label text-label text-on-surface">Mahasiswa</span>
+<span class="font-small text-small text-on-surface-variant">Teknik Informatika</span>
+</div>
+</div>
+</nav>
+<!-- Mobile TopBar -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-line shadow-sm flex justify-between items-center px-lg h-16">
+<h1 class="font-display text-h2 font-bold text-primary">ICL ITATS</h1>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 pt-16 md:pt-0 p-md md:p-lg lg:p-xxl max-w-container-max mx-auto w-full">
+<div class="mb-xl max-w-3xl">
+<h1 class="font-display text-h1-mobile md:text-display text-on-surface mb-sm">Self-Assessment</h1>
+<p class="font-body text-body text-on-surface-variant">Rate your current proficiency across key competency units. Be honest and objective to establish an accurate baseline for your career profile. This initial assessment guides your personalized development path.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-line p-lg md:p-xl mb-xl shadow-sm">
+<div class="flex items-start gap-md mb-lg pb-md border-b border-line">
+<div class="p-sm bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Rating Scale Guide</h3>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-sm mt-sm">
+<div class="font-small text-small"><strong class="text-on-surface">1 - Novice:</strong> No practical experience; fundamental knowledge only.</div>
+<div class="font-small text-small"><strong class="text-on-surface">2 - Beginner:</strong> Limited practical experience; requires close supervision.</div>
+<div class="font-small text-small"><strong class="text-on-surface">3 - Competent:</strong> Independent execution of standard tasks; moderate experience.</div>
+<div class="font-small text-small"><strong class="text-on-surface">4 - Proficient:</strong> Deep understanding; handles complex scenarios independently.</div>
+<div class="font-small text-small"><strong class="text-on-surface">5 - Expert:</strong> Recognized authority; mentors others; drives innovation.</div>
+</div>
+</div>
+</div>
+<!-- Form -->
+<form action="#" class="flex flex-col gap-xl" method="POST">
+<!-- Competency Group: Software Engineering -->
+<div class="flex flex-col gap-md">
+<h2 class="font-h2 text-h2 text-on-surface border-b border-line pb-xs">Software Engineering Fundamentals</h2>
+<!-- Item 1 -->
+<div class="bg-surface rounded-lg p-md border border-line shadow-sm hover:shadow-md transition-shadow">
+<div class="mb-md">
+<h3 class="font-h3 text-h3 text-on-surface">Data Structures &amp; Algorithms</h3>
+<p class="font-body text-body text-on-surface-variant mt-xs">Ability to select and implement appropriate data structures and algorithms to solve complex problems efficiently.</p>
+</div>
+<div class="flex flex-wrap gap-sm justify-between mt-md">
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_dsa_1" name="comp_dsa" type="radio" value="1"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_dsa_1">
+<span class="font-h2 text-h2">1</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Novice</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_dsa_2" name="comp_dsa" type="radio" value="2"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_dsa_2">
+<span class="font-h2 text-h2">2</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Beginner</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input checked="" class="sr-only rating-radio" id="comp_dsa_3" name="comp_dsa" type="radio" value="3"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_dsa_3">
+<span class="font-h2 text-h2">3</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Competent</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_dsa_4" name="comp_dsa" type="radio" value="4"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_dsa_4">
+<span class="font-h2 text-h2">4</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Proficient</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_dsa_5" name="comp_dsa" type="radio" value="5"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_dsa_5">
+<span class="font-h2 text-h2">5</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Expert</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface rounded-lg p-md border border-line shadow-sm hover:shadow-md transition-shadow">
+<div class="mb-md">
+<h3 class="font-h3 text-h3 text-on-surface">Software Architecture</h3>
+<p class="font-body text-body text-on-surface-variant mt-xs">Understanding of design patterns, architectural styles (e.g., MVC, Microservices), and system design principles.</p>
+</div>
+<div class="flex flex-wrap gap-sm justify-between mt-md">
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_arch_1" name="comp_arch" type="radio" value="1"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_arch_1">
+<span class="font-h2 text-h2">1</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Novice</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input checked="" class="sr-only rating-radio" id="comp_arch_2" name="comp_arch" type="radio" value="2"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_arch_2">
+<span class="font-h2 text-h2">2</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Beginner</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_arch_3" name="comp_arch" type="radio" value="3"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_arch_3">
+<span class="font-h2 text-h2">3</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Competent</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_arch_4" name="comp_arch" type="radio" value="4"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_arch_4">
+<span class="font-h2 text-h2">4</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Proficient</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_arch_5" name="comp_arch" type="radio" value="5"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_arch_5">
+<span class="font-h2 text-h2">5</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Expert</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Competency Group: Professional Skills -->
+<div class="flex flex-col gap-md mt-lg">
+<h2 class="font-h2 text-h2 text-on-surface border-b border-line pb-xs">Professional Skills</h2>
+<!-- Item 3 -->
+<div class="bg-surface rounded-lg p-md border border-line shadow-sm hover:shadow-md transition-shadow">
+<div class="mb-md">
+<h3 class="font-h3 text-h3 text-on-surface">Team Communication</h3>
+<p class="font-body text-body text-on-surface-variant mt-xs">Effectiveness in communicating technical concepts to both technical and non-technical stakeholders.</p>
+</div>
+<div class="flex flex-wrap gap-sm justify-between mt-md">
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_comm_1" name="comp_comm" type="radio" value="1"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_comm_1">
+<span class="font-h2 text-h2">1</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Novice</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_comm_2" name="comp_comm" type="radio" value="2"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_comm_2">
+<span class="font-h2 text-h2">2</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Beginner</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_comm_3" name="comp_comm" type="radio" value="3"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_comm_3">
+<span class="font-h2 text-h2">3</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Competent</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input checked="" class="sr-only rating-radio" id="comp_comm_4" name="comp_comm" type="radio" value="4"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_comm_4">
+<span class="font-h2 text-h2">4</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Proficient</span>
+</label>
+</div>
+<div class="relative flex-1 min-w-[60px]">
+<input class="sr-only rating-radio" id="comp_comm_5" name="comp_comm" type="radio" value="5"/>
+<label class="flex flex-col items-center justify-center p-sm border border-outline-variant rounded-lg cursor-pointer bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors h-full" for="comp_comm_5">
+<span class="font-h2 text-h2">5</span>
+<span class="font-small text-small text-center mt-xs hidden sm:block">Expert</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Submit Section -->
+<div class="mt-xl pt-lg border-t border-line flex justify-end">
+<button class="bg-primary text-on-primary font-label text-label px-xl py-md rounded-lg hover:bg-primary-container transition-colors shadow-sm active:scale-95 duration-150 flex items-center gap-sm" type="submit">
+                        Calculate Initial Profile
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-line shadow-sm pb-safe flex justify-around items-center h-16">
+<a class="flex flex-col items-center gap-xs text-on-surface-variant p-sm active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-small text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-primary font-bold border-b-2 border-primary p-sm active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined filled" data-icon="star" data-weight="fill">star</span>
+<span class="font-small text-[10px]">Competencies</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant p-sm active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-small text-[10px]">Evidence</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant p-sm active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-small text-[10px]">Activities</span>
+</a>
+</nav>
+</body></html>

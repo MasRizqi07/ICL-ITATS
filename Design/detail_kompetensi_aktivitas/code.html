@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Competency Detail - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737686",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "tertiary": "#8c3d00",
+                        "on-secondary-container": "#006f67",
+                        "secondary-container": "#99efe5",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "canvas": "#F8FAFC",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#331200",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#213145",
+                        "ink": "#17202A",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-container": "#b15106",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "primary": "#004ac6",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "line": "#D9E0E8",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "error": "#B42318",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "secondary": "#006a63",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-container": "#ffece4",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "ai-accent": "#6D28D9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .progress-bar-bg { background-color: var(--color-line, #D9E0E8); }
+        .progress-bar-fill { background-color: var(--color-primary, #004ac6); }
+        .progress-marker { border-color: var(--color-primary, #004ac6); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body text-body antialiased min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-line dark:border-outline-variant shadow-sm flex justify-between items-center px-lg h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary dark:text-primary-fixed-dim active:scale-95 duration-150 p-sm hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display text-h2 font-bold text-primary dark:text-primary-fixed-dim">
+                ICL ITATS
+            </div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden border border-line">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a university student against a neutral, high-key white background, creating a clean and modern avatar profile picture. The lighting is soft and flattering, suitable for a corporate SaaS enterprise application interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_2ZLdIUVQrid9ZeDo0eFb0ITmiE6ZDPhOq2MH093luDzgHciBLOgrffebC9s3d82e73MX_yDeztT_Pib7I6AHCNdyK1jwZF2u4z8uEiUiokzgd6StidYYNFatoqzC_kiPPblpj75hwiiCFZHaqrpkujAVDblf82MYrNzx07Df5lSUYPvkoVkxevP25891xF91lmjULU31vF0_gm9C1s37uzSb88W0T6bdwtZcHHGb4bDKOvb4ypVVRg"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container dark:bg-surface-container-high pt-16 z-40 hidden md:flex flex-col p-md gap-sm border-r border-line">
+<div class="mb-xl px-sm pt-md">
+<div class="font-display text-h1 font-bold text-primary">ICL ITATS</div>
+<div class="font-small text-small text-on-surface-variant mt-xs">Career Intelligence</div>
+</div>
+<nav class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Active State Navigation -->
+<a class="flex items-center gap-md bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-md py-sm transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                Competencies
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+                Evidence
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                Activities
+            </a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="pt-[88px] pb-xxl px-md md:pl-[280px] md:pr-lg mx-auto max-w-container-max">
+<!-- Breadcrumbs & Header -->
+<div class="mb-xl">
+<div class="flex items-center gap-sm text-on-surface-variant font-small text-small mb-sm">
+<a class="hover:text-primary transition-colors" href="#">Competencies</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Cloud Infrastructure</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h1 class="font-display text-h1-mobile md:text-h1 text-on-surface flex items-center gap-md">
+                        Cloud Infrastructure
+                        <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-[#fff8e1] text-[#b45309] border border-[#fde68a] font-label text-small">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+                            Berjalan
+                        </span>
+</h1>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label text-label hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Evidence
+                </button>
+</div>
+</div>
+<!-- Section 1 & 2: Definition & Status Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xxl">
+<!-- Definition Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-lg border border-line shadow-[0px_4px_12px_rgba(0,0,0,0.02)] flex flex-col justify-center">
+<h2 class="font-h2 text-h2 text-on-surface mb-md">Definition</h2>
+<p class="font-body text-body text-on-surface-variant leading-relaxed">
+                    Ability to design, deploy, and manage scalable, highly available, and fault-tolerant systems on cloud platforms (e.g., AWS, Azure, Google Cloud). This includes understanding core cloud architectural principles, networking, storage solutions, and infrastructure as code (IaC) methodologies to optimize resource utilization and operational efficiency in enterprise environments.
+                </p>
+<div class="mt-lg flex gap-sm flex-wrap">
+<span class="px-sm py-xs bg-surface-container rounded text-on-surface font-small text-small border border-line">AWS</span>
+<span class="px-sm py-xs bg-surface-container rounded text-on-surface font-small text-small border border-line">Architecture</span>
+<span class="px-sm py-xs bg-surface-container rounded text-on-surface font-small text-small border border-line">DevOps</span>
+</div>
+</div>
+<!-- Status/Level Card -->
+<div class="md:col-span-1 bg-surface-container-lowest rounded-xl p-lg border border-line shadow-[0px_4px_12px_rgba(0,0,0,0.02)] flex flex-col">
+<h2 class="font-h3 text-h3 text-on-surface mb-lg">Current Status</h2>
+<div class="mb-auto">
+<div class="flex justify-between items-end mb-sm">
+<span class="font-body text-body text-on-surface-variant">Level 2</span>
+<span class="font-label text-label text-primary">Target: Level 4</span>
+</div>
+<!-- Custom Progress Bar -->
+<div class="relative h-4 w-full rounded-full bg-surface-container overflow-hidden border border-line">
+<!-- Fill representing current level (50% for Level 2 out of 4) -->
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-1000 w-1/2"></div>
+<!-- Marker for Target Level -->
+<div class="absolute top-0 left-full h-full w-[2px] bg-ink transform -translate-x-1/2 z-10 hidden"></div>
+</div>
+<div class="flex justify-between mt-xs font-small text-small text-outline">
+<span>L1</span>
+<span>L2</span>
+<span>L3</span>
+<span>L4</span>
+<span>L5</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-line">
+<p class="font-small text-small text-on-surface-variant">You need <strong class="text-on-surface">2 more verified activities</strong> to reach the target level for graduation.</p>
+</div>
+</div>
+</div>
+<!-- AI Panel: Analysis -->
+<div class="bg-[#f5f3ff] border-l-4 border-ai-accent rounded-r-xl p-md mb-xxl relative overflow-hidden flex flex-col sm:flex-row gap-lg items-start">
+<div class="absolute top-md right-md bg-white px-sm py-xs rounded-full border border-[#ede9fe] shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-ai-accent">auto_awesome</span>
+<span class="font-label text-small text-ai-accent">Dibantu AI</span>
+</div>
+<div class="p-sm bg-white rounded-lg shadow-sm text-ai-accent flex-shrink-0 mt-xs">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="flex-1 pr-xl sm:pr-0">
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Skill Gap Identified</h3>
+<p class="font-body text-body text-on-surface-variant mb-md">
+                    Based on your recent 'Database Foundations' evidence, you have a strong grasp of storage concepts. To reach Level 3 in Cloud Infrastructure, focus on <strong>Networking Fundamentals within AWS</strong>. We highly recommend the upcoming internal workshop.
+                </p>
+</div>
+</div>
+<!-- Section 3: Recommended Activities -->
+<div class="mb-xxl">
+<h2 class="font-h2 text-h2 text-on-surface mb-lg">Recommended Activities</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Activity Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-line shadow-[0px_4px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-32 w-full bg-surface-container relative" data-alt="A clean, abstract 3D geometric composition featuring stylized server racks and floating isometric data blocks in a bright, modern corporate color palette of blues and whites, representing cloud computing infrastructure. The aesthetic is high-fidelity and minimal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJnxN7S78o_wd_NR1IIygeWvMc2t5qHLnnAkOU8HAy1Rzx-uhbDKrofJuOzbKzB1hmu9KE-0ZbVITAvkzrUfTkV_GByW7ULNIap60hd8HEKPTmHSnirLINk8vscL7278_gH-kYYSHTpjT9r7lXtHHGs8tTBMCvcQZiZjDg3i6s-QOX-DCxKCshguYgyQiv7q_R63YucWdfBiGVs7VDKGXOK6fwAMARjxJU14j9WkenpRV9IknE1DDwDg')">
+<div class="absolute top-sm left-sm px-sm py-xs bg-white/90 backdrop-blur-sm rounded text-on-surface font-label text-small border border-line/50 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                            Workshop
+                        </div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-on-surface mb-xs group-hover:text-primary transition-colors">AWS Cloud Practitioner Essentials</h3>
+<p class="font-small text-small text-on-surface-variant mb-md line-clamp-2">Internal workshop covering fundamental cloud concepts, security, and AWS core services.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-small text-small text-outline">Oct 15, 2023</span>
+<button class="text-primary font-label text-label hover:bg-surface-container px-sm py-xs rounded transition-colors">Join Now</button>
+</div>
+</div>
+</div>
+<!-- Activity Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-line shadow-[0px_4px_12px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-32 w-full bg-surface-container relative" data-alt="An abstract data visualization artwork showing connected nodes and illuminated pathways on a pristine white canvas, symbolizing digital networking and certification pathways. Soft ambient shadows give depth to the geometric connections." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6BqumwEQ3FC4iE9W4RGsn9IpLbwS5PsLmkNgiflrDOBik32eWdf_Wr1alvm8UlZ8BoRTrMHcRx_hqoj08j8MEAL-sjGMA_KfmU4SgDaJ8EkZUgK4LVP7m4qnKTpcyxFAspzA7Ssb4RnXQxgpcoRMyilvGWsWXJNsm9uUkAxOvn_T0tthLjwmpNKDFbRJjrFqvp6nzC0QfxPolUsZJsQFU8G0kPSFBER1eQIGKWyObuqrppitwp5WWYw')">
+<div class="absolute top-sm left-sm px-sm py-xs bg-white/90 backdrop-blur-sm rounded text-on-surface font-label text-small border border-line/50 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                            Certification
+                        </div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-on-surface mb-xs group-hover:text-primary transition-colors">Microsoft Azure Fundamentals (AZ-900)</h3>
+<p class="font-small text-small text-on-surface-variant mb-md line-clamp-2">Foundational level knowledge on cloud concepts and core Azure services.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-small text-small text-outline">Self-paced</span>
+<button class="text-primary font-label text-label hover:bg-surface-container px-sm py-xs rounded transition-colors">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Existing Evidence -->
+<div>
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-h2 text-h2 text-on-surface">Linked Evidence</h2>
+<a class="text-primary font-label text-label hover:underline" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Evidence Item 1 -->
+<div class="bg-surface-container-lowest border border-line rounded-xl p-md flex flex-col sm:flex-row gap-md sm:items-center hover:bg-surface transition-colors cursor-pointer">
+<div class="h-12 w-12 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-sm mb-xs">
+<h3 class="font-h3 text-h3 text-on-surface">Final Project: Scalable Web Architecture</h3>
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] font-label text-small">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                                Terverifikasi
+                            </span>
+</div>
+<p class="font-body text-body text-on-surface-variant line-clamp-1">Deployed a 3-tier architecture using EC2, RDS, and S3 for the final semester project.</p>
+</div>
+<div class="sm:border-l sm:border-line sm:pl-md flex flex-col gap-xs min-w-[150px]">
+<span class="font-label text-small text-outline uppercase tracking-wider">Reviewer</span>
+<div class="flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container overflow-hidden">
+<img alt="Reviewer Profile" class="w-full h-full object-cover" data-alt="A small, professional headshot avatar of a male academic advisor with glasses, smiling softly against a light grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1VnmPMTwWV6VfLfgxzGo0QZa0MAhPn_gKWfguLJZKsqjhUADHwHsucHWBsBaArtf5ExwyJ9Wlc36TyTKbrXfwvNoSejTq8hLP8tTyssvvtjhU8QyRghJH6oFIJU8EwmiAE4wjo63k3VvheY7bu_aO8b9hVzvoFJFsCSIsYBGGpMU4DhldCUoyOh7odLZwo4S9ZKcloSL1I3JeandSWr3GqZIid09cDR5ZWz-_7PUuqo_6dSimBZP2kw"/>
+</div>
+<span class="font-small text-small text-on-surface">Dr. A. Rahman</span>
+</div>
+</div>
+</div>
+<!-- Evidence Item 2 -->
+<div class="bg-surface-container-lowest border border-line rounded-xl p-md flex flex-col sm:flex-row gap-md sm:items-center hover:bg-surface transition-colors cursor-pointer">
+<div class="h-12 w-12 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">link</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-sm mb-xs">
+<h3 class="font-h3 text-h3 text-on-surface">GitHub Repo: Terraform Configurations</h3>
+<span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface text-on-surface-variant border border-line font-label text-small">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                                Belum dinilai
+                            </span>
+</div>
+<p class="font-body text-body text-on-surface-variant line-clamp-1">Infrastructure as Code repository demonstrating basic network provisioning.</p>
+</div>
+<div class="sm:border-l sm:border-line sm:pl-md flex flex-col gap-xs min-w-[150px]">
+<span class="font-label text-small text-outline uppercase tracking-wider">Submitted</span>
+<span class="font-small text-small text-on-surface">2 days ago</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

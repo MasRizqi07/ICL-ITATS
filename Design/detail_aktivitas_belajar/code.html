@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Aktivitas Belajar - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "surface-tint": "#0053db",
+                        "on-secondary-container": "#006f67",
+                        "primary-container": "#2563eb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffece4",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed": "#9cf2e8",
+                        "secondary-container": "#99efe5",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#0b1c30",
+                        "error": "#B42318",
+                        "secondary": "#006a63",
+                        "tertiary-container": "#b15106",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#8c3d00",
+                        "inverse-surface": "#213145",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed": "#00174b",
+                        "line": "#D9E0E8",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "ink": "#17202A",
+                        "on-primary-container": "#eeefff",
+                        "ai-accent": "#6D28D9",
+                        "outline-variant": "#c3c6d7",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#331200",
+                        "canvas": "#F8FAFC",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "on-secondary-fixed": "#00201d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "container-max": "1200px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "small": ["Inter"],
+                        "label": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "h3": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-canvas text-on-surface font-body min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 py-lg bg-surface-container-low dark:bg-inverse-surface border-r border-line z-40">
+<div class="px-lg mb-xl">
+<h1 class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">ICL ITATS</h1>
+<p class="font-small text-small text-on-surface-variant">Career Intelligence</p>
+</div>
+<div class="px-md mb-xl">
+<button class="w-full bg-primary text-on-primary font-label text-label py-sm px-md rounded-DEFAULT hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-sm shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                Add Evidence
+            </button>
+</div>
+<ul class="flex flex-col gap-sm px-md flex-1 overflow-y-auto">
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label text-label">Development</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto px-md flex flex-col gap-sm pt-md border-t border-line">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label text-label">Help Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label text-label">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between px-lg w-full h-16 sticky top-0 z-50 bg-surface dark:bg-on-background shadow-sm border-b border-line dark:border-outline-variant">
+<div class="md:hidden flex items-center gap-sm">
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">ICL ITATS</h1>
+</div>
+<div class="hidden md:flex flex-1 max-w-md mx-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container pl-xl pr-md py-sm rounded-DEFAULT font-body text-body text-on-surface border border-line focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors p-sm rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors p-sm rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-line cursor-pointer" data-alt="A professional headshot of a university student looking confident and ready to learn. The student is wearing casual professional attire, standing in a well-lit modern campus environment. The lighting is soft and natural, creating a bright and trustworthy mood. The image is cropped closely to the face and shoulders, conveying approachability and readiness for career development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwdx3EL33ytGAmTLBwnRz6-aLNdcQfudhBOFTT9jdWCD-R-nf7AhUpy0FX3dDGaojdU395hI5aPiLcEAFamLBtMMIbP4hMRL0676OFEaKuoqcdmJv0w2VtWBp93phbIDS08HUE47BYER_cFF3WYN08jSm63HS3yO4XFOcrbrH4wcKG0x_rgfgIc9XYhJp5stLbhRcMsa2RGyWeNRw3QddtxPjFKiya4Uc7CjnlQwnmBnR83l6k1hNLlA"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 max-w-[1200px] w-full mx-auto p-lg md:p-xl flex flex-col gap-xl">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-sm text-small font-small text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Development</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Course Catalog</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-label">AWS Cloud Practitioner Essentials</span>
+</nav>
+<!-- Hero Section / Bento Top -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Main Info Card -->
+<div class="lg:col-span-2 bg-surface rounded-xl p-lg md:p-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-line flex flex-col gap-lg">
+<div class="flex items-start justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-surface-container-high text-primary font-label text-label px-sm py-[2px] rounded-DEFAULT">Sertifikasi Cloud</span>
+<span class="bg-teal-50 text-teal-700 border border-teal-200 font-label text-label px-sm py-[2px] rounded-DEFAULT flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                                    Terverifikasi ICL
+                                </span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">AWS Cloud Practitioner Essentials</h1>
+<p class="font-body text-body text-on-surface-variant">Oleh Amazon Web Services (AWS)</p>
+</div>
+<img class="w-16 h-16 md:w-20 md:h-20 rounded-lg object-cover border border-line shadow-sm shrink-0" data-alt="A modern, abstract digital illustration representing cloud computing technology. The design features geometric shapes, interconnected nodes, and a subtle glowing cloud icon in the center. The color palette primarily uses deep blues and vibrant teals, fitting a professional enterprise SaaS aesthetic. The style is clean, flat, and corporate, conveying trust and technical proficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI_bpCvLEX1tTsthDKxXAgB-DXpir5XwVEolMXW6hZSms6LW_-qkAV1S3lOC0hdQLKFh7jIkNz4uToq3CU2CB5gZixL1pImiQLtwO0tHCAhobTWgl7rW3HTab7b6k8rmqdglILKDGQpvKX6rfF3q7-ILkWJ2TjO-UNUBZ3ilNH5bHCK3gNUg2s5WePuCqh6zlW3LBwOV_uEiOgQq89PptmpEWoYh2yJLwqRDWDUpe9Jwp9C0aLt_Em7Q"/>
+</div>
+<p class="font-body text-body text-on-surface text-opacity-90 leading-relaxed">
+                        Kursus ini memberikan pemahaman dasar secara keseluruhan tentang cloud AWS. Anda akan mempelajari konsep cloud dasar, keamanan, arsitektur, penetapan harga, dan dukungan. Ini adalah langkah awal yang sangat baik bagi siapa saja yang ingin membuktikan pengetahuan cloud mereka dengan sertifikasi AWS Certified Cloud Practitioner.
+                    </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md pt-md border-t border-line">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-small text-small">Durasi</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">6 Jam</span>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span class="font-small text-small">Tingkat</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Pemula</span>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span class="font-small text-small">Bahasa</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Indonesia</span>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span class="font-small text-small">Biaya</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">Gratis</span>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="bg-surface rounded-xl p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-line flex flex-col gap-lg h-fit sticky top-[88px]">
+<!-- AI Insight Suggestion -->
+<div class="bg-surface-bright border border-ai-accent rounded-lg p-md relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-ai-accent"></div>
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-label text-label text-ai-accent flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+                                Saran AI
+                            </h3>
+</div>
+<p class="font-small text-small text-on-surface-variant">
+                            Kursus ini memiliki tingkat kecocokan <strong class="text-on-surface">92%</strong> dengan target karir Anda sebagai <strong class="text-on-surface">Cloud Engineer</strong>. Sangat disarankan untuk menutupi gap kompetensi 'Cloud Computing Fundamentals'.
+                        </p>
+</div>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-primary text-on-primary font-h3 text-h3 py-md px-lg rounded-DEFAULT hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-sm shadow-sm">
+                            Mulai Belajar Sekarang
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full bg-surface text-primary border border-primary font-label text-label py-sm px-md rounded-DEFAULT hover:bg-surface-container-low transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">bookmark_add</span>
+                            Simpan ke Rencana
+                        </button>
+</div>
+<div class="pt-md border-t border-line">
+<h4 class="font-label text-label text-on-surface mb-sm">Akan membuka kompetensi:</h4>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-surface-container text-on-surface-variant border border-outline-variant font-small text-small px-sm py-[2px] rounded-full">Cloud Fundamentals</span>
+<span class="bg-surface-container text-on-surface-variant border border-outline-variant font-small text-small px-sm py-[2px] rounded-full">AWS Services</span>
+<span class="bg-surface-container text-on-surface-variant border border-outline-variant font-small text-small px-sm py-[2px] rounded-full">Cloud Security Basics</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="lg:col-span-2 flex flex-col gap-xl">
+<!-- Silabus -->
+<section class="bg-surface rounded-xl p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-line">
+<h2 class="font-h2 text-h2 text-on-surface mb-md">Silabus Modul</h2>
+<div class="flex flex-col gap-sm">
+<!-- Accordion Items (Static for display) -->
+<div class="border border-line rounded-lg overflow-hidden">
+<button class="w-full bg-surface-bright flex items-center justify-between p-md hover:bg-surface-container-low transition-colors text-left">
+<div class="flex items-center gap-md">
+<span class="bg-surface-container text-primary w-8 h-8 rounded-full flex items-center justify-center font-label text-label">1</span>
+<span class="font-h3 text-h3 text-on-surface">Pengantar Amazon Web Services</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<div class="border border-line rounded-lg overflow-hidden">
+<button class="w-full bg-surface-bright flex items-center justify-between p-md hover:bg-surface-container-low transition-colors text-left">
+<div class="flex items-center gap-md">
+<span class="bg-surface-container text-primary w-8 h-8 rounded-full flex items-center justify-center font-label text-label">2</span>
+<span class="font-h3 text-h3 text-on-surface">Komputasi di Cloud</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<div class="border border-line rounded-lg overflow-hidden">
+<button class="w-full bg-surface-bright flex items-center justify-between p-md hover:bg-surface-container-low transition-colors text-left">
+<div class="flex items-center gap-md">
+<span class="bg-surface-container text-primary w-8 h-8 rounded-full flex items-center justify-center font-label text-label">3</span>
+<span class="font-h3 text-h3 text-on-surface">Infrastruktur Global dan Keandalan</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Testimoni -->
+<section class="bg-surface rounded-xl p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-line">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-h2 text-h2 text-on-surface">Review Mahasiswa</h2>
+<div class="flex items-center gap-xs text-amber-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-h3 text-h3 text-on-surface">4.8</span>
+<span class="text-on-surface-variant font-small text-small">(124 review)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-bright p-md rounded-lg border border-line">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-10 h-10 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center font-label text-label">AD</div>
+<div>
+<p class="font-label text-label text-on-surface">Andi Darmawan</p>
+<p class="font-small text-small text-on-surface-variant">Teknik Informatika '20</p>
+</div>
+</div>
+<p class="font-body text-body text-on-surface-variant">"Materi sangat mudah dipahami untuk pemula. Sertifikatnya langsung saya upload sebagai evidence dan di-approve dosen!"</p>
+</div>
+<div class="bg-surface-bright p-md rounded-lg border border-line">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-10 h-10 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center font-label text-label">SR</div>
+<div>
+<p class="font-label text-label text-on-surface">Siti Rahma</p>
+<p class="font-small text-small text-on-surface-variant">Sistem Informasi '21</p>
+</div>
+</div>
+<p class="font-body text-body text-on-surface-variant">"Course yang wajib diambil kalau mau berkarir di bidang cloud. Penjelasannya terstruktur dengan baik."</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

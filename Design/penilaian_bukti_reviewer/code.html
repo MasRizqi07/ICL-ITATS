@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evidence Review Detail - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737686",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "tertiary": "#8c3d00",
+                        "on-secondary-container": "#006f67",
+                        "secondary-container": "#99efe5",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "canvas": "#F8FAFC",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#331200",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#213145",
+                        "ink": "#17202A",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-container": "#b15106",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "primary": "#004ac6",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "line": "#D9E0E8",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "error": "#B42318",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "secondary": "#006a63",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-container": "#ffece4",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "ai-accent": "#6D28D9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-canvas text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- Top Navigation (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest border-b border-line shadow-sm flex justify-between items-center px-lg h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<span class="font-display text-h2 font-bold text-primary">ICL ITATS</span>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer">notifications</span>
+<img alt="User Profile" class="w-8 h-8 rounded-full bg-line object-cover" data-alt="A small circular avatar showing a professional headshot of a reviewer in a modern office setting. Light mode aesthetic, bright and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN04ewwMHFrPvm205_ie9J2Lv45_V61cAExmOcwj-picd3wzonAyjiuGxSvyU5sfp6TrIXGnECsd6L3rBpgnV0xP6ChBGoOlRDYLG5ecMjWWRCyn4LCtpDBDObVjY1KVFCYxuuQOyZY1OGxM8inKYHCpAfL-DTdDCf_D_zqCBvN3EGBkdppjRioo4zf7rD_PTAyXgePgn6UmD0XX_3PwWjlVmGR6nfyXUjM2JSmHMN7TbNKTzVUQBAeg"/>
+</div>
+</nav>
+<!-- Side Navigation (Web Only) -->
+<aside class="hidden md:flex flex-col bg-surface-container h-full w-64 fixed left-0 top-0 z-40">
+<div class="p-lg">
+<h1 class="font-display text-h1 font-bold text-primary">ICL ITATS</h1>
+<p class="font-small text-small text-on-surface-variant mt-xs">Career Intelligence</p>
+</div>
+<nav class="flex flex-col p-md gap-sm flex-grow">
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-xl px-md py-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 0;">history_edu</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-xl transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</nav>
+<div class="p-md mt-auto">
+<div class="flex items-center gap-sm px-md py-sm">
+<img alt="Reviewer Avatar" class="w-10 h-10 rounded-full bg-line object-cover" data-alt="A professional headshot of an academic reviewer, smiling subtly. Set against a clean, bright office background with modern decor. Corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQBIn6TOppcqv5RxZqwfUf7Ac9sfUxnw045ZzT0U389MVIHLQQ5OyGjMsbTO2D-HJ5ztz9X58pi2fDGzs3rfH-AF4f2pRP3GGE1gQqQyMaNLWbHZbXLLOk4NUrWaioPKFOPzwu14E1_HOn97wGc2_k-IYypMI2x9cxnTruOI6dfk-km7MnADtd851JedOpR5UO8MywrxhY2TsjX9zvFcQOikjWvXxifAvBuk7D-m5-JLr9fNyXesg2ww"/>
+<div>
+<p class="font-label text-label text-on-surface">Dr. A. Rahman</p>
+<p class="font-small text-small text-on-surface-variant">Reviewer</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow md:ml-64 pt-20 md:pt-0 p-lg md:p-xl w-full max-w-container-max mx-auto">
+<!-- Header Actions -->
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-display text-h2 font-bold text-on-surface">Review Evidence</h2>
+</div>
+<div class="flex gap-sm">
+<span class="bg-surface-variant text-on-surface-variant px-sm py-xs rounded-full font-label text-label flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+                    Belum dinilai
+                </span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Document Preview -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-line p-md flex flex-col h-[600px]">
+<div class="flex justify-between items-center mb-md border-b border-line pb-sm">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Project Report: Data Analytics Implementation</h3>
+<p class="font-small text-small text-on-surface-variant mt-xs">Submitted on Oct 24, 2023 • PDF Document</p>
+</div>
+<div class="flex gap-sm">
+<button class="text-on-surface-variant hover:bg-surface-container p-xs rounded transition-colors" title="Download">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container p-xs rounded transition-colors" title="Expand">
+<span class="material-symbols-outlined">open_in_full</span>
+</button>
+</div>
+</div>
+<!-- Placeholder for PDF/Document Viewer -->
+<div class="flex-grow bg-surface rounded-lg border border-line flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-top opacity-50" data-alt="A blurred, high-fidelity mock document preview. It looks like a professional data analytics report with charts, text blocks, and a modern corporate layout. The lighting is bright and clean, fitting a SaaS platform interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCF77Q36Of8RFzpgvB4Vc15MU3kUuayImbH7pFUBd1esU8xFnaCucbVOudOqcU9kYnO-ysj3HzG6yOqDufhrXdttWVLDc0hou_6Wr36Lv2KZPcB95mX9oBvjlGiLj2KamQPRG5gXOX96lE2f90FcqxeHbkKY4M2QFrbJ549ZN0at710MJRzqPiAEWaSvuJKZMnZs71ywn9BE7Ph5ttk38t-Ux5RHDlKB1mMfjjNxBCyBwcwYRPnaIiESw')"></div>
+<div class="z-10 flex flex-col items-center p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-line max-w-sm text-center">
+<span class="material-symbols-outlined text-display text-primary mb-sm" style="font-size: 48px;">description</span>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">Document Preview Unavailable</h4>
+<p class="font-body text-body text-on-surface-variant mb-md text-sm">A full preview is not available for this file type. Please download to view.</p>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label text-label flex items-center gap-xs hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Download File (2.4 MB)
+                            </button>
+</div>
+</div>
+</div>
+<!-- AI Analysis Panel (Optional Context) -->
+<div class="bg-[#f3e8ff] border border-ai-accent rounded-xl p-md flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-ai-accent text-white px-sm py-xs rounded-bl-lg font-label text-[10px] flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                        Dibantu AI
+                    </div>
+<div class="flex items-start gap-md mt-sm">
+<span class="material-symbols-outlined text-ai-accent mt-xs">insights</span>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface mb-xs">AI Initial Scan</h4>
+<p class="font-body text-body text-on-surface-variant text-sm">
+                                The document appears to contain valid methodology for data collection and analysis. It heavily references Python pandas libraries, aligning well with the "Data Analysis" competency. However, practical implementation results are sparse.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Context & Review Panel -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Student Context -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-line p-md">
+<h3 class="font-label text-label text-on-surface-variant uppercase tracking-wider mb-md">Submitter Context</h3>
+<div class="flex items-center gap-md mb-md">
+<img alt="Student Profile" class="w-12 h-12 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a young university student, looking professional and ready for a career. Bright, clean background, modern high-key lighting, corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLdz4b02MUaHRmHnmd_YTUdMrjsCSDLaLTyOwHZT3yu938EvOIVGy_PynUyp54UUTBvh1X1V5n1uEuk_mCZGzRNdU9D15f7-xjNzJwJg4anROd8OyfnZt93wQgseSeSoYrEuvUOI8JmnSkLajeW8bF0GJa39WrdRGOTG5MQf_XmXDeh9p6BRK2ANCXs7CwL0IOpELwkez3TESDtgAIGPR_kscv-q6VVJkkpWPft_bB96YwADFFmN2XQQ"/>
+<div>
+<p class="font-h3 text-h3 text-on-surface">Budi Santoso</p>
+<p class="font-small text-small text-on-surface-variant">Informatics Engineering • Semester 6</p>
+</div>
+</div>
+<div class="border-t border-line pt-md">
+<p class="font-label text-label text-on-surface-variant mb-sm">Linked Competencies</p>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center bg-surface p-sm rounded border border-line">
+<span class="font-body text-body text-sm font-medium">Data Analysis</span>
+<span class="text-xs bg-surface-container text-primary px-2 py-1 rounded">Target: L3</span>
+</div>
+<div class="flex justify-between items-center bg-surface p-sm rounded border border-line">
+<span class="font-body text-body text-sm font-medium">Technical Writing</span>
+<span class="text-xs bg-surface-container text-primary px-2 py-1 rounded">Target: L2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Panel Form -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-line p-md flex-grow flex flex-col">
+<h3 class="font-h3 text-h3 text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">rate_review</span>
+                        Review Actions
+                    </h3>
+<form class="flex flex-col gap-md flex-grow">
+<!-- Status Selection -->
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-sm">Assessment Status</label>
+<div class="grid grid-cols-1 gap-xs">
+<label class="flex items-center gap-sm p-sm rounded border border-line hover:bg-surface cursor-pointer transition-colors has-[:checked]:border-secondary has-[:checked]:bg-[#e6f4f2]">
+<input class="text-secondary focus:ring-secondary border-outline" name="status" type="radio" value="verified"/>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body text-body text-sm font-medium">Terverifikasi (Verified)</span>
+</label>
+<label class="flex items-center gap-sm p-sm rounded border border-line hover:bg-surface cursor-pointer transition-colors has-[:checked]:border-[#d97706] has-[:checked]:bg-[#fef3c7]">
+<input class="text-[#d97706] focus:ring-[#d97706] border-outline" name="status" type="radio" value="revision"/>
+<span class="material-symbols-outlined text-[#d97706] text-[20px]">history</span>
+<span class="font-body text-body text-sm font-medium">Revisi (Needs Revision)</span>
+</label>
+<label class="flex items-center gap-sm p-sm rounded border border-line hover:bg-surface cursor-pointer transition-colors has-[:checked]:border-error has-[:checked]:bg-error-container">
+<input class="text-error focus:ring-error border-outline" name="status" type="radio" value="rejected"/>
+<span class="material-symbols-outlined text-error text-[20px]">cancel</span>
+<span class="font-body text-body text-sm font-medium">Ditolak (Rejected)</span>
+</label>
+</div>
+</div>
+<!-- Feedback Area -->
+<div class="flex-grow flex flex-col">
+<label class="block font-label text-label text-on-surface-variant mb-sm" for="feedback">Reviewer Feedback</label>
+<textarea class="w-full border-line rounded-md font-body text-body text-sm focus:border-primary focus:ring-1 focus:ring-primary bg-surface resize-none flex-grow" id="feedback" placeholder="Provide constructive feedback based on the competencies..." rows="5"></textarea>
+</div>
+<!-- Action -->
+<button class="w-full bg-primary text-on-primary py-sm rounded-lg font-label text-label mt-sm hover:bg-primary-container transition-colors shadow-sm" type="button">
+                            Submit Review
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body></html>

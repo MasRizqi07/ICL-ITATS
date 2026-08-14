@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications &amp; Feedback Center - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#737686",
+                    "surface-container": "#e5eeff",
+                    "background": "#f8f9ff",
+                    "tertiary": "#8c3d00",
+                    "on-secondary-container": "#006f67",
+                    "secondary-container": "#99efe5",
+                    "secondary-fixed": "#9cf2e8",
+                    "surface-container-lowest": "#ffffff",
+                    "canvas": "#F8FAFC",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-fixed": "#331200",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-surface": "#213145",
+                    "ink": "#17202A",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-container": "#b15106",
+                    "tertiary-fixed": "#ffdbca",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "secondary-fixed-dim": "#80d5cb",
+                    "tertiary-fixed-dim": "#ffb68e",
+                    "primary": "#004ac6",
+                    "primary-container": "#2563eb",
+                    "outline-variant": "#c3c6d7",
+                    "primary-fixed": "#dbe1ff",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-fixed": "#00201d",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "line": "#D9E0E8",
+                    "on-background": "#0b1c30",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "on-primary-container": "#eeefff",
+                    "surface-container-highest": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#0053db",
+                    "error": "#B42318",
+                    "on-tertiary-fixed-variant": "#763300",
+                    "secondary": "#006a63",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-container": "#ffece4",
+                    "surface-variant": "#d3e4fe",
+                    "on-tertiary": "#ffffff",
+                    "ai-accent": "#6D28D9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "container-max": "1200px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display": [
+                            "Inter"
+                    ],
+                    "small": [
+                            "Inter"
+                    ],
+                    "h3": [
+                            "Inter"
+                    ],
+                    "h1-mobile": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ],
+                    "h1": [
+                            "Inter"
+                    ],
+                    "h2": [
+                            "Inter"
+                    ],
+                    "body": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "display": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "small": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "h3": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h1-mobile": [
+                            "22px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h1": [
+                            "26px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h2": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC; /* canvas */
+        }
+    </style>
+</head>
+<body class="font-body text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden bg-surface-container-lowest dark:bg-inverse-surface border-b border-line dark:border-outline-variant shadow-sm fixed top-0 w-full z-50 flex justify-between items-center px-lg h-16">
+<div class="font-display text-h2 font-bold text-primary dark:text-primary-fixed-dim">ICL ITATS</div>
+<div class="flex items-center gap-md">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications" data-weight="fill" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-line" data-alt="A small, circular avatar image of a professional student or young professional, suitable for a profile picture in a corporate SaaS application. The style is clean, modern, and well-lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDC8HC18M-RvFiI0GHqd6e-A7FArrYK-A47YsaxDv0R9VFrp-rUbyGelWmQ7EVFfbwYMlbIeLUch2dZWwghqwNAYCkX8I2gcsgiyQQ0m0vPsVLmba57xqrs_s5nowQL6HPWcjyzujtg4LTe4r2d_Ao1BHb-kqUdFE6Coa8xRc81IPCHPJ6ofkIGR_DB1jX-U7xxb2bOm8-jhaHUvTCijl1DLkvIxt4WJPGQ4l823N7QBbysVudJJqMjw"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-surface-container-high fixed left-0 top-0 h-full w-64 flex-col p-md gap-sm">
+<div class="mb-lg px-md">
+<div class="flex items-center gap-sm mb-xs">
+<img alt="ICL ITATS Logo" class="w-8 h-8 object-contain" data-alt="A minimalist geometric logo representing career intelligence and academic growth, suitable for a university platform named ICL ITATS. The logo uses a modern color palette of blue and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa857jicq9FGAVNFAqvZO9n0ZHylZoeaL1uIPFSaAyu1TZo0Q0dK8SOAM0LC-8B7EEfx7gdux-E0oKSGqsC6zF-EZyc_G_0S7bCdpkqBDJTAgfKlk4j8hJPfWIWEbzBn5QgkeAg9UCT0EQKuu8W-2Ymc81MPYcvV8UIbYPAlnkBt_CQHpJQBwEATSfpwga_AjvfTvaHkuVECMgY5WHNdIqyfIRWZR7GuGN4PDlSWRqJ-5ya2LE-0qc6w"/>
+<span class="font-display text-h1 font-bold text-primary">ICL ITATS</span>
+</div>
+<div class="font-label text-label text-on-surface-variant ml-10">Career Intelligence</div>
+</div>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+            Dashboard
+        </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+            Competencies
+        </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+            Evidence
+        </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+            Activities
+        </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-md py-sm hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-xl transition-all duration-200 ease-in-out font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+            Settings
+        </a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pt-20 md:pt-lg px-md md:px-lg pb-xl max-w-[container-max] mx-auto w-full">
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h1 class="font-display text-display text-on-background mb-xs">Notifications</h1>
+<p class="font-body text-body text-on-surface-variant">Stay updated on your career intelligence progress and feedback.</p>
+</div>
+<div class="hidden md:flex gap-sm">
+<button class="font-label text-label px-md py-sm rounded-lg border border-line text-on-surface hover:bg-surface-container-low transition-colors">Mark all as read</button>
+</div>
+</div>
+<!-- Filters (Optional but good UX) -->
+<div class="flex gap-sm mb-lg overflow-x-auto pb-sm scrollbar-hide">
+<button class="whitespace-nowrap font-label text-label px-md py-xs rounded-full bg-primary text-on-primary border border-transparent">All Notifications</button>
+<button class="whitespace-nowrap font-label text-label px-md py-xs rounded-full bg-surface-container-lowest text-on-surface-variant border border-line hover:bg-surface-container-low transition-colors">Feedback</button>
+<button class="whitespace-nowrap font-label text-label px-md py-xs rounded-full bg-surface-container-lowest text-on-surface-variant border border-line hover:bg-surface-container-low transition-colors">Verifications</button>
+<button class="whitespace-nowrap font-label text-label px-md py-xs rounded-full bg-surface-container-lowest text-on-surface-variant border border-line hover:bg-surface-container-low transition-colors">Reminders</button>
+</div>
+<!-- Notification List (Bento-ish structured cards) -->
+<div class="flex flex-col gap-sm">
+<!-- Card 1: Reviewer Feedback (Unread) -->
+<a class="block bg-surface-container-lowest border-l-4 border-l-primary border-t border-r border-b border-line rounded-lg p-md hover:shadow-sm transition-shadow relative group" href="#">
+<div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-primary"></div>
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-h3 text-h3 text-on-background group-hover:text-primary transition-colors">Reviewer Feedback Received</h3>
+<span class="font-small text-small text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="font-body text-body text-on-surface-variant mb-sm">Prof. Budi Santoso left new feedback on your "Advanced Data Structures Project" evidence submission.</p>
+<div class="inline-flex items-center gap-xs font-label text-label text-primary">
+                            View Feedback
+                            <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Card 2: Evidence Verified (Read, Success state) -->
+<a class="block bg-surface-container-lowest border border-line rounded-lg p-md hover:shadow-sm transition-shadow group" href="#">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-h3 text-h3 text-on-background group-hover:text-primary transition-colors">Evidence Verified</h3>
+<span class="font-small text-small text-outline">Yesterday</span>
+</div>
+<p class="font-body text-body text-on-surface-variant mb-sm">Your submission for "Public Speaking Seminar Certificate" has been verified and applied to your Communication competency.</p>
+<div class="inline-flex items-center px-2 py-1 rounded bg-[#e6f4ea] text-[#137333] font-small text-small border border-[#ceead6]">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="check_circle">check_circle</span>
+                            Status: Terverifikasi
+                        </div>
+</div>
+</div>
+</a>
+<!-- Card 3: New Recommended Activity (AI Assisted) -->
+<a class="block bg-surface-container-lowest border border-ai-accent/30 rounded-lg p-md hover:shadow-sm transition-shadow group relative overflow-hidden" href="#">
+<!-- Subtle wash for AI -->
+<div class="absolute inset-0 bg-gradient-to-r from-ai-accent/5 to-transparent pointer-events-none"></div>
+<div class="flex gap-md relative z-10">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-ai-accent">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-h3 text-h3 text-on-background group-hover:text-primary transition-colors">New Recommended Activity</h3>
+<span class="font-small text-small text-outline">2 days ago</span>
+</div>
+<p class="font-body text-body text-on-surface-variant mb-sm">Based on your recent interest in Machine Learning, we suggest joining the upcoming "Intro to Neural Networks Workshop" to boost your Analytical Skills competency.</p>
+<div class="flex gap-sm">
+<button class="font-label text-label px-md py-xs rounded-lg bg-surface-container-lowest border border-line text-on-surface hover:bg-surface-container-low transition-colors">View Details</button>
+<div class="inline-flex items-center px-2 py-1 rounded bg-surface-container text-ai-accent font-small text-small">
+                                Dibantu AI
+                            </div>
+</div>
+</div>
+</div>
+</a>
+<!-- Card 4: Reminder (Warning state) -->
+<a class="block bg-surface-container-lowest border border-line rounded-lg p-md hover:shadow-sm transition-shadow group" href="#">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-h3 text-h3 text-on-background group-hover:text-primary transition-colors">Reminder: Goal Deadline</h3>
+<span class="font-small text-small text-outline">Oct 12, 2023</span>
+</div>
+<p class="font-body text-body text-on-surface-variant mb-sm">You have an upcoming deadline for your "Complete Python Basics Course" goal in 3 days. Upload your certificate soon!</p>
+<div class="inline-flex items-center px-2 py-1 rounded bg-[#fef7e0] text-[#b06000] font-small text-small border border-[#fce8b2]">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="warning">warning</span>
+                            Status: Berjalan
+                        </div>
+</div>
+</div>
+</a>
+<!-- Card 5: System Update -->
+<div class="block bg-surface-container-lowest border border-line rounded-lg p-md text-center group mt-md opacity-70">
+<p class="font-body text-body text-on-surface-variant">You've reached the end of your notifications.</p>
+</div>
+</div>
+</main>
+</body></html>

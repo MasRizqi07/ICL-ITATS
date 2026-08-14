@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ICL ITATS - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#B42318",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "secondary-container": "#99efe5",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-container": "#ffece4",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline": "#737686",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "line": "#D9E0E8",
+                        "on-tertiary-fixed": "#331200",
+                        "secondary": "#006a63",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#006f67",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "canvas": "#F8FAFC",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "ai-accent": "#6D28D9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#ffdbca",
+                        "tertiary": "#8c3d00",
+                        "ink": "#17202A",
+                        "on-error": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#b15106",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#eeefff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "display": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(var(--tw-colors-primary-fixed-dim) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-canvas text-on-surface font-body antialiased selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation (Simplified for Landing Page) -->
+<nav class="sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface/90 backdrop-blur-md border-b border-line shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="text-h2 font-h2 text-primary tracking-tight">ICL ITATS</span>
+<span class="text-label font-label text-on-surface-variant bg-surface-container-high px-2 py-1 rounded-full hidden sm:inline-block">Career Intelligence</span>
+</div>
+<div class="flex items-center gap-md">
+<a class="text-body font-body text-on-surface-variant hover:text-primary transition-colors hidden md:block" href="#">Fitur</a>
+<a class="text-body font-body text-on-surface-variant hover:text-primary transition-colors hidden md:block" href="#">Statistik</a>
+<a class="text-body font-body text-on-surface-variant hover:text-primary transition-colors hidden md:block" href="#">Testimoni</a>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label text-label hover:bg-on-primary-fixed-variant transition-colors shadow-sm">Masuk</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-xxl pb-xxl px-gutter overflow-hidden flex items-center min-h-[819px]">
+<div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-container-low -z-10"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-pattern opacity-20 -z-10 transform translate-x-1/4"></div>
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-xl items-center relative z-10">
+<div class="space-y-lg text-center md:text-left">
+<span class="inline-block bg-primary-fixed text-primary px-md py-sm rounded-full text-label font-label shadow-sm">Platform Karir Mahasiswa</span>
+<h1 class="text-display font-display text-on-surface leading-tight text-4xl md:text-5xl lg:text-6xl">
+                        Hubungkan <span class="text-primary">Karier Impian</span> dengan Kompetensi Nyata.
+                    </h1>
+<p class="text-h3 font-h3 text-on-surface-variant font-normal max-w-xl mx-auto md:mx-0">
+                        Bangun portofolio kompetensi Anda, identifikasi skill gap dengan AI, dan siapkan diri untuk kebutuhan industri masa kini.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md justify-center md:justify-start pt-sm">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-h3 text-h3 hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center justify-center gap-sm group">
+                            Mulai Sekarang
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface text-primary border border-line px-xl py-md rounded-lg font-h3 text-h3 hover:bg-surface-container-low transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">play_circle</span>
+                            Lihat Demo
+                        </button>
+</div>
+</div>
+<div class="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-xl overflow-hidden shadow-xl bg-surface">
+<img class="w-full h-full object-cover" data-alt="A modern, high-fidelity 3D illustration showing a stylized career pathway mapping interface. The scene features glowing connected nodes representing skills, a prominent 'Skill Gap' highlighted with an AI accent color (subtle violet), and floating UI elements like competency badges. The background is a clean, bright light-mode environment with soft ambient lighting and subtle depth. The overall aesthetic is professional, technical, and forward-thinking, suitable for an Enterprise SaaS educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf4KMhKSFslBrDX_4k02hy83k0j4gWYxyF0aVA09LQDHV6PcLkvp_eyV_rTwJf-1VkZTSf_M1BjrixI8XmPG12T8VsjMA29BcUzsTNyGpzfPVBVauAq84kwRko8FzjDSirSBUSLI0PxJ_URIphx851CAIOaewKlrDJmdWaOCJrtJVH8rjC6Wf87c3zIK2PVw8zs1pGZr1dGtSbiExruyeoh91dgTfSaqHmNtKGZ53-cWVWGCMfcd-l3w"/>
+<!-- Decorative Floating Elements -->
+<div class="absolute top-8 left-8 bg-surface/90 backdrop-blur-sm p-sm rounded-lg shadow-sm border border-line flex items-center gap-sm animate-bounce" style="animation-duration: 3s;">
+<span class="material-symbols-outlined text-teal-600">verified</span>
+<span class="text-label font-label text-on-surface">Kompetensi Terverifikasi</span>
+</div>
+<div class="absolute bottom-16 right-8 bg-surface/90 backdrop-blur-sm p-sm rounded-lg shadow-sm border border-line flex items-center gap-sm animate-bounce" style="animation-duration: 4s; animation-delay: 1s;">
+<span class="material-symbols-outlined text-ai-accent">auto_awesome</span>
+<span class="text-label font-label text-on-surface">AI Gap Analysis</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-xxl px-gutter bg-canvas">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl space-y-sm">
+<h2 class="text-h1 font-h1 text-on-surface">Ekosistem Pengembangan Karier</h2>
+<p class="text-body font-body text-on-surface-variant max-w-2xl mx-auto">Fitur komprehensif yang dirancang untuk memetakan, memvalidasi, dan meningkatkan kompetensi Anda secara sistematis.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Feature 1: Career Mapping -->
+<div class="md:col-span-2 bg-surface p-xl rounded-xl shadow-sm border border-line flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-size: 28px;">route</span>
+</div>
+<h3 class="text-h2 font-h2 text-on-surface">Career Mapping</h3>
+<p class="text-body font-body text-on-surface-variant">Rancang jalur karier Anda dengan memetakan kompetensi yang dibutuhkan oleh peran impian Anda. Visualisasikan progres Anda secara real-time.</p>
+</div>
+<div class="mt-lg h-48 bg-surface-container-low rounded-lg border border-line overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist user interface component displaying a career mapping graph. It features a bright white background with a subtle grid. A curving line connects several circular nodes. Some nodes are filled with a primary blue color indicating completed skills, while others are grayed out. The style is modern, sharp, and data-focused, reflecting a high-end corporate dashboard aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC7tPJbhEdQZjUA_tl51y13V50EZWEcT1yzHGBB_TPxJCoMZrC0uZQhXov9HVKP1KoSF7l1tWUkZe-7Q8dQs74i_mKAEWculc4QL4pDRIE7wiH4J0NtcMeIYY7xAF4uN4EhB22zeIE11ZWS4oMoszxdOL9h_Ct3QkL6bVWtK3jDPQO5ddlGcG-NDjba1E7WSlDhBVrQu9ROMAUEgvqIcTGuuWPIfCu83tgBmuhCh5rHrR-c0Yik7Yi1g"/>
+</div>
+</div>
+<!-- Feature 2: Evidence Locker -->
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-line flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-size: 28px;">inventory_2</span>
+</div>
+<h3 class="text-h2 font-h2 text-on-surface">Evidence Locker</h3>
+<p class="text-body font-body text-on-surface-variant">Simpan dan organisir bukti kompetensi Anda (sertifikat, proyek, dokumen) di satu tempat yang aman dan mudah diakses untuk validasi.</p>
+</div>
+<div class="mt-lg h-32 flex flex-col gap-sm">
+<div class="bg-canvas p-sm rounded border border-line flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">description</span>
+<span class="text-small font-small flex-1">Sertifikat_Pelatihan.pdf</span>
+<span class="material-symbols-outlined text-teal-600 text-[16px]">check_circle</span>
+</div>
+<div class="bg-canvas p-sm rounded border border-line flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">link</span>
+<span class="text-small font-small flex-1">Github Repo: Final Project</span>
+<span class="material-symbols-outlined text-amber-600 text-[16px]">pending</span>
+</div>
+</div>
+</div>
+<!-- Feature 3: AI Gap Analysis -->
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-ai-accent/30 bg-gradient-to-br from-surface to-[#f3efff] flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 bg-ai-accent/10 rounded-lg flex items-center justify-center text-ai-accent">
+<span class="material-symbols-outlined" style="font-size: 28px;">troubleshoot</span>
+</div>
+<span class="bg-ai-accent/10 text-ai-accent px-2 py-1 rounded text-label font-label flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Dibantu AI
+                                </span>
+</div>
+<h3 class="text-h2 font-h2 text-on-surface">AI Gap Analysis</h3>
+<p class="text-body font-body text-on-surface-variant">Algoritma cerdas kami membandingkan profil kompetensi Anda dengan standar industri untuk mengidentifikasi celah keterampilan secara presisi.</p>
+</div>
+</div>
+<!-- Feature 4: Development Plan -->
+<div class="md:col-span-2 bg-surface p-xl rounded-xl shadow-sm border border-line flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="space-y-md">
+<div class="w-12 h-12 bg-tertiary-container rounded-lg flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" style="font-size: 28px;">psychology</span>
+</div>
+<h3 class="text-h2 font-h2 text-on-surface">Development Plan</h3>
+<p class="text-body font-body text-on-surface-variant">Dapatkan rekomendasi aktivitas pembelajaran, proyek, dan sumber daya yang terstruktur untuk menutup skill gap Anda secara efisien.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-inverse-surface text-inverse-on-surface py-xl px-gutter text-center border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-sm">
+<span class="text-h2 font-h2 tracking-tight">ICL ITATS</span>
+</div>
+<p class="text-small font-small text-outline-variant">© 2023 Career Intelligence Platform. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

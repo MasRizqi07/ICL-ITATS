@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pengaturan Akun &amp; Keamanan - ICL ITATS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "surface-tint": "#0053db",
+                        "on-secondary-container": "#006f67",
+                        "primary-container": "#2563eb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffece4",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed": "#9cf2e8",
+                        "secondary-container": "#99efe5",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#0b1c30",
+                        "error": "#B42318",
+                        "secondary": "#006a63",
+                        "tertiary-container": "#b15106",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#8c3d00",
+                        "inverse-surface": "#213145",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed": "#00174b",
+                        "line": "#D9E0E8",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "ink": "#17202A",
+                        "on-primary-container": "#eeefff",
+                        "ai-accent": "#6D28D9",
+                        "outline-variant": "#c3c6d7",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#331200",
+                        "canvas": "#F8FAFC",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "on-secondary-fixed": "#00201d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "container-max": "1200px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "small": ["Inter"],
+                        "label": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "h3": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-canvas text-on-background min-h-screen flex font-body text-body">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-lg hidden md:flex transition-all duration-200 ease-in-out border-r border-line">
+<div class="px-lg mb-xl flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A clean, minimalist university crest or modern corporate logo suitable for a career intelligence platform like ICL ITATS. High resolution, white background, flat design, using primary blue and dark navy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuBo3zcykyjDAO9pYPeSI8_RWk3J7NSMXPyt2gGJw8483QaIC7SdWChOVaZxauotL7LHMpEN3IBg9JPbXNEDeI5XMLKWGcmBY1tkM0s3xnozNbJ_5BpVGLYZ52U1OoyedrwegRDfttHxCX_VMfNTyrSKyVqZW2ncfgMsIdAvTKGb-SPpjQvcLQ6FLH6KAmruOj3MLQH2jaCH-VtA0UuNkdLz7IZKuJOfL_4x6KuN099WyqFcziZzJWsA"/>
+<div>
+<h1 class="font-h3 text-h3 text-primary">ICL ITATS</h1>
+<p class="font-small text-small text-on-surface-variant">Career Intelligence</p>
+</div>
+</div>
+<div class="flex-1 px-sm space-y-sm">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                Competencies
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+                Evidence
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                Development
+            </a>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-lg transition-all font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+                Settings
+            </a>
+</div>
+<div class="px-md mt-auto">
+<button class="w-full bg-primary text-on-primary py-sm rounded-lg font-label text-label flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add Evidence
+            </button>
+</div>
+<div class="mt-lg px-sm space-y-sm">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-label text-label" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Mobile) -->
+<header class="bg-surface flex items-center justify-between px-lg w-full sticky top-0 z-50 h-16 shadow-sm md:hidden border-b border-line">
+<div class="font-h2 text-h2 text-primary">ICL ITATS</div>
+<div class="flex items-center gap-md text-primary">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80" data-icon="help">help</span>
+<img class="w-8 h-8 rounded-full object-cover border border-line cursor-pointer" data-alt="A professional headshot of a university student or young professional facing forward with a warm smile, well-lit studio lighting, neutral grey background, corporate modern SaaS style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHjYrysdHnTSj3QW4kH39ARhGcKEAM8PSCvCllxbtD20HlKLI8sY6MDAa9NAObF9xhNN5F3F_zJd1r1W_6-gakVL5KsVHPb7GCYriiM73ivlAlIf-BK0BFYdVrnnDLflPEwIm0l72eIVOoMe1GKEaGaP5mHVkZwRHHuKRxFAW81QKJS8iKe6BMoq30iBwYGT_KUq3D1KcSEgk0cXujlAlHgdiGqfn0Jym_ntZHpvfcSRWN73OCzlARLg"/>
+</div>
+</header>
+<!-- TopNavBar (Desktop - Contextual Header) -->
+<header class="bg-surface items-center justify-between px-lg w-full sticky top-0 z-40 h-16 shadow-sm hidden md:flex border-b border-line">
+<div class="font-h3 text-h3 text-on-surface">Pengaturan Akun</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="pl-10 pr-4 py-sm bg-surface-container-low border border-line rounded-full font-body text-body focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Cari pengaturan..." type="text"/>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low p-sm rounded-full transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low p-sm rounded-full transition-colors" data-icon="help">help</span>
+<img class="w-8 h-8 rounded-full object-cover border border-line cursor-pointer ml-sm" data-alt="A professional headshot of a university student or young professional facing forward with a warm smile, well-lit studio lighting, neutral grey background, corporate modern SaaS style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF-gPnGPYWq-e1Uxwou8qyaCV8jqPHM_dyzblAZwDwRAMxjss4lcsRwV6ioj5du02LpIQE5p6bUlePYaryedx3U6H78pT0nk0uGV0JguaTzOJ_RII9E5sJfOvuPVrbwYroGhjgKK84mB4cMDt3jo6Crf3pHh0g8AV025b_jN9BtALFMHn2mWzMLhhR8xUXloroz7RfYpyIgn0ucYEBnjFc4GD_ry5WC3eodIvkkxrHXEbx-KgQjduZEQ"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-lg max-w-[container-max] mx-auto w-full flex-1">
+<div class="mb-xl">
+<h2 class="font-h1 text-h1 text-on-surface mb-xs">Pengaturan &amp; Keamanan</h2>
+<p class="font-body text-body text-on-surface-variant">Kelola profil, preferensi, dan koneksi akun Anda untuk pengalaman yang lebih baik.</p>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-line mb-lg gap-lg overflow-x-auto">
+<button class="font-h3 text-h3 text-primary border-b-2 border-primary pb-sm px-xs whitespace-nowrap">Profil &amp; Akun</button>
+<button class="font-body text-body text-on-surface-variant hover:text-on-surface pb-sm px-xs transition-colors whitespace-nowrap">Keamanan</button>
+<button class="font-body text-body text-on-surface-variant hover:text-on-surface pb-sm px-xs transition-colors whitespace-nowrap">Notifikasi</button>
+<button class="font-body text-body text-on-surface-variant hover:text-on-surface pb-sm px-xs transition-colors whitespace-nowrap">Integrasi</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Main Form Column -->
+<div class="lg:col-span-2 space-y-lg">
+<!-- Profile Info Card -->
+<section class="bg-surface rounded-xl p-lg border border-line shadow-sm">
+<h3 class="font-h2 text-h2 text-on-surface mb-md">Informasi Dasar</h3>
+<div class="flex flex-col md:flex-row gap-lg">
+<!-- Avatar Upload -->
+<div class="flex flex-col items-center gap-sm">
+<div class="relative group cursor-pointer">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface shadow-sm" data-alt="A professional headshot of a university student or young professional facing forward with a warm smile, well-lit studio lighting, neutral grey background, corporate modern SaaS style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFXsPZqvg2pIpBHwU1vABIr5z5OEUUsxqLiBo5SIQ_eANBBddbPGj3LcrsXSYlskRlK_0TEUvR07w6L9-xebWiVq4RrFZRGDqQkyTDzuSjoVcjueMv5wHP8ojwpsNGQRvKATLHIZNootN5APnzxHna18_ttRP6tQXTYYaSJcPsCqxicCNHNRweAnw1ibIPDcsqjIcnPZj6ULF9DHrgCVWTIb72dJkJiU736LmPebTcEKKz64Xb-fpyMA"/>
+<div class="absolute inset-0 bg-on-background/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary">photo_camera</span>
+</div>
+</div>
+<button class="font-label text-label text-primary hover:underline">Ubah Foto</button>
+</div>
+<!-- Form Fields -->
+<div class="flex-1 space-y-md w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-surface-variant">Nama Depan</label>
+<input class="px-sm py-sm border border-line rounded-lg font-body text-body focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="Budi"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-surface-variant">Nama Belakang</label>
+<input class="px-sm py-sm border border-line rounded-lg font-body text-body focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="Santoso"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-surface-variant">Email Institusi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+<input class="pl-10 pr-sm py-sm border border-line rounded-lg font-body text-body bg-surface-container-low text-on-surface-variant w-full cursor-not-allowed" disabled="" type="email" value="budi.s@itats.ac.id"/>
+</div>
+<p class="font-small text-small text-outline mt-xs">Email institusi tidak dapat diubah secara langsung.</p>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label text-on-surface-variant">Jurusan / Program Studi</label>
+<select class="px-sm py-sm border border-line rounded-lg font-body text-body focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-surface">
+<option>Teknik Informatika</option>
+<option>Sistem Informasi</option>
+<option>Teknik Industri</option>
+</select>
+</div>
+</div>
+</div>
+<div class="mt-lg flex justify-end">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label text-label hover:opacity-90 transition-opacity">Simpan Perubahan</button>
+</div>
+</section>
+</div>
+<!-- Sidebar Settings Column -->
+<div class="space-y-lg">
+<!-- AI Assistance Panel -->
+<div class="bg-[#f3e8ff] border border-[#d8b4fe] rounded-xl p-md shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-ai-accent text-on-primary font-small text-small px-sm py-xs rounded-bl-lg font-semibold">Dibantu AI</div>
+<div class="flex items-start gap-sm mb-sm mt-sm">
+<span class="material-symbols-outlined text-ai-accent">auto_awesome</span>
+<div>
+<h4 class="font-h3 text-h3 text-on-background">Saran Profil</h4>
+<p class="font-small text-small text-on-surface-variant mt-xs">Lengkapi bio Anda untuk mendapatkan rekomendasi kompetensi yang lebih akurat dari sistem ICL.</p>
+</div>
+</div>
+<button class="w-full bg-surface text-ai-accent border border-[#d8b4fe] py-sm rounded-lg font-label text-label mt-sm hover:bg-surface-bright transition-colors">Tinjau Saran</button>
+</div>
+<!-- Integrations Mini-Card -->
+<section class="bg-surface rounded-xl p-md border border-line shadow-sm">
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Integrasi Tersambung</h3>
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-surface-container-low rounded flex items-center justify-center text-[#0077b5] font-bold">in</div>
+<div>
+<p class="font-label text-label text-on-surface">LinkedIn</p>
+<p class="font-small text-small text-primary">Tersambung</p>
+</div>
+</div>
+<button class="font-small text-small text-outline hover:text-error transition-colors">Putus</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-ink rounded flex items-center justify-center text-on-primary font-bold">GH</div>
+<div>
+<p class="font-label text-label text-on-surface">GitHub</p>
+<p class="font-small text-small text-outline">Belum tersambung</p>
+</div>
+</div>
+<button class="font-small text-small text-primary hover:underline transition-colors">Sambungkan</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

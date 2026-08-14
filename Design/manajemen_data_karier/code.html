@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Data Karier &amp; Kompetensi - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "on-tertiary-container": "#ffece4",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#004ac6",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#9cf2e8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "ai-accent": "#6D28D9",
+                        "on-surface": "#0b1c30",
+                        "outline-variant": "#c3c6d7",
+                        "canvas": "#F8FAFC",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-fixed": "#00201d",
+                        "tertiary-fixed": "#ffdbca",
+                        "line": "#D9E0E8",
+                        "secondary": "#006a63",
+                        "on-secondary-container": "#006f67",
+                        "surface-container-high": "#dce9ff",
+                        "surface-tint": "#0053db",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary": "#8c3d00",
+                        "primary-container": "#2563eb",
+                        "tertiary-container": "#b15106",
+                        "ink": "#17202A",
+                        "on-surface-variant": "#434655",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "error": "#B42318",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#99efe5",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#331200",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "xxl": "48px",
+                        "base": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "h2": ["Inter"],
+                        "label": ["Inter"],
+                        "h1-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.canvas'); color: theme('colors.on-surface'); }
+    </style>
+</head>
+<body class="flex min-h-screen w-full font-body">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-64 p-md border-r border-line bg-surface-container-low dark:bg-inverse-surface">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-h3 shrink-0">
+<img alt="ICL ITATS Logo" class="w-full h-full object-cover rounded-full" data-alt="A modern corporate logo for an educational institution, minimal geometric design in deep blue and white, suitable for a professional SaaS dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGK939PoB4DdSL1KuLX-KoW7kA-iQK_fskHVP1c5b2XGtwSwL-BlbsXaFGU8tfGPuD2JoiIMmDOg3Ahwe-3rygXqI-1evpczCOb9YxSizkcw1E_nTlM6u9AV1tKhcZfckH-W9AyhyNt8NdBL3gTfGIhA1MjHcLePIbTo3et4UlHLVL_6ouvIIa7N-FUV5AAcPmZyInaoyEpiDKkIXgoHo8qQidc5mvyMN4B8cPDXk4qOp0KJvxPrXP2Q"/>
+</div>
+<div>
+<h1 class="text-h3 font-h3 text-on-surface dark:text-inverse-on-surface">ICL ITATS</h1>
+<p class="text-small font-small text-on-surface-variant">Career Intelligence</p>
+</div>
+</div>
+<button class="w-full py-sm px-md mb-lg bg-primary text-on-primary rounded-lg font-h3 text-h3 flex items-center justify-center gap-sm hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+            Add Evidence
+        </button>
+<div class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all font-label text-label group scale-95 hover:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<!-- Active Tab: Competencies -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-bold font-label text-label scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                Competencies
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all font-label text-label group scale-95 hover:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+                Evidence
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all font-label text-label group scale-95 hover:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">list_alt</span>
+                Activities
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all font-label text-label group scale-95 hover:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto border-t border-line pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all font-label text-label scale-95 hover:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full min-h-screen bg-canvas">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface border-b border-line shadow-sm">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-sm text-on-surface hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-h2 font-h2 text-primary hidden md:block">Career Intelligence</h2>
+</div>
+<!-- Search Bar (on_left as per JSON, but pushed to center/right based on flex-between) -->
+<div class="flex-1 max-w-md mx-lg hidden sm:block">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container border border-outline-variant rounded-full text-body font-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors relative cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+</button>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container p-sm rounded-lg transition-colors border border-transparent hover:border-line">
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a young adult career advisor, smiling gently, softly lit studio setting, modern light corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ScvnqNSo8_cP2X76pdMmr0_r6pVR-jafKK91Ew6fEVaQKJVLxdcDTBIyWfjrH6F9P7vKpU3BjBYnW16tVJ2zDea9mvC-Xg8F4gXxLSz__JcRJ5AHXI5wa7_jHyR_OFW4tKCHLTjqFmHfB2hRSVSfw72n1VyRSzcQjLZkkLgf9oiaHnXxi3ZVek8xccBtu9sqWKAH3CMvr3GL3aZh1_J4znBMCsijbfU0M7urzQoBSgEanhwO8tVDOg"/>
+<span class="text-body font-h3 font-semibold text-on-surface hidden md:block">Ahmad Fauzi</span>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-md md:p-lg max-w-container-max mx-auto w-full flex flex-col gap-lg">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+<div>
+<h1 class="text-display font-display text-on-surface">Manajemen Data Karier</h1>
+<p class="text-body font-body text-on-surface-variant mt-sm">Kelola profil karier, petakan kompetensi, dan atur bobot penilaian untuk mahasiswa.</p>
+</div>
+<button class="px-md py-sm bg-primary text-on-primary rounded-lg font-h3 text-h3 flex items-center gap-sm shadow-sm hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+                    Tambah Karier Baru
+                </button>
+</div>
+<!-- Tabs Navigation (Professional Admin Style) -->
+<div class="w-full border-b border-line mt-md flex gap-lg overflow-x-auto no-scrollbar">
+<button class="pb-sm text-h3 font-h3 text-primary border-b-2 border-primary whitespace-nowrap">
+                    Profil Karier
+                </button>
+<button class="pb-sm text-h3 font-h3 text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">
+                    Peta Kompetensi
+                </button>
+<button class="pb-sm text-h3 font-h3 text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">
+                    Bobot Penilaian
+                </button>
+</div>
+<!-- Bento Grid Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg mt-md">
+<!-- Main Data Table Panel -->
+<div class="lg:col-span-2 bg-surface rounded-xl shadow-sm border border-line flex flex-col overflow-hidden">
+<div class="p-md border-b border-line flex justify-between items-center bg-surface-bright">
+<h3 class="text-h2 font-h2 text-on-surface">Daftar Karier Target</h3>
+<div class="flex gap-sm">
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-md transition-colors border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-md transition-colors border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-label font-label text-on-surface-variant border-b border-line">
+<th class="py-sm px-md font-semibold">Posisi Karier</th>
+<th class="py-sm px-md font-semibold">Total Kompetensi</th>
+<th class="py-sm px-md font-semibold">Status</th>
+<th class="py-sm px-md font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="text-body font-body">
+<tr class="border-b border-line hover:bg-surface-bright transition-colors group">
+<td class="py-md px-md">
+<div class="font-h3 text-on-surface">Software Engineer</div>
+<div class="text-small text-on-surface-variant mt-xs">Departemen IT / Engineering</div>
+</td>
+<td class="py-md px-md text-on-surface-variant">12 Keterampilan</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container text-label font-label">
+                                            Aktif
+                                        </span>
+</td>
+<td class="py-md px-md text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-sm text-primary hover:bg-primary-container rounded-md transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</td>
+</tr>
+<tr class="border-b border-line hover:bg-surface-bright transition-colors group">
+<td class="py-md px-md">
+<div class="font-h3 text-on-surface">Data Scientist</div>
+<div class="text-small text-on-surface-variant mt-xs">Departemen Data &amp; AI</div>
+</td>
+<td class="py-md px-md text-on-surface-variant">15 Keterampilan</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container text-label font-label">
+                                            Aktif
+                                        </span>
+</td>
+<td class="py-md px-md text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-sm text-primary hover:bg-primary-container rounded-md transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="py-md px-md">
+<div class="font-h3 text-on-surface">Product Manager</div>
+<div class="text-small text-on-surface-variant mt-xs">Departemen Produk</div>
+</td>
+<td class="py-md px-md text-on-surface-variant">8 Keterampilan</td>
+<td class="py-md px-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-surface-container-high text-on-surface-variant text-label font-label border border-outline-variant">
+                                            Draft
+                                        </span>
+</td>
+<td class="py-md px-md text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-sm text-primary hover:bg-primary-container rounded-md transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Side Info / AI Suggestion Panel -->
+<div class="flex flex-col gap-lg">
+<!-- Stats Card -->
+<div class="bg-surface rounded-xl shadow-sm border border-line p-md">
+<h4 class="text-h3 font-h3 text-on-surface mb-sm">Ringkasan Sistem</h4>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg border border-line">
+<div class="text-display font-display text-primary">24</div>
+<div class="text-small font-small text-on-surface-variant mt-xs">Total Karier</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-line">
+<div class="text-display font-display text-secondary">156</div>
+<div class="text-small font-small text-on-surface-variant mt-xs">Kompetensi Map</div>
+</div>
+</div>
+</div>
+<!-- AI Suggestion Panel -->
+<div class="bg-[#F3F0FF] rounded-xl border border-[#D8B4FE] p-md relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-ai-accent text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg tracking-wider uppercase">
+                            Dibantu AI
+                        </div>
+<div class="flex items-start gap-sm mb-md mt-sm">
+<span class="material-symbols-outlined text-ai-accent">lightbulb</span>
+<div>
+<h4 class="text-h3 font-h3 text-on-surface">Tren Industri Baru</h4>
+<p class="text-small font-small text-on-surface-variant mt-xs">Analisis data pasar terbaru merekomendasikan penambahan kompetensi <strong>"Prompt Engineering"</strong> ke profil karier <em>Software Engineer</em>.</p>
+</div>
+</div>
+<div class="flex gap-sm mt-auto">
+<button class="flex-1 py-sm px-md bg-ai-accent text-white rounded-md font-h3 text-small hover:bg-opacity-90 transition-all text-center">
+                                Tinjau Saran
+                            </button>
+<button class="px-md py-sm border border-line rounded-md text-on-surface-variant hover:bg-surface-container text-small font-h3 transition-all">
+                                Abaikan
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

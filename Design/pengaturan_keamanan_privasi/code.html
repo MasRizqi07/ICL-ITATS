@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#B42318",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "secondary-container": "#99efe5",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-container": "#ffece4",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline": "#737686",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-fixed": "#9cf2e8",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "line": "#D9E0E8",
+                        "on-tertiary-fixed": "#331200",
+                        "secondary": "#006a63",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#006f67",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "canvas": "#F8FAFC",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "ai-accent": "#6D28D9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#ffdbca",
+                        "tertiary": "#8c3d00",
+                        "ink": "#17202A",
+                        "on-error": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#b15106",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#eeefff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "h3": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "display": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    fontSize: {
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-canvas text-on-surface font-body antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-64 flex flex-col p-md border-r border-line bg-surface-container-low z-40 hidden md:flex">
+<div class="mb-lg px-sm">
+<h2 class="text-h3 font-h3 text-on-surface mb-1">ICL ITATS</h2>
+<p class="font-small text-small text-on-surface-variant">Career Intelligence</p>
+</div>
+<div class="flex-1 overflow-y-auto space-y-sm">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="military_tech">military_tech</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="description">description</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="list_alt">list_alt</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-bold" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</div>
+<div class="mt-auto pt-md border-t border-line">
+<button class="w-full flex items-center justify-center gap-sm py-sm px-md bg-primary text-on-primary rounded-lg font-label text-label mb-md hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add Evidence
+            </button>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined font-label text-label" data-icon="logout">logout</span>
+<span class="font-label text-label">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface border-b border-line shadow-sm">
+<div class="flex items-center gap-md">
+<!-- Mobile menu button -->
+<button class="md:hidden text-on-surface-variant p-sm rounded hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-h2 font-h2 text-primary">Career Intelligence</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="flex items-center gap-sm cursor-pointer hover:opacity-80 transition-opacity">
+<span class="font-label text-label text-on-surface hidden sm:block">Ahmad Fauzi</span>
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover border border-line" data-alt="A professional headshot of a young male student or career advisor, looking confident and approachable. The lighting is soft and natural, emphasizing a modern corporate aesthetic. The background is a clean, abstract blur reflecting a high-end tech or academic environment. The style aligns with an enterprise SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8gx8k5TU9kYCtUL2kbQfQgpNbkwF0a0j9zscI7-l3iwBA3GeOXhUx1K_7OwHA9D5J2xrMxG8r8yxfr8XEhd6fgE0YbIuCvM6I_ceJEnpxdnCO23fz40c2UdAwg5GrhJN5svqW7L5eSQzNwY5FTNXjLk9ZB-jq04BgYmGRJ6cJ5xSaDwBSR4Km7YCVOtR70H8r37E2BfQ56bvo1EE91uvrJ0ClGgqRRTGCNcqXtvuo3r_gcASSJZb6ow"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto bg-canvas p-md md:p-lg">
+<div class="max-w-container-max mx-auto h-full flex flex-col md:flex-row gap-lg">
+<!-- Settings Sub-Nav -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<h2 class="text-h1 font-h1 text-on-surface mb-md">Settings</h2>
+<nav class="space-y-xs">
+<a class="flex items-center justify-between px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-body text-body">Profil</span>
+</a>
+<a class="flex items-center justify-between px-md py-sm rounded-lg bg-surface text-primary font-bold shadow-sm border border-line border-l-4 border-l-primary transition-colors" href="#">
+<span class="font-body text-body">Keamanan</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-body text-body">Notifikasi</span>
+</a>
+<a class="flex items-center justify-between px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-body text-body">Integrasi</span>
+</a>
+<a class="flex items-center justify-between px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-body text-body">Preferensi Aplikasi</span>
+</a>
+</nav>
+</aside>
+<!-- Settings Content -->
+<div class="flex-1 space-y-lg">
+<!-- Header -->
+<div>
+<h3 class="text-h2 font-h2 text-on-surface">Keamanan Akun</h3>
+<p class="font-body text-body text-on-surface-variant mt-1">Kelola kata sandi, pengaturan 2FA, dan periksa sesi login aktif Anda.</p>
+</div>
+<!-- Change Password Panel -->
+<section class="bg-surface rounded-xl p-lg border border-line shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="password">password</span>
+</div>
+<div>
+<h4 class="text-h3 font-h3 text-on-surface">Ubah Password</h4>
+<p class="font-small text-small text-on-surface-variant mt-1">Pastikan password Anda kuat dan belum pernah digunakan di tempat lain.</p>
+</div>
+</div>
+<form class="space-y-md max-w-md">
+<div>
+<label class="block font-label text-label text-on-surface mb-xs">Password Saat Ini</label>
+<input class="w-full px-sm py-2 border border-line rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="••••••••" type="password"/>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface mb-xs">Password Baru</label>
+<input class="w-full px-sm py-2 border border-line rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="••••••••" type="password"/>
+<div class="flex gap-1 mt-2">
+<div class="h-1 flex-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-2/3"></div>
+</div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+</div>
+<p class="font-small text-small text-secondary mt-1">Kekuatan: Sedang</p>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface mb-xs">Konfirmasi Password Baru</label>
+<input class="w-full px-sm py-2 border border-line rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="••••••••" type="password"/>
+</div>
+<button class="px-md py-2 bg-primary text-on-primary font-label text-label rounded-lg hover:bg-surface-tint transition-colors" type="button">Perbarui Password</button>
+</form>
+</section>
+<!-- 2FA Panel -->
+<section class="bg-surface rounded-xl p-lg border border-line shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<div>
+<h4 class="text-h3 font-h3 text-on-surface flex items-center gap-sm">
+                                        Two-Factor Authentication (2FA)
+                                        <span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded-full font-small text-[10px] uppercase tracking-wider">Nonaktif</span>
+</h4>
+<p class="font-body text-body text-on-surface-variant mt-1 max-w-xl">Tambahkan lapisan keamanan ekstra ke akun Anda. Ketika diaktifkan, Anda akan diminta memasukkan kode unik setiap kali login.</p>
+</div>
+</div>
+<button class="px-md py-2 border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors flex-shrink-0" type="button">Set Up 2FA</button>
+</div>
+</section>
+<!-- Active Sessions Panel -->
+<section class="bg-surface rounded-xl p-lg border border-line shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="devices">devices</span>
+</div>
+<div>
+<h4 class="text-h3 font-h3 text-on-surface">Sesi Login Aktif</h4>
+<p class="font-small text-small text-on-surface-variant mt-1">Perangkat yang saat ini masuk ke akun Anda. Logout dari sesi yang tidak Anda kenali.</p>
+</div>
+</div>
+<div class="mt-md space-y-md">
+<!-- Session Item -->
+<div class="flex items-center justify-between p-sm border border-line rounded-lg bg-canvas">
+<div class="flex items-center gap-md">
+<div class="text-outline">
+<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Mac OS • Chrome</p>
+<p class="font-small text-small text-on-surface-variant mt-xs">Surabaya, Indonesia • IP: 192.168.1.5</p>
+<div class="flex items-center gap-xs mt-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-small text-small text-secondary">Sesi ini</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Session Item -->
+<div class="flex items-center justify-between p-sm border border-line rounded-lg">
+<div class="flex items-center gap-md">
+<div class="text-outline">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<p class="font-label text-label text-on-surface">iOS 16 • Safari</p>
+<p class="font-small text-small text-on-surface-variant mt-xs">Surabaya, Indonesia • Terakhir aktif: 2 jam lalu</p>
+</div>
+</div>
+<button class="text-error hover:bg-error-container p-sm rounded-lg transition-colors" title="Logout Sesi" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

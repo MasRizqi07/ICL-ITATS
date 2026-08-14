@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Peta Kompetensi - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "line": "#D9E0E8",
+                    "on-surface": "#0b1c30",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary-container": "#99efe5",
+                    "tertiary-fixed": "#ffdbca",
+                    "inverse-surface": "#213145",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#004ac6",
+                    "secondary-fixed": "#9cf2e8",
+                    "on-secondary-container": "#006f67",
+                    "surface-container": "#e5eeff",
+                    "tertiary": "#8c3d00",
+                    "on-tertiary-fixed": "#331200",
+                    "surface": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#434655",
+                    "on-primary-container": "#eeefff",
+                    "ink": "#17202A",
+                    "on-secondary-fixed": "#00201d",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed-dim": "#80d5cb",
+                    "tertiary-fixed-dim": "#ffb68e",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "error": "#B42318",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-container": "#ffece4",
+                    "ai-accent": "#6D28D9",
+                    "on-background": "#0b1c30",
+                    "outline": "#737686",
+                    "primary-container": "#2563eb",
+                    "tertiary-container": "#b15106",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#763300",
+                    "secondary": "#006a63",
+                    "background": "#f8f9ff",
+                    "canvas": "#F8FAFC",
+                    "outline-variant": "#c3c6d7",
+                    "primary-fixed": "#dbe1ff",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "md": "16px",
+                    "base": "4px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xxl": "48px",
+                    "lg": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body": [
+                            "Inter"
+                    ],
+                    "h1": [
+                            "Inter"
+                    ],
+                    "h3": [
+                            "Inter"
+                    ],
+                    "display": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ],
+                    "h2": [
+                            "Inter"
+                    ],
+                    "h1-mobile": [
+                            "Inter"
+                    ],
+                    "small": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "h1": [
+                            "26px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h3": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h2": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h1-mobile": [
+                            "22px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "small": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .shadow-ambient {
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-canvas text-on-surface font-body text-body min-h-screen flex antialiased">
+<!-- SideNavBar (WEB) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-64 flex-col p-md border-r border-line bg-surface-container-low z-40">
+<div class="mb-lg px-sm">
+<h3 class="font-h3 text-h3 text-on-surface">ICL ITATS</h3>
+<p class="font-small text-small text-on-surface-variant">Career Intelligence</p>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-sm bg-primary-container text-on-primary-container rounded-lg font-bold scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label text-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+<span class="font-label text-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">list_alt</span>
+<span class="font-label text-label">Activities</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary rounded-lg py-sm px-md font-label text-label hover:opacity-90 transition-opacity mb-md shadow-sm">
+                Add Evidence
+            </button>
+<a class="flex items-center gap-md p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+<span class="font-label text-label">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (MOBILE & WEB Contextual) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface border-b border-line shadow-sm">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-on-surface-variant hover:bg-surface-container p-xs rounded transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-h2 text-h2 text-primary font-bold tracking-tight">Career Intelligence</h2>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container p-xs rounded transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container p-xs rounded transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="flex items-center gap-sm ml-sm pl-sm border-l border-line cursor-pointer active:opacity-80">
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover bg-surface-container" data-alt="A small, professional headshot portrait of a modern corporate employee. The image is a tight crop of a face with a neutral, friendly expression. The background is a very soft, light corporate gray. The lighting is studio quality, soft and even, highlighting the professional nature of the SaaS application profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABk1RMHD4iWH4PT8WNPW-27lHIrbo2oVJfLZPC4ygVwMIDHVdbGQ-Ucfbd99uJ3MtwOhHOdSmIigU2o13mMgZwlQ-3U_DwJdemorXtMLGUJZFmLmXJuZODWLwaDb_am-hTUjTjAZJrSERYQWnU9CPV0htcSlNAVq_HOjHAYOuNCykRpZL-LLeshVUYj8-KamllO-ezKSKyUm-4e7fF58CSr_WUNpB5bFrVkB_6Sv5SUZhzvDMe4t6EpQ"/>
+<span class="font-label text-label text-on-surface hidden sm:block">Ahmad Fauzi</span>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="flex-1 p-md md:p-lg lg:p-xl max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md mb-lg">
+<div>
+<h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-surface mb-xs">Peta Kompetensi</h1>
+<p class="font-body text-body text-on-surface-variant">Target Karir: <span class="font-semibold text-primary">Senior Data Analyst</span></p>
+</div>
+<button class="bg-primary text-on-primary rounded-lg py-sm px-md font-label text-label hover:opacity-90 transition-opacity shadow-sm flex items-center justify-center gap-xs w-full sm:w-auto">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Evidence
+                </button>
+</div>
+<!-- Bento Grid Layout for Competencies -->
+<div class="grid grid-cols-1 gap-md lg:gap-lg">
+<!-- Competency Item 1 -->
+<div class="bg-surface rounded-xl border border-line shadow-ambient overflow-hidden">
+<div class="p-md md:p-lg border-b border-line flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+                                Data Visualization
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-[10px] uppercase tracking-wider">
+                                    Memadai
+                                </span>
+</h3>
+<p class="font-small text-small text-on-surface-variant mt-xs max-w-2xl">Kemampuan untuk menyajikan data kompleks dalam format visual yang mudah dipahami oleh pemangku kepentingan.</p>
+</div>
+<div class="flex items-center gap-lg">
+<div class="text-right">
+<div class="font-label text-label text-on-surface-variant mb-xs">Level Saat Ini</div>
+<div class="font-h2 text-h2 text-primary">4 <span class="font-body text-body text-outline">/ 5</span></div>
+</div>
+<div class="text-right">
+<div class="font-label text-label text-on-surface-variant mb-xs">Evidence</div>
+<div class="font-h2 text-h2 text-on-surface flex items-center justify-end gap-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">description</span>
+                                    3
+                                </div>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="bg-surface-container-low p-md">
+<div class="flex justify-between font-label text-label mb-sm">
+<span class="text-on-surface-variant">Progress menuju Level 5</span>
+<span class="text-primary font-bold">80%</span>
+</div>
+<div class="h-2 w-full bg-line rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<!-- Competency Item 2 -->
+<div class="bg-surface rounded-xl border border-line shadow-ambient overflow-hidden">
+<div class="p-md md:p-lg border-b border-line flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+                                Statistical Modeling
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label text-[10px] uppercase tracking-wider">
+                                    Perlu Ditingkatkan
+                                </span>
+</h3>
+<p class="font-small text-small text-on-surface-variant mt-xs max-w-2xl">Menerapkan model statistik tingkat lanjut untuk memprediksi tren dan menganalisis variance.</p>
+</div>
+<div class="flex items-center gap-lg">
+<div class="text-right">
+<div class="font-label text-label text-on-surface-variant mb-xs">Level Saat Ini</div>
+<div class="font-h2 text-h2 text-tertiary">2 <span class="font-body text-body text-outline">/ 5</span></div>
+</div>
+<div class="text-right">
+<div class="font-label text-label text-on-surface-variant mb-xs">Evidence</div>
+<div class="font-h2 text-h2 text-on-surface flex items-center justify-end gap-xs">
+<span class="material-symbols-outlined text-[20px] text-outline">description</span>
+                                    1
+                                </div>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="bg-surface-container-low p-md">
+<div class="flex justify-between font-label text-label mb-sm">
+<span class="text-on-surface-variant">Progress menuju Level 5</span>
+<span class="text-tertiary font-bold">40%</span>
+</div>
+<div class="h-2 w-full bg-line rounded-full overflow-hidden relative">
+<div class="h-full bg-tertiary absolute left-0 top-0" style="width: 40%;"></div>
+<!-- Target Marker -->
+<div class="absolute top-0 bottom-0 w-0.5 bg-ink" style="left: 80%;"></div>
+</div>
+<p class="font-small text-[10px] text-outline mt-xs text-right">Target Karir: Level 4</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Dosen - Career Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#763300",
+                        "on-tertiary-container": "#ffece4",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#004ac6",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#80d5cb",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#9cf2e8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "ai-accent": "#6D28D9",
+                        "on-surface": "#0b1c30",
+                        "outline-variant": "#c3c6d7",
+                        "canvas": "#F8FAFC",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-fixed": "#00201d",
+                        "tertiary-fixed": "#ffdbca",
+                        "line": "#D9E0E8",
+                        "secondary": "#006a63",
+                        "on-secondary-container": "#006f67",
+                        "surface-container-high": "#dce9ff",
+                        "surface-tint": "#0053db",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary": "#8c3d00",
+                        "primary-container": "#2563eb",
+                        "tertiary-container": "#b15106",
+                        "ink": "#17202A",
+                        "on-surface-variant": "#434655",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#ffb68e",
+                        "error": "#B42318",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#99efe5",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#331200",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "xxl": "48px",
+                        "base": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "h3": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "h2": ["Inter"],
+                        "label": ["Inter"],
+                        "h1-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "small": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; }
+    </style>
+</head>
+<body class="bg-canvas text-on-surface font-body font-body antialiased flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-64 flex-col p-md border-r border-line dark:border-outline-variant bg-surface-container-low dark:bg-inverse-surface z-40">
+<div class="mb-lg px-md">
+<h1 class="text-h3 font-h3 text-on-surface dark:text-inverse-on-surface font-bold tracking-tight">ICL ITATS</h1>
+<p class="text-small font-small text-on-surface-variant mt-xs">Career Intelligence</p>
+</div>
+<div class="flex-1 flex flex-col gap-sm overflow-y-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container dark:bg-primary dark:text-on-primary font-bold transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label font-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest dark:hover:bg-surface-variant scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="text-label font-label">Competencies</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest dark:hover:bg-surface-variant scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-label font-label">Evidence</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest dark:hover:bg-surface-variant scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="text-label font-label">Activities</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest dark:hover:bg-surface-variant scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label font-label">Settings</span>
+</a>
+</div>
+<div class="mt-auto pt-md border-t border-line dark:border-outline-variant">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all hover:bg-surface-container-highest dark:hover:bg-surface-variant scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label font-label">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-h-screen md:ml-64 w-full">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden sticky top-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface dark:bg-surface-dim shadow-sm border-b border-line dark:border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="text-h2 font-h2 text-primary dark:text-inverse-primary font-bold">Career Intelligence</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors p-sm rounded-full cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-line">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a university professor in a bright modern office. Lighting is soft, high key corporate SaaS style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDczc5xIhJ4wtVuXwXSH-e0yBPbLG-1H-oh-p29FidFDNodiQBDAQOWProTW1ZFPug7Er9hDAy83Fs_BuHp9cJs7CnxM8drCAf7vg2Y74BIm4r8aDXv2-oz_tn2lTBIELnorM8RJKZQlrbLzvPwukYdPFTHgeitKblzdIdHea97Ec4opvOkQ0qx3x0pC4gC7FczcVkzV2LgbR8NNeNUcbiiIB8QVRi1Y_ALsOEw-GIDO6MPaTrTCCMNqQ"/>
+</div>
+</div>
+</header>
+<!-- Top Header Area (Desktop) -->
+<header class="hidden md:flex sticky top-0 z-30 items-center justify-between px-gutter w-full h-16 bg-surface/80 backdrop-blur-md border-b border-line/50">
+<h2 class="text-h2 font-h2 text-on-surface font-bold">Reviewer Dashboard</h2>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm text-on-surface-variant bg-surface-container-low px-md py-sm rounded-full">
+<span class="material-symbols-outlined text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-body font-body w-64 placeholder:text-outline text-sm" placeholder="Search students or evidence..." type="text"/>
+</div>
+<div class="flex items-center gap-md border-l border-line pl-lg">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-sm cursor-pointer">
+<img alt="Ahmad Fauzi" class="w-8 h-8 rounded-full object-cover border border-line" data-alt="A confident professional headshot of an academic advisor in a modern bright setting. Corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuWWbayT2rikFH7s8gTLcopEfvt6hcoV7-f7q2GcGxafXedrz7aTYbWAuNI0CU_pFWowDWbV1ATNvNP9cfy9XLpfNn2bmjAFVTAPjQYwgBZ0GlAOIYZPQNyvzMiOyw8lWDygZmfiUDSBK-cGqU0ersvxRnxWhpwO2v_7a90BjN-nmzCfpKZnzoCsyiP5xkg-4bSGK7qGn2DknDNY454-BfcWF6uGcHQGYxguhjFPwytqjbQ5L30CYKWA"/>
+<span class="text-body font-body font-medium text-on-surface">Ahmad Fauzi</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-lg md:p-xl max-w-container-max mx-auto w-full flex flex-col gap-xl">
+<!-- Welcome & AI Summary Panel -->
+<section class="bg-surface rounded-xl p-lg shadow-sm border border-line flex flex-col md:flex-row gap-lg items-start relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="flex-1 z-10">
+<h1 class="text-display font-display text-on-surface mb-xs">Welcome back, Dr. Ahmad.</h1>
+<p class="text-body font-body text-on-surface-variant mb-md max-w-2xl">You have <strong class="text-primary">12 new evidence submissions</strong> waiting for your review. Overall student competency growth is trending upwards this week.</p>
+<div class="flex gap-md mt-lg">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label text-label flex items-center gap-sm hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">playlist_play</span>
+                            Start Review Queue
+                        </button>
+</div>
+</div>
+<!-- AI Quick Insights -->
+<div class="md:w-1/3 w-full bg-surface-container-low rounded-lg p-md border border-ai-accent/20 relative z-10">
+<div class="flex items-center gap-xs text-ai-accent mb-sm">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="text-label font-label font-bold uppercase tracking-wider text-[10px]">AI Insight</span>
+</div>
+<p class="text-small font-small text-on-surface-variant leading-relaxed">
+                        Noticeable gap in "Data Analysis" competencies among 3rd-year students. Consider recommending more practical project evidence.
+                    </p>
+</div>
+</section>
+<!-- Key Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-surface p-md rounded-lg border border-line shadow-sm flex flex-col">
+<span class="text-small font-small text-on-surface-variant mb-xs">Pending Reviews</span>
+<div class="flex items-end gap-sm">
+<span class="text-display font-display text-on-surface">12</span>
+<span class="text-small font-small text-error mb-1 flex items-center"><span class="material-symbols-outlined text-xs">trending_up</span> +3 today</span>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg border border-line shadow-sm flex flex-col">
+<span class="text-small font-small text-on-surface-variant mb-xs">Reviewed This Week</span>
+<div class="flex items-end gap-sm">
+<span class="text-display font-display text-on-surface">45</span>
+<span class="text-small font-small text-secondary mb-1 flex items-center"><span class="material-symbols-outlined text-xs">trending_up</span> +12%</span>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg border border-line shadow-sm flex flex-col">
+<span class="text-small font-small text-on-surface-variant mb-xs">Avg. Response Time</span>
+<div class="flex items-end gap-sm">
+<span class="text-display font-display text-on-surface">2.4</span>
+<span class="text-small font-small text-on-surface-variant mb-1">days</span>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg border border-line shadow-sm flex flex-col justify-center items-center text-center">
+<span class="text-body font-body font-medium text-primary mb-sm">Need Help?</span>
+<button class="text-label font-label text-primary border border-primary px-md py-xs rounded-full hover:bg-primary-container transition-colors">View Guide</button>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Evidence Review Queue -->
+<section class="lg:col-span-2 flex flex-col gap-md">
+<div class="flex justify-between items-center mb-sm">
+<h3 class="text-h2 font-h2 text-on-surface">Review Queue</h3>
+<a class="text-body font-body text-primary hover:underline" href="#">View all</a>
+</div>
+<!-- Queue Item 1 -->
+<div class="bg-surface border border-line rounded-lg p-md flex flex-col md:flex-row gap-md shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex-shrink-0">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-h3 font-h3 text-on-surface">Market Analysis Report</h4>
+<p class="text-small font-small text-on-surface-variant mt-xs">Submitted by <span class="font-medium text-on-surface">Budi Santoso</span> • 2 hours ago</p>
+</div>
+<span class="bg-[#fef3c7] text-[#92400e] text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Belum Dinilai</span>
+</div>
+<div class="mt-md flex flex-wrap gap-sm">
+<span class="text-xs bg-surface-container px-2 py-1 rounded text-on-surface-variant border border-line">Strategic Planning</span>
+<span class="text-xs bg-surface-container px-2 py-1 rounded text-on-surface-variant border border-line">Data Analysis</span>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-sm border-t md:border-t-0 md:border-l border-line pt-md md:pt-0 md:pl-md mt-md md:mt-0">
+<button class="bg-primary text-on-primary px-md py-sm rounded text-label font-label w-full hover:bg-primary-container hover:text-on-primary-container transition-colors text-center">Review</button>
+</div>
+</div>
+<!-- Queue Item 2 (AI Assisted) -->
+<div class="bg-surface border border-ai-accent/30 rounded-lg p-md flex flex-col md:flex-row gap-md shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-ai-accent/10 text-ai-accent px-2 py-1 text-[10px] font-bold rounded-bl-lg uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span> AI Pre-screened
+                        </div>
+<div class="flex-shrink-0">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">link</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-h3 font-h3 text-on-surface">GitHub Portfolio: React Native App</h4>
+<p class="text-small font-small text-on-surface-variant mt-xs">Submitted by <span class="font-medium text-on-surface">Siti Aminah</span> • 5 hours ago</p>
+</div>
+</div>
+<p class="text-small font-small text-on-surface-variant mt-sm border-l-2 border-ai-accent pl-2 italic">
+                                "AI suggests strong alignment with 'Mobile Development' competency based on code structure."
+                            </p>
+</div>
+<div class="flex md:flex-col justify-end gap-sm border-t md:border-t-0 md:border-l border-line pt-md md:pt-0 md:pl-md mt-md md:mt-0">
+<button class="bg-primary text-on-primary px-md py-sm rounded text-label font-label w-full hover:bg-primary-container hover:text-on-primary-container transition-colors text-center">Review</button>
+</div>
+</div>
+</section>
+<!-- Students to Watch -->
+<section class="flex flex-col gap-md">
+<h3 class="text-h2 font-h2 text-on-surface mb-sm">Students to Monitor</h3>
+<div class="bg-surface border border-line rounded-xl p-md shadow-sm flex flex-col gap-md">
+<!-- Student 1 -->
+<div class="flex items-center gap-md pb-md border-b border-line last:border-0 last:pb-0">
+<img alt="Student" class="w-10 h-10 rounded-full object-cover border border-line" data-alt="Headshot of a young male university student looking thoughtful in a campus setting, bright lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_t7MmXvO1IP1jYJIpsZpm-w2CqdcsNUuSPVyIsB7ru55RcdIm6mWKCGFOd-y2kyzDG01hamEjVobJ1VQZlbJJ7JDWeHCGh3x0J6zN11GeX7IF1qU8_BWPNZvEBXU5zt3SMLy4cxwivt_eGnJ2kLLwgYL5eHsBd0HZWxog4A-6ISqIrY0llzir_EBEpt8CNF655CtejVD2gPFYG6Sb6ox5oC-BlkmWOY8Xzxcnf88Op0k8BJLFF_qgCw"/>
+<div class="flex-1">
+<p class="text-body font-body font-medium text-on-surface leading-tight">Rizky Pratama</p>
+<p class="text-small font-small text-on-surface-variant">Stagnant progress: 3 weeks</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-sm rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+</button>
+</div>
+<!-- Student 2 -->
+<div class="flex items-center gap-md pb-md border-b border-line last:border-0 last:pb-0">
+<img alt="Student" class="w-10 h-10 rounded-full object-cover border border-line" data-alt="Headshot of a young female university student smiling in a library, modern bright aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ23bDypnNvCRh7Iow6VZ55z8LYOew1F19JDFw2lth9G2ZjgrukYQy7G9zO6z81UMKsI9-JSToejJPXfcDJSM1b4ciECBmJDJEftiUS20vZICNnnzGAJ3W9Um9K-O7cwqlfxx4IycNyuEEOaKxwltegOiYD1Ghe-ZZ87W46_TXaVLPFddp4RCtMXauof_Uyf9ZIb-Mj8p_mWi8_xTO4S7EmG2xQ4qw_1_OYl2Nma5a-ztZyYVwLMlCEg"/>
+<div class="flex-1">
+<p class="text-body font-body font-medium text-on-surface leading-tight">Dian Sastrowardoyo</p>
+<p class="text-small font-small text-error">Missed target milestone</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-sm rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+</button>
+</div>
+<!-- Student 3 -->
+<div class="flex items-center gap-md pb-md border-b border-line last:border-0 last:pb-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant border border-line font-bold">AF</div>
+<div class="flex-1">
+<p class="text-body font-body font-medium text-on-surface leading-tight">Andi Firmansyah</p>
+<p class="text-small font-small text-on-surface-variant">Requires guidance setup</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-sm rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>
