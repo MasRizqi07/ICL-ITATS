@@ -16,15 +16,15 @@
 /* Glassmorphism Cards & Panels */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(217, 224, 232, 0.7);
 }
 
 .dark .glass-panel {
   background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(51, 65, 85, 0.7);
 }
 

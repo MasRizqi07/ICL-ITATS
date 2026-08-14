@@ -26,7 +26,7 @@
 ## 🔑 Akun Demo Pengujian
 
 | Role | Email | Password |
-|---|---|---|
+| --- | --- | --- |
 | **Mahasiswa** | `student@itats.ac.id` | `password` |
 | **Reviewer / Dosen** | `reviewer@itats.ac.id` | `password` |
 | **Administrator** | `admin@itats.ac.id` | `password` |
@@ -36,12 +36,14 @@
 ## 🛠️ Cara Menjalankan Secara Lokal
 
 1. **Clone Repositori:**
+
    ```bash
    git clone https://github.com/MasRizqi07/ICL-ITATS.git
    cd ICL-ITATS
    ```
 
 2. **Instal Dependensi & Konfigurasi:**
+
    ```bash
    composer install
    cp .env.example .env
@@ -49,17 +51,21 @@
    ```
 
 3. **Migrasi & Seed Basis Data:**
+
    ```bash
    php artisan migrate:fresh --seed
    ```
 
 4. **Jalankan Server Development:**
+
    ```bash
    php artisan serve
    ```
+
    Buka browser di `http://127.0.0.1:8000`
 
 5. **Menjalankan Test Suite:**
+
    ```bash
    php artisan test
    ```

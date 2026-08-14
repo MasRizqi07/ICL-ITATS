@@ -18,6 +18,7 @@ class DashboardController extends Controller
 
     public function index()
     {
+        /** @var User $user */
         $user = Auth::user();
 
         if ($user->isReviewer()) {
