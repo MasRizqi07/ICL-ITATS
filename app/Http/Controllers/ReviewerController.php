@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewEvidenceRequest;
+use App\Models\Career;
 use App\Models\Evidence;
 use App\Models\Feedback;
 use App\Services\ReassessmentService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewerController extends Controller
 {
+    use ResolvesCareer;
     public function __construct(protected ReassessmentService $reassessmentService)
     {
     }
@@ -30,13 +34,18 @@ class ReviewerController extends Controller
         return view('pages.reviewer.review_evidence', compact('evidence'));
     }
 
-    public function reviewEvidence(Request $request, string $id)
+    public function reviewEvidence(ReviewEvidenceRequest $request, string $id)
     {
         $reviewer = Auth::user();
         $evidence = Evidence::findOrFail($id);
 
-        $status = $request->input('validation_status');
-        $note = $request->input('reviewer_note');
+        if ($reviewer->id === $evidence->user_id) {
+            abort(403, 'Reviewer tidak dapat meninjau bukti kemampuan miliknya sendiri.');
+        }
+
+        $validated = $request->validated();
+        $status = $validated['validation_status'];
+        $note = $validated['reviewer_note'] ?? null;
 
         $evidence->update([
             'validation_status' => $status,
@@ -54,7 +63,8 @@ class ReviewerController extends Controller
         }
 
         // Trigger snapshot update for student
-        $career = \App\Models\Career::where('slug', 'fullstack-web-developer')->first();
+        $latestReassessment = $evidence->user->reassessments()->latest()->first();
+        $career = $latestReassessment ? $latestReassessment->career : $this->getCurrentCareer();
         if ($career) {
             $this->reassessmentService->createSnapshot($evidence->user, $career);
         }

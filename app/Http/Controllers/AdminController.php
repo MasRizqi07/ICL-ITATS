@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCareerRequest;
+use App\Http\Requests\StoreCompetencyRequest;
 use App\Models\Career;
 use App\Models\Competency;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class AdminController extends Controller
@@ -15,13 +16,9 @@ class AdminController extends Controller
         return view('pages.admin.careers', compact('careers'));
     }
 
-    public function storeCareer(Request $request)
+    public function storeCareer(StoreCareerRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'status' => 'required|string',
-        ]);
+        $validated = $request->validated();
 
         Career::create([
             'name' => $validated['name'],
@@ -40,13 +37,9 @@ class AdminController extends Controller
         return view('pages.admin.competencies', compact('competencies'));
     }
 
-    public function storeCompetency(Request $request)
+    public function storeCompetency(StoreCompetencyRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'domain' => 'required|string',
-            'description' => 'required|string',
-        ]);
+        $validated = $request->validated();
 
         Competency::create([
             'name' => $validated['name'],

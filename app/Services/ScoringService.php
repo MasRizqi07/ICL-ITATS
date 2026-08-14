@@ -86,7 +86,7 @@ class ScoringService
             return "Telah memenuhi standar ($curr/$req) dengan $evCount bukti yang terverifikasi oleh reviewer.";
         }
         if ($status === 'memenuhi') {
-            return "Memenuhi tingkat target ($curr/$req). Disarankan menambah sertifikat/portofolio resmi untuk verifikasi.";
+            return "Memenuhi tingkat target ($curr/$req) [Provisional / Menunggu Verifikasi]. Disarankan menambah sertifikat/portofolio resmi untuk verifikasi reviewer.";
         }
         if ($status === 'belum_dinilai') {
             return "Belum ada asesmen atau bukti kemampuan yang disubmit untuk kompetensi $name.";

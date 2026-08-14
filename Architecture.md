@@ -33,22 +33,14 @@ flowchart LR
 
 ```text
 app/
-  Domain/
-    Identity/
-    Career/
-    Competency/
-    Assessment/
-    Evidence/
-    GapAnalysis/
-    DevelopmentPlan/
-    Reassessment/
-    Review/
-    AiSupport/
   Http/
+    Controllers/
+    Middleware/
+    Requests/
   Models/
-  Policies/
-  Jobs/
   Services/
+  Traits/
+  Jobs/
 ```
 
 - Identity: authentication, roles, profile, authorization.

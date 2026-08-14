@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEvidenceRequest;
 use App\Models\Career;
 use App\Models\Competency;
 use App\Models\Evidence;
 use App\Services\ReassessmentService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class EvidenceController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected ReassessmentService $reassessmentService)
     {
     }
@@ -28,18 +32,10 @@ class EvidenceController extends Controller
         return view('pages.evidence.create', compact('competencies'));
     }
 
-    public function store(Request $request)
+    public function store(StoreEvidenceRequest $request)
     {
         $user = Auth::user();
-
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'type' => 'required|string',
-            'description' => 'required|string',
-            'source_url' => 'nullable|url',
-            'obtained_at' => 'nullable|date',
-            'competency_ids' => 'required|array',
-        ]);
+        $validated = $request->validated();
 
         $ev = Evidence::create([
             'user_id' => $user->id,
@@ -56,7 +52,7 @@ class EvidenceController extends Controller
         }
 
         // Trigger snapshot update
-        $career = Career::where('slug', 'fullstack-web-developer')->first();
+        $career = $this->getCurrentCareer($request);
         if ($career) {
             $this->reassessmentService->createSnapshot($user, $career);
         }

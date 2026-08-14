@@ -65,14 +65,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reassessments', [ReassessmentController::class, 'index'])->name('reassessments.index');
     Route::post('/reassessments/trigger', [ReassessmentController::class, 'trigger'])->name('reassessments.trigger');
 
-    Route::get('/reviewer', [ReviewerController::class, 'index'])->name('reviewer.index');
-    Route::get('/reviewer/evidence/{id}', [ReviewerController::class, 'showEvidence'])->name('reviewer.evidence.show');
-    Route::post('/reviewer/evidence/{id}', [ReviewerController::class, 'reviewEvidence'])->name('reviewer.evidence.review');
+    Route::middleware(['role:reviewer'])->group(function () {
+        Route::get('/reviewer', [ReviewerController::class, 'index'])->name('reviewer.index');
+        Route::get('/reviewer/evidence/{id}', [ReviewerController::class, 'showEvidence'])->name('reviewer.evidence.show');
+        Route::post('/reviewer/evidence/{id}', [ReviewerController::class, 'reviewEvidence'])->name('reviewer.evidence.review');
+    });
 
-    Route::get('/admin/careers', [AdminController::class, 'careers'])->name('admin.careers');
-    Route::post('/admin/careers', [AdminController::class, 'storeCareer'])->name('admin.careers.store');
-    Route::get('/admin/competencies', [AdminController::class, 'competencies'])->name('admin.competencies');
-    Route::post('/admin/competencies', [AdminController::class, 'storeCompetency'])->name('admin.competencies.store');
+    Route::middleware(['role:admin'])->group(function () {
+        Route::get('/admin/careers', [AdminController::class, 'careers'])->name('admin.careers');
+        Route::post('/admin/careers', [AdminController::class, 'storeCareer'])->name('admin.careers.store');
+        Route::get('/admin/competencies', [AdminController::class, 'competencies'])->name('admin.competencies');
+        Route::post('/admin/competencies', [AdminController::class, 'storeCompetency'])->name('admin.competencies.store');
+    });
 
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');

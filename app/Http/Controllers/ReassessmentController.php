@@ -5,18 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Career;
 use App\Models\Reassessment;
 use App\Services\ReassessmentService;
+use App\Traits\ResolvesCareer;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ReassessmentController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected ReassessmentService $reassessmentService)
     {
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         
         $reassessments = Reassessment::where('user_id', $user->id)
             ->where('career_id', $career->id)
@@ -30,10 +34,10 @@ class ReassessmentController extends Controller
         return view('pages.reassessment.index', compact('career', 'reassessments', 'latestSnapshot', 'previousSnapshot'));
     }
 
-    public function trigger()
+    public function trigger(Request $request)
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         
         $this->reassessmentService->createSnapshot($user, $career);
 

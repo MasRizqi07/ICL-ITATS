@@ -114,6 +114,7 @@
                 </button>
             </form>
 
+            @if(app()->environment(['local', 'testing', 'demo']) || config('app.debug'))
             <!-- Quick Demo Login Switcher -->
             <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
                 <p class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center">Login Instan untuk Pengujian Demo:</p>
@@ -129,6 +130,7 @@
                     </a>
                 </div>
             </div>
+            @endif
 
         </div>
     </div>

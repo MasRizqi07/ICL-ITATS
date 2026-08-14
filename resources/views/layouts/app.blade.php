@@ -90,6 +90,7 @@
 
             <!-- Header Quick Role Switcher & User Profile -->
             <div class="flex items-center space-x-2 sm:space-x-4">
+                @if(app()->environment(['local', 'testing', 'demo']) || config('app.debug'))
                 <!-- Role Switcher Pill for Demo (Hidden on Small Screens) -->
                 <div class="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-700">
                     <span class="px-2 text-slate-400 dark:text-slate-500">Role Demo:</span>
@@ -97,6 +98,7 @@
                     <a href="{{ route('login.quick', 'reviewer') }}" class="px-2.5 py-1 rounded-lg transition {{ auth()->user()->isReviewer() ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Reviewer</a>
                     <a href="{{ route('login.quick', 'admin') }}" class="px-2.5 py-1 rounded-lg transition {{ auth()->user()->isAdmin() ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Admin</a>
                 </div>
+                @endif
 
                 <!-- Instant Toggle Dark/Light Mode Button -->
                 <button id="theme-toggle" type="button" aria-label="Toggle Theme" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-95">

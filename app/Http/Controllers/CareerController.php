@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Career;
 use App\Models\Competency;
 use App\Services\ScoringService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Support\Facades\Auth;
 
 class CareerController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected ScoringService $scoringService)
     {
     }
@@ -22,6 +25,7 @@ class CareerController extends Controller
     public function show(string $slug)
     {
         $career = Career::where('slug', $slug)->with('competencies')->firstOrFail();
+        session(['selected_career_slug' => $career->slug]);
         $user = Auth::user();
         $gaps = $user ? $this->scoringService->calculateGap($user, $career) : [];
 
@@ -31,7 +35,8 @@ class CareerController extends Controller
     public function map()
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->with('competencies')->firstOrFail();
+        $career = $this->getCurrentCareer();
+        $career->load('competencies');
         $gaps = $this->scoringService->calculateGap($user, $career);
 
         return view('pages.competency.map', compact('career', 'gaps'));

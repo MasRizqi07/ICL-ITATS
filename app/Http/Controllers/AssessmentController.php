@@ -7,18 +7,21 @@ use App\Models\AssessmentAttempt;
 use App\Models\AssessmentResult;
 use App\Models\Career;
 use App\Services\ReassessmentService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AssessmentController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected ReassessmentService $reassessmentService)
     {
     }
 
-    public function show()
+    public function show(Request $request)
     {
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         $assessment = Assessment::where('career_id', $career->id)->with('items.competency')->firstOrFail();
         return view('pages.assessment.take', compact('career', 'assessment'));
     }
@@ -26,7 +29,7 @@ class AssessmentController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         $assessment = Assessment::where('career_id', $career->id)->firstOrFail();
 
         $answers = $request->input('scores', []);

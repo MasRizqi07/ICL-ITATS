@@ -7,19 +7,22 @@ use App\Models\Competency;
 use App\Models\DevelopmentActivity;
 use App\Models\DevelopmentPlan;
 use App\Services\AiSupportService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DevelopmentPlanController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected AiSupportService $aiSupportService)
     {
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         $plan = DevelopmentPlan::firstOrCreate(
             ['user_id' => $user->id, 'career_id' => $career->id],
             ['status' => 'active']
@@ -34,7 +37,7 @@ class DevelopmentPlanController extends Controller
     public function storeActivity(Request $request)
     {
         $user = Auth::user();
-        $career = Career::where('slug', 'fullstack-web-developer')->firstOrFail();
+        $career = $this->getCurrentCareer($request);
         $plan = DevelopmentPlan::where('user_id', $user->id)->where('career_id', $career->id)->firstOrFail();
 
         $validated = $request->validate([

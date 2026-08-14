@@ -38,6 +38,10 @@ class AuthController extends Controller
      */
     public function quickLogin(string $role)
     {
+        if (! app()->environment(['local', 'testing', 'demo']) && ! config('app.debug')) {
+            abort(403, 'Quick login tidak tersedia di lingkungan ini.');
+        }
+
         $email = match ($role) {
             'student' => 'student@itats.ac.id',
             'reviewer' => 'reviewer@itats.ac.id',

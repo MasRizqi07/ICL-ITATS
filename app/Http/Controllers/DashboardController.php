@@ -8,10 +8,13 @@ use App\Models\Evidence;
 use App\Models\Reassessment;
 use App\Models\User;
 use App\Services\ScoringService;
+use App\Traits\ResolvesCareer;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    use ResolvesCareer;
+
     public function __construct(protected ScoringService $scoringService)
     {
     }
@@ -45,7 +48,8 @@ class DashboardController extends Controller
         }
 
         // Student Dashboard
-        $career = Career::where('slug', 'fullstack-web-developer')->with('competencies')->first();
+        $career = $this->getCurrentCareer();
+        $career->load('competencies');
         $gaps = $career ? $this->scoringService->calculateGap($user, $career) : [];
         
         $verifiedEvidence = $user->evidence()->where('validation_status', 'verified')->count();
