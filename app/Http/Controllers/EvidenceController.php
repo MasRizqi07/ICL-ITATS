@@ -44,25 +44,34 @@ class EvidenceController extends Controller
             $storageKey = $request->file('evidence_file')->store('evidence', 'local');
         }
 
-        $ev = Evidence::create([
-            'user_id' => $user->id,
-            'title' => $validated['title'],
-            'type' => $validated['type'],
-            'description' => $validated['description'],
-            'source_url' => $validated['source_url'] ?? null,
-            'storage_key' => $storageKey,
-            'obtained_at' => $validated['obtained_at'] ?? now(),
-            'validation_status' => 'pending',
-        ]);
+        try {
+            \Illuminate\Support\Facades\DB::transaction(function () use ($user, $validated, $storageKey, $request) {
+                $ev = Evidence::create([
+                    'user_id' => $user->id,
+                    'title' => $validated['title'],
+                    'type' => $validated['type'],
+                    'description' => $validated['description'],
+                    'source_url' => $validated['source_url'] ?? null,
+                    'storage_key' => $storageKey,
+                    'obtained_at' => $validated['obtained_at'] ?? now(),
+                    'validation_status' => 'pending',
+                ]);
 
-        foreach ($validated['competency_ids'] as $compId) {
-            $ev->competencies()->attach($compId, ['relevance' => 1.0]);
-        }
+                foreach ($validated['competency_ids'] as $compId) {
+                    $ev->competencies()->attach($compId, ['relevance' => 1.0]);
+                }
 
-        // Trigger snapshot update
-        $career = $this->getCurrentCareer($request);
-        if ($career) {
-            $this->reassessmentService->createSnapshot($user, $career);
+                // Trigger snapshot update
+                $career = $this->getCurrentCareer($request);
+                if ($career) {
+                    $this->reassessmentService->createSnapshot($user, $career);
+                }
+            });
+        } catch (\Throwable $e) {
+            if ($storageKey && Storage::disk('local')->exists($storageKey)) {
+                Storage::disk('local')->delete($storageKey);
+            }
+            throw $e;
         }
 
         return redirect()->route('evidence.index')->with('success', 'Bukti kemampuan berhasil diunggah dan menunggu peninjauan reviewer.');

@@ -38,7 +38,10 @@ class DevelopmentPlanController extends Controller
     {
         $user = Auth::user();
         $career = $this->getCurrentCareer($request);
-        $plan = DevelopmentPlan::where('user_id', $user->id)->where('career_id', $career->id)->firstOrFail();
+        $plan = DevelopmentPlan::firstOrCreate(
+            ['user_id' => $user->id, 'career_id' => $career->id],
+            ['status' => 'active']
+        );
 
         $validated = $request->validate([
             'competency_id' => 'required|uuid',

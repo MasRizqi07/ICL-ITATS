@@ -31,7 +31,9 @@ class ScoringService
                 }
             }
 
-            // Additional score boost from validated evidence
+            // Additional score boost from evidence:
+            // Verified evidence adds +1.0 boost and enables 'terverifikasi' status upon meeting target level.
+            // Pending (unverified) evidence adds +0.5 provisional boost for immediate visual feedback with '[Provisional]' status label.
             $evidenceBonus = 0.0;
             $evidenceCount = 0;
             $hasVerified = false;

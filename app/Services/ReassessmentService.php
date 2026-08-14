@@ -22,7 +22,8 @@ class ReassessmentService
         return DB::transaction(function () use ($user, $career) {
             $latestPrevious = Reassessment::where('user_id', $user->id)
                 ->where('career_id', $career->id)
-                ->latest()
+                ->orderBy('created_at', 'desc')
+                ->orderBy('id', 'desc')
                 ->first();
 
             $reassessment = Reassessment::create([

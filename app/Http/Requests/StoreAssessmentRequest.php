@@ -14,7 +14,7 @@ class StoreAssessmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'scores' => ['required', 'array'],
+            'scores' => ['required', 'array', 'min:1'],
             'scores.*' => ['required', 'numeric', 'min:0', 'max:5'],
         ];
     }

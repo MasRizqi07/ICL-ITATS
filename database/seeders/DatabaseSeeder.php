@@ -300,7 +300,8 @@ class DatabaseSeeder extends Seeder
             'career_id' => $career1->id,
             'rule_version' => 'v1.0',
             'status' => 'completed',
-            'completed_at' => now(),
+            'completed_at' => now()->subDays(1),
+            'created_at' => now()->subDays(1),
         ]);
 
         CompetencySnapshot::create([

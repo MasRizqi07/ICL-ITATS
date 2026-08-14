@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Validation\ValidationException;
+
 class AssessmentController extends Controller
 {
     use ResolvesCareer;
@@ -35,9 +37,37 @@ class AssessmentController extends Controller
         $assessment = Assessment::where('career_id', $career->id)->with('items')->firstOrFail();
 
         $answers = $request->validated()['scores'];
-        $validCompetencyIds = $assessment->items->pluck('competency_id')->toArray();
+        $itemsByCompetency = $assessment->items->keyBy('competency_id');
+        $validCompetencyIds = $itemsByCompetency->keys()->toArray();
+        $submittedCompIds = array_keys($answers);
 
-        DB::transaction(function () use ($user, $career, $assessment, $answers, $validCompetencyIds) {
+        // Reject if there are foreign competency IDs
+        $invalidCompIds = array_diff($submittedCompIds, $validCompetencyIds);
+        if (! empty($invalidCompIds)) {
+            throw ValidationException::withMessages([
+                'scores' => 'Terdapat butir penilaian yang tidak termasuk dalam instrumen asesmen aktif.',
+            ]);
+        }
+
+        // Reject if any assessment item is left unanswered
+        $missingCompIds = array_diff($validCompetencyIds, $submittedCompIds);
+        if (! empty($missingCompIds)) {
+            throw ValidationException::withMessages([
+                'scores' => 'Harap lengkapi seluruh butir asesmen kompetensi yang tersedia.',
+            ]);
+        }
+
+        // Guard against duplicate submission within 3 seconds
+        $recentAttempt = AssessmentAttempt::where('user_id', $user->id)
+            ->where('assessment_id', $assessment->id)
+            ->where('created_at', '>=', now()->subSeconds(3))
+            ->first();
+
+        if ($recentAttempt) {
+            return redirect()->route('skill-gaps')->with('success', 'Asesmen mandiri berhasil disubmit!');
+        }
+
+        DB::transaction(function () use ($user, $career, $assessment, $answers, $itemsByCompetency) {
             $attempt = AssessmentAttempt::create([
                 'user_id' => $user->id,
                 'assessment_id' => $assessment->id,
@@ -47,16 +77,15 @@ class AssessmentController extends Controller
             ]);
 
             foreach ($answers as $competencyId => $score) {
-                if (! in_array($competencyId, $validCompetencyIds, true)) {
-                    continue;
-                }
+                $item = $itemsByCompetency->get($competencyId);
+                $maxScore = $item ? (float) $item->max_score : 5.0;
 
                 AssessmentResult::create([
                     'attempt_id' => $attempt->id,
                     'competency_id' => $competencyId,
                     'score' => (float) $score,
-                    'max_score' => 5.0,
-                    'explanation' => "Penilaian mandiri mahasiswa: skor {$score}/5.0",
+                    'max_score' => $maxScore,
+                    'explanation' => "Penilaian mandiri mahasiswa: skor {$score}/{$maxScore}",
                 ]);
             }
 
