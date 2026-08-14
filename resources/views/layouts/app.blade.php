@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full bg-slate-50 scroll-smooth">
+<html lang="id" class="h-full scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>@yield('title', 'ICL ITATS Career Intelligence')</title>
+
+    <!-- Immediate Dark Mode Script in Head to Prevent Flicker (FOUC) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('color-theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -54,7 +67,7 @@
 <body class="h-full flex flex-col bg-[#F8FAFC] dark:bg-slate-950 text-[#17202A] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- Top Navigation Bar with Responsive Breakpoints -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 transition-all">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             
             <div class="flex items-center space-x-3">
@@ -85,9 +98,9 @@
                     <a href="{{ route('login.quick', 'admin') }}" class="px-2.5 py-1 rounded-lg transition {{ auth()->user()->isAdmin() ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900' }}">Admin</a>
                 </div>
 
-                <!-- Dark Mode Toggle -->
-                <button id="theme-toggle" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition active:scale-95">
-                    <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+                <!-- Instant Toggle Dark/Light Mode Button -->
+                <button id="theme-toggle" type="button" aria-label="Toggle Theme" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-95">
+                    <span class="material-symbols-outlined text-xl dark:hidden text-slate-700">dark_mode</span>
                     <span class="material-symbols-outlined text-xl hidden dark:block text-amber-400">light_mode</span>
                 </button>
 
@@ -299,43 +312,42 @@
         </main>
     </div>
 
-    <!-- Script for Dark Mode & Mobile Drawer Toggle -->
+    <!-- Robust & Smooth Dark Mode Toggle Script -->
     <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', function() {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    }
+                });
+            }
+
+            // Mobile Drawer Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+
+            if (mobileMenuBtn && mobileDrawer && mobileDrawerClose) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('hidden');
+                });
+                mobileDrawerClose.addEventListener('click', () => {
+                    mobileDrawer.classList.add('hidden');
+                });
+                mobileDrawer.addEventListener('click', (e) => {
+                    if (e.target === mobileDrawer) {
+                        mobileDrawer.classList.add('hidden');
+                    }
+                });
             }
         });
-
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        // Mobile Drawer Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileDrawer = document.getElementById('mobile-drawer');
-        const mobileDrawerClose = document.getElementById('mobile-drawer-close');
-
-        if (mobileMenuBtn && mobileDrawer && mobileDrawerClose) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileDrawer.classList.remove('hidden');
-            });
-            mobileDrawerClose.addEventListener('click', () => {
-                mobileDrawer.classList.add('hidden');
-            });
-            mobileDrawer.addEventListener('click', (e) => {
-                if (e.target === mobileDrawer) {
-                    mobileDrawer.classList.add('hidden');
-                }
-            });
-        }
     </script>
     @stack('scripts')
 </body>
