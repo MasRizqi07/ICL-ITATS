@@ -18,6 +18,10 @@
         })();
     </script>
 
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="{{ asset('images/mark.png') }}"/>
+    <link rel="shortcut icon" href="{{ asset('images/mark.png') }}" type="image/x-icon"/>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
@@ -77,10 +81,8 @@
                 </button>
 
                 <!-- Logo Brand -->
-                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2 group">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white font-extrabold text-lg sm:text-xl shadow-md group-hover:scale-105 transition-transform duration-200">
-                        ICL
-                    </div>
+                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2.5 group">
+                    <img src="{{ asset('images/mark.png') }}" alt="ICL ITATS Mark" class="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-xs group-hover:scale-105 transition-transform duration-200">
                     <div class="leading-tight">
                         <span class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base tracking-tight block">ICL ITATS</span>
                         <span class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 block font-medium">Career Intelligence</span>
@@ -137,8 +139,8 @@
         <div class="fixed inset-y-0 left-0 max-w-xs w-full bg-white dark:bg-slate-900 p-5 shadow-2xl space-y-4 overflow-y-auto flex flex-col justify-between">
             <div class="space-y-4">
                 <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-sm">ICL</div>
+                    <div class="flex items-center space-x-2.5">
+                        <img src="{{ asset('images/mark.png') }}" alt="ICL ITATS Mark" class="w-8 h-8 object-contain">
                         <span class="font-bold text-slate-900 dark:text-white text-sm">ICL ITATS Menu</span>
                     </div>
                     <button id="mobile-drawer-close" class="p-1 text-slate-400 hover:text-slate-600">

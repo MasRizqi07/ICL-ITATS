@@ -18,6 +18,10 @@
         })();
     </script>
 
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="{{ asset('images/mark.png') }}"/>
+    <link rel="shortcut icon" href="{{ asset('images/mark.png') }}" type="image/x-icon"/>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
@@ -54,10 +58,8 @@
     <!-- Navbar -->
     <nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="{{ route('landing') }}" class="flex items-center space-x-2">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                    ICL
-                </div>
+            <a href="{{ route('landing') }}" class="flex items-center space-x-2.5 group">
+                <img src="{{ asset('images/mark.png') }}" alt="ICL ITATS Mark" class="w-10 h-10 object-contain drop-shadow-xs group-hover:scale-105 transition-transform duration-200">
                 <div class="leading-tight">
                     <span class="font-extrabold text-slate-900 dark:text-white text-base tracking-tight block">ICL ITATS</span>
                     <span class="text-xs text-slate-500 dark:text-slate-400 block font-normal">Career Intelligence Platform</span>

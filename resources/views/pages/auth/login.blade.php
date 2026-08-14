@@ -11,15 +11,15 @@
         <div class="absolute inset-0 bg-dots-pattern opacity-10 pointer-events-none"></div>
 
         <div class="relative z-10 flex flex-col justify-between h-full max-w-lg space-y-8">
-            <div class="space-y-3">
+            <div class="space-y-4">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-blue-200">
                     <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
                     <span>GEMASTIK XIX 2026 - Software Development</span>
                 </div>
-                <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                    Career Intelligence Platform
-                </h1>
-                <p class="text-sm text-blue-200 font-normal">
+                <div class="bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-white/40 inline-block">
+                    <img src="{{ asset('images/logo.png') }}" alt="ICL ITATS Logo" class="h-12 w-auto object-contain">
+                </div>
+                <p class="text-sm text-blue-200 font-medium">
                     Institute of Technology Adhi Tama Surabaya (ITATS)
                 </p>
             </div>
@@ -47,16 +47,18 @@
         <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 dark:border-slate-800 space-y-6 animate-fade-in-up">
             
             <!-- Mobile Header Logo -->
-            <div class="md:hidden text-center space-y-1">
-                <div class="mx-auto w-10 h-10 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-lg shadow-md">ICL</div>
-                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white">ICL ITATS</h2>
-                <p class="text-xs text-slate-500">Career Intelligence Platform</p>
+            <div class="md:hidden text-center space-y-2">
+                <img src="{{ asset('images/logo.png') }}" alt="ICL ITATS Logo" class="mx-auto h-12 w-auto object-contain">
+                <p class="text-xs text-slate-500 dark:text-slate-400">Career Intelligence Platform</p>
             </div>
 
             <!-- Header Title -->
-            <div>
-                <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Masuk ke Akun Anda</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Akses dashboard karier Anda menggunakan kredensial kampus.</p>
+            <div class="flex items-center space-x-3.5 pb-2 border-b border-slate-100 dark:border-slate-800">
+                <img src="{{ asset('images/mark.png') }}" alt="ICL ITATS Mark" class="w-10 h-10 object-contain drop-shadow-xs">
+                <div>
+                    <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Masuk ke Akun Anda</h2>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">Akses dashboard karier Anda menggunakan kredensial kampus.</p>
+                </div>
             </div>
 
             <!-- Flash Error Message -->

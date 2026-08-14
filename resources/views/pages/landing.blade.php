@@ -9,6 +9,12 @@
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="mb-6 flex justify-center">
+            <div class="bg-white/95 backdrop-blur-md p-3 px-6 rounded-2xl shadow-2xl border border-white/30 inline-flex items-center space-x-3">
+                <img src="{{ asset('images/logo.png') }}" alt="ICL ITATS Logo" class="h-10 md:h-12 w-auto object-contain">
+            </div>
+        </div>
+
         <span class="inline-flex items-center space-x-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold px-4 py-1.5 rounded-full mb-6 backdrop-blur-md animate-float">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-ping"></span>
             <span>GEMASTIK XIX 2026 - Software Development Competition</span>
