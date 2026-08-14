@@ -3,67 +3,135 @@
 @section('title', 'Login - ICL ITATS Career Intelligence')
 
 @section('content')
-<div class="min-h-[calc(100vh-8rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-2xl border border-[#D9E0E8] shadow-sm">
-        
-        <div class="text-center">
-            <div class="mx-auto w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl mb-3 shadow-md">
-                ICL
-            </div>
-            <h2 class="text-2xl font-bold text-[#17202A] tracking-tight">Masuk ke ICL ITATS</h2>
-            <p class="mt-1 text-xs text-slate-500">Platform Kecerdasan Karier Mahasiswa ITATS</p>
-        </div>
+<div class="min-h-[calc(100vh-4rem)] flex flex-col md:flex-row w-full bg-slate-50 dark:bg-slate-950">
+    
+    <!-- Left Side: Visual Hero Branding (Split Screen) -->
+    <div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-blue-900 text-white items-center justify-center p-8 lg:p-12">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 opacity-95"></div>
+        <div class="absolute inset-0 bg-dots-pattern opacity-10 pointer-events-none"></div>
 
-        @if($errors->any())
-            <div class="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
-                {{ $errors->first() }}
-            </div>
-        @endif
-
-        <form class="mt-8 space-y-4" action="{{ route('login.post') }}" method="POST">
-            @csrf
-            <div>
-                <label for="email" class="block text-xs font-semibold text-slate-700 mb-1">Email Institusi</label>
-                <input id="email" name="email" type="email" required value="{{ old('email', 'student@itats.ac.id') }}" 
-                    class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-hidden" 
-                    placeholder="nama@itats.ac.id">
+        <div class="relative z-10 flex flex-col justify-between h-full max-w-lg space-y-8">
+            <div class="space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-blue-200">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+                    <span>GEMASTIK XIX 2026 - Software Development</span>
+                </div>
+                <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                    Career Intelligence Platform
+                </h1>
+                <p class="text-sm text-blue-200 font-normal">
+                    Institute of Technology Adhi Tama Surabaya (ITATS)
+                </p>
             </div>
 
-            <div>
-                <label for="password" class="block text-xs font-semibold text-slate-700 mb-1">Kata Sandi</label>
-                <input id="password" name="password" type="password" required value="password" 
-                    class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-hidden" 
-                    placeholder="••••••••">
+            <!-- Quote Container Card -->
+            <div class="bg-white/10 backdrop-blur-md p-6 lg:p-8 rounded-3xl border border-white/20 shadow-xl space-y-4">
+                <span class="material-symbols-outlined text-4xl text-blue-300">format_quote</span>
+                <p class="text-sm lg:text-base font-medium text-white leading-relaxed italic">
+                    "Petakan potensimu, kumpulkan bukti keahlianmu, dan bangun masa depan karier yang terukur sejak dari bangku kuliah."
+                </p>
+                <div class="flex items-center space-x-3 pt-2">
+                    <div class="w-8 h-[2px] bg-teal-400"></div>
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-teal-300">Platform Pengembangan Karier ITATS</span>
+                </div>
             </div>
 
-            <div class="flex items-center justify-between text-xs">
-                <label class="flex items-center text-slate-600">
-                    <input type="checkbox" name="remember" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500 mr-2">
-                    Ingat saya di perangkat ini
-                </label>
-                <a href="#" class="text-blue-600 hover:underline">Lupa kata sandi?</a>
-            </div>
-
-            <button type="submit" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-lg shadow-sm transition">
-                Masuk Ke Akun
-            </button>
-        </form>
-
-        <div class="pt-4 border-t border-slate-200">
-            <p class="text-xs font-semibold text-slate-500 mb-2 text-center">Login Instan untuk Demo Gemastik:</p>
-            <div class="grid grid-cols-3 gap-2 text-xs">
-                <a href="{{ route('login.quick', 'student') }}" class="py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg font-medium text-center transition">
-                    Mahasiswa
-                </a>
-                <a href="{{ route('login.quick', 'reviewer') }}" class="py-2 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-lg font-medium text-center transition">
-                    Reviewer
-                </a>
-                <a href="{{ route('login.quick', 'admin') }}" class="py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg font-medium text-center transition">
-                    Admin
-                </a>
+            <div class="text-xs text-blue-300">
+                © 2026 ICL ITATS • Institutional Career Learning System
             </div>
         </div>
-
     </div>
+
+    <!-- Right Side: Login Form Card -->
+    <div class="w-full md:w-1/2 flex items-center justify-center p-6 sm:p-12">
+        <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 dark:border-slate-800 space-y-6 animate-fade-in-up">
+            
+            <!-- Mobile Header Logo -->
+            <div class="md:hidden text-center space-y-1">
+                <div class="mx-auto w-10 h-10 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-lg shadow-md">ICL</div>
+                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white">ICL ITATS</h2>
+                <p class="text-xs text-slate-500">Career Intelligence Platform</p>
+            </div>
+
+            <!-- Header Title -->
+            <div>
+                <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Masuk ke Akun Anda</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Akses dashboard karier Anda menggunakan kredensial kampus.</p>
+            </div>
+
+            <!-- Flash Error Message -->
+            @if($errors->any())
+                <div class="p-4 bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-xs rounded-2xl flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-lg text-red-500">error</span>
+                    <span>{{ $errors->first() }}</span>
+                </div>
+            @endif
+
+            <form action="{{ route('login.post') }}" method="POST" class="space-y-4">
+                @csrf
+
+                <!-- Email Input -->
+                <div class="space-y-1.5">
+                    <label for="email" class="block text-xs font-bold text-slate-700 dark:text-slate-300">Email Institusi (@itats.ac.id)</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            <span class="material-symbols-outlined text-xl">mail</span>
+                        </div>
+                        <input id="email" name="email" type="email" required value="{{ old('email', 'student@itats.ac.id') }}"
+                            class="w-full pl-11 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition"
+                            placeholder="npm@mahasiswa.itats.ac.id">
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="password" class="block text-xs font-bold text-slate-700 dark:text-slate-300">Kata Sandi</label>
+                        <a href="{{ route('help') }}" class="text-[11px] font-bold text-blue-600 dark:text-blue-400 hover:underline">Lupa Kata Sandi?</a>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            <span class="material-symbols-outlined text-xl">lock</span>
+                        </div>
+                        <input id="password" name="password" type="password" required value="password"
+                            class="w-full pl-11 pr-11 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <!-- Remember Me Checkbox -->
+                <div class="flex items-center">
+                    <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300 rounded dark:bg-slate-800 dark:border-slate-700 cursor-pointer">
+                    <label for="remember" class="ml-2 block text-xs font-medium text-slate-600 dark:text-slate-400 cursor-pointer">
+                        Ingat saya di perangkat ini
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition hover-lift flex items-center justify-center space-x-2">
+                    <span class="material-symbols-outlined text-lg">login</span>
+                    <span>Masuk Ke Akun</span>
+                </button>
+            </form>
+
+            <!-- Quick Demo Login Switcher -->
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                <p class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center">Login Instan untuk Pengujian Demo:</p>
+                <div class="grid grid-cols-3 gap-2 text-xs">
+                    <a href="{{ route('login.quick', 'student') }}" class="py-2.5 bg-blue-50 dark:bg-blue-900/40 hover:bg-blue-100 text-blue-700 dark:text-blue-300 rounded-xl font-bold text-center transition hover-lift">
+                        Mahasiswa
+                    </a>
+                    <a href="{{ route('login.quick', 'reviewer') }}" class="py-2.5 bg-teal-50 dark:bg-teal-900/40 hover:bg-teal-100 text-teal-700 dark:text-teal-300 rounded-xl font-bold text-center transition hover-lift">
+                        Reviewer
+                    </a>
+                    <a href="{{ route('login.quick', 'admin') }}" class="py-2.5 bg-purple-50 dark:bg-purple-900/40 hover:bg-purple-100 text-purple-700 dark:text-purple-300 rounded-xl font-bold text-center transition hover-lift">
+                        Admin
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 @endsection
