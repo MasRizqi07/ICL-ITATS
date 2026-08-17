@@ -27,6 +27,9 @@ class CareerController extends Controller
         $career = Career::where('slug', $slug)->with('competencies')->firstOrFail();
         session(['selected_career_slug' => $career->slug]);
         $user = Auth::user();
+        if ($user && $user->isStudent()) {
+            $user->update(['target_career_id' => $career->id]);
+        }
         $gaps = $user ? $this->scoringService->calculateGap($user, $career) : [];
 
         return view('pages.career.show', compact('career', 'gaps'));

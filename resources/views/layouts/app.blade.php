@@ -163,7 +163,7 @@
                         <span class="material-symbols-outlined text-lg">dashboard</span>
                         <span>Dashboard</span>
                     </a>
-                    <a href="{{ route('careers.show', 'fullstack-web-developer') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <a href="{{ $currentCareer ? route('careers.show', $currentCareer->slug) : route('careers.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
                         <span class="material-symbols-outlined text-lg">work</span>
                         <span>Target Karier</span>
                     </a>
@@ -216,7 +216,7 @@
                     <span>Dashboard</span>
                 </a>
 
-                <a href="{{ route('careers.show', 'fullstack-web-developer') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('careers.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
+                <a href="{{ $currentCareer ? route('careers.show', $currentCareer->slug) : route('careers.index') }}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition hover-lift {{ request()->routeIs('careers.*') ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
                     <span class="material-symbols-outlined text-lg">work</span>
                     <span>Target Karier</span>
                 </a>

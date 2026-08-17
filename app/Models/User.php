@@ -19,6 +19,7 @@ class User extends Authenticatable
         'semester',
         'bio',
         'avatar_url',
+        'target_career_id',
     ];
 
     protected $hidden = [
@@ -66,5 +67,10 @@ class User extends Authenticatable
     public function reassessments()
     {
         return $this->hasMany(Reassessment::class, 'user_id');
+    }
+
+    public function targetCareer()
+    {
+        return $this->belongsTo(Career::class, 'target_career_id');
     }
 }

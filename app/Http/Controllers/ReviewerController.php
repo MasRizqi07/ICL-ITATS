@@ -7,13 +7,12 @@ use App\Models\Career;
 use App\Models\Evidence;
 use App\Models\Feedback;
 use App\Services\ReassessmentService;
-use App\Traits\ResolvesCareer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ReviewerController extends Controller
 {
-    use ResolvesCareer;
     public function __construct(protected ReassessmentService $reassessmentService)
     {
     }
@@ -37,7 +36,7 @@ class ReviewerController extends Controller
     public function reviewEvidence(ReviewEvidenceRequest $request, string $id)
     {
         $reviewer = Auth::user();
-        $evidence = Evidence::findOrFail($id);
+        $evidence = Evidence::with('user.reassessments.career')->findOrFail($id);
 
         if ($reviewer->id === $evidence->user_id) {
             abort(403, 'Reviewer tidak dapat meninjau bukti kemampuan miliknya sendiri.');
@@ -62,11 +61,15 @@ class ReviewerController extends Controller
             ]);
         }
 
-        // Trigger snapshot update for student
+        // Trigger snapshot update for student strictly based on evidence owner's target career
         $latestReassessment = $evidence->user->reassessments()->latest()->first();
-        $career = $latestReassessment ? $latestReassessment->career : $this->getCurrentCareer();
+        $career = $latestReassessment?->career
+            ?? ($evidence->user->target_career_id ? Career::find($evidence->user->target_career_id) : null);
+
         if ($career) {
             $this->reassessmentService->createSnapshot($evidence->user, $career);
+        } else {
+            Log::info("Skipping snapshot creation for user {$evidence->user_id}: no target career or prior reassessment found.");
         }
 
         return redirect()->route('reviewer.index')->with('success', 'Bukti kemampuan berhasil ditinjau dan status diperbarui.');

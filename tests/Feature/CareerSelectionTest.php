@@ -32,6 +32,7 @@ class CareerSelectionTest extends TestCase
         $response->assertSee($career->name);
 
         $this->assertEquals($career->slug, session('selected_career_slug'));
+        $this->assertEquals($career->id, $student->fresh()->target_career_id);
 
         // Dashboard should now reflect selected career
         $dashboardResponse = $this->get('/dashboard');
