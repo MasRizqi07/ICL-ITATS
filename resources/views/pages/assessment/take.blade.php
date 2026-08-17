@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-3xl mx-auto space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700">
         <h1 class="text-2xl font-bold text-slate-900 dark:text-white">{{ $assessment->title }}</h1>
         <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Target Karier: <strong>{{ $career->name }}</strong> • Versi Instrumen: {{ $assessment->version }}

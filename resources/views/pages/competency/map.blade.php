@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Header Section -->
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
                 <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Peta Kompetensi Karier Target</h1>

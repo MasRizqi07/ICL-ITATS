@@ -5,7 +5,7 @@
 @section('content')
 <div class="space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
             <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Riwayat Penilaian Ulang (Reassessment Snapshots)</h1>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">

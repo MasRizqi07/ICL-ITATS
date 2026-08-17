@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-2xl mx-auto space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700">
         <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300">
             Form Evaluasi Reviewer Dosen
         </span>

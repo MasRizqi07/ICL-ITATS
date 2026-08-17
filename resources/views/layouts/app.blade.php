@@ -23,55 +23,20 @@
     <link rel="shortcut icon" href="{{ asset('images/mark.png') }}" type="image/x-icon"/>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                screens: {
-                    'xs': '360px',
-                    'sm': '480px',
-                    'md': '768px',
-                    'lg': '1024px',
-                    'xl': '1200px',
-                    '2xl': '1920px',
-                },
-                extend: {
-                    colors: {
-                        "primary": "#2563eb",
-                        "primary-dark": "#004ac6",
-                        "secondary": "#0F766E",
-                        "tertiary": "#B45309",
-                        "ai-accent": "#6D28D9",
-                        "ink": "#17202A",
-                        "canvas": "#F8FAFC",
-                        "surface": "#FFFFFF",
-                        "line": "#D9E0E8",
-                        "error": "#B42318"
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
     @stack('styles')
 </head>
-<body class="h-full flex flex-col bg-[#F8FAFC] dark:bg-slate-950 text-[#17202A] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
+<body class="h-full flex flex-col bg-canvas dark:bg-slate-950 text-ink dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- Top Navigation Bar with Responsive Breakpoints -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 transition-colors duration-300">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-line dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             
             <div class="flex items-center space-x-3">
@@ -205,7 +170,7 @@
         
         <!-- Desktop Sidebar Navigation (>= 768px) -->
         <aside class="hidden md:block w-60 xl:w-64 shrink-0">
-            <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl border border-[#D9E0E8] dark:border-slate-800 p-3.5 space-y-1 shadow-sm sticky top-22">
+            <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl border border-line dark:border-slate-800 p-3.5 space-y-1 shadow-sm sticky top-22">
                 
                 <div class="px-3 py-2 text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
                     Menu Utama

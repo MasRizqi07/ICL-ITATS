@@ -5,7 +5,7 @@
 @section('content')
 <div class="space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700 space-y-3">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700 space-y-3">
         <div class="flex items-center space-x-2">
             <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">
                 Profil Karier Standar Industri

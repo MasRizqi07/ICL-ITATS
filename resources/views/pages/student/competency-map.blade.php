@@ -59,7 +59,7 @@
     </div>
 
     <!-- Competencies Interactive Cards Grid -->
-    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-[#D9E0E8] dark:border-slate-800 p-6 shadow-sm space-y-6">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-line dark:border-slate-800 p-6 shadow-sm space-y-6">
         <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
                 <h3 class="text-lg font-extrabold text-slate-900 dark:text-white tracking-tight">Rincian Kompetensi & Level Standar</h3>

@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-2xl mx-auto space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700 flex items-center space-x-4">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700 flex items-center space-x-4">
         <div class="w-16 h-16 rounded-full bg-blue-600 text-white font-bold text-2xl flex items-center justify-center shadow-md">
             {{ strtoupper(substr($user->name, 0, 1)) }}
         </div>

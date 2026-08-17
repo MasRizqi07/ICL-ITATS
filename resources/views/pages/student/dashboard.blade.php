@@ -86,7 +86,7 @@
     </div>
 
     <!-- Main Competency Map Table Preview -->
-    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-[#D9E0E8] dark:border-slate-800 p-6 shadow-sm">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-line dark:border-slate-800 p-6 shadow-sm">
         <div class="flex items-center justify-between mb-5">
             <div>
                 <h3 class="text-lg font-extrabold text-slate-900 dark:text-white tracking-tight">Peta Ringkasan Kompetensi Karier Target</h3>

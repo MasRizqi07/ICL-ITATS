@@ -23,40 +23,15 @@
     <link rel="shortcut icon" href="{{ asset('images/mark.png') }}" type="image/x-icon"/>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2563eb",
-                        "primary-dark": "#004ac6",
-                        "secondary": "#0F766E",
-                        "tertiary": "#B45309",
-                        "ai-accent": "#6D28D9",
-                        "ink": "#17202A",
-                        "canvas": "#F8FAFC",
-                        "surface": "#FFFFFF",
-                        "line": "#D9E0E8"
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="h-full flex flex-col bg-[#F8FAFC] dark:bg-slate-950 text-[#17202A] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
+<body class="h-full flex flex-col bg-canvas dark:bg-slate-950 text-ink dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
     <!-- Navbar -->
-    <nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#D9E0E8] dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
+    <nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-line dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="{{ route('landing') }}" class="flex items-center space-x-2.5 group">
                 <img src="{{ asset('images/mark.png') }}" alt="ICL ITATS Mark" class="w-10 h-10 object-contain drop-shadow-xs group-hover:scale-105 transition-transform duration-200">
@@ -103,7 +78,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-slate-900 border-t border-[#D9E0E8] dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors duration-300">
+    <footer class="bg-white dark:bg-slate-900 border-t border-line dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors duration-300">
         <div class="max-w-[1200px] mx-auto px-4">
             <p>© 2026 ICL ITATS — Gemastik XIX Software Development Competition. Hak Cipta Dilindungi Undang-Undang.</p>
         </div>

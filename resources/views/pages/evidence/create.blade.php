@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-2xl mx-auto space-y-6">
 
-    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-[#D9E0E8] dark:border-slate-700">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-line dark:border-slate-700">
         <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Tambah Bukti Kemampuan Baru</h1>
         <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Unggah rincian portofolio, sertifikat, atau repositori proyek yang relevan dengan peta kompetensi Anda.
